@@ -74,13 +74,14 @@ Strengths:
 
 - Calculations require no network.
 - Output files are stored locally.
-- Easy visualization (nglview).
+- Easy visualization in the notebook with nglview.
+- You can work interactively.
 
 Weaknesses:
 
-- Installation requires some work.
-- Overheating of your laptop, except for the smallest simulations.
-- Laptop must remain on during calculations.
+- The installation requires some work.
+- Your laptop could overheat when running longer simulations.
+- Yout laptop must remain powered on during calculations.
 
 Instructions: [setup_on_your_laptop.md](setup_on_your_laptop.md)
 
@@ -88,17 +89,18 @@ Instructions: [setup_on_your_laptop.md](setup_on_your_laptop.md)
 
 Strengths:
 
-- Easy to get started.
-- GPU acceleration.
-- Interactive work.
+- Requires no software installation on your laptop, other than a web browser.
+- GPU acceleration can speed up calculations.
+- You can work interactively.
 
 Weaknesses:
 
-- Network (and your laptop) must remain on during calculations.
-- Output deleted after session.
-- Transferring files is tedious.
-- Google account required.
-- No visualization of MD.
+- Your laptop must remain powered on during the calculations and your network connection cannot drop.
+  Especially when connected through Eduroam, this can be challenging.
+- Output files are deleted after closing your notebook session.
+- Transferring files from and to your laptop is tedious and slow.
+- A Google account required.
+- Trajectories cannot be visualized inside a notebook because nglview is not supported.
 
 Instructions: [setup_on_google_colab.md](setup_on_google_colab.md)
 
@@ -106,13 +108,13 @@ Instructions: [setup_on_google_colab.md](setup_on_google_colab.md)
 
 Strengths:
 
-- Calculations in background, i.e. you can power off your laptop while they run.
-- Computational power.
+- Calculations run in the background on a remote machine. You can power off your laptop while they run.
+- You have access to more computational power.
 
 Weaknesses:
 
-- Requires Linux knowledge.
-- Queueing time.
+- Some Linux knowledge is required.
+- Your calculations do not start instantly. Instead, you submit "jobs" which are executed when a compute node becomes available.
 
 Instructions: [setup_on_a_hpc.md](setup_on_a_hpc.md)
 
