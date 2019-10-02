@@ -99,4 +99,4 @@ Working with an HPC requires a basic knowledge of the Linux operating system. If
 
     After the job is submitted, you can safely log out (type `exit`), even switch off your laptop, and connect later to check the status of the job. When the job status is `C` (completed) or it is no longer present in the output of `qstat`, the job was executed and corresponding outfiles will be created.
 
-Later in the tutorial, it will be explained how to run notebooks from this tutorial on a HPC.
+Later in the tutorial, it will be explained how to run notebooks from this tutorial on a HPC. This does not make sense in all cases because you have to adapt your notebook to run correctly without any user interaction. Most notebooks in this tutorial require you to make modifications.

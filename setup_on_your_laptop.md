@@ -86,4 +86,4 @@ Take the following steps:
 
 7. Start Spyder, a simple Python integrated development environment, enter the same two lines from the previous point in the editor and execute (click the green Play button). You should see the same output. Unlike notebooks, source code in Spyder is not grouped into cells. Unlike notebooks, a script in Spyder does not know remember variables from previous executions.
 
-To start any notebook from the tutorial, download a ZIP file with the most recent notebooks [here](XXX). Unzip this archive and open the notebook from Jupyter,
+To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip). Unzip this archive and open the notebook from Jupyter,

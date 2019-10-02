@@ -123,7 +123,8 @@ The getting-started instructions showed you how to open a new notebook or to
 start any notebook from this tutorial. The tutorial consists of the following
 sections, to be followed in order:
 
-1. `01/01_first_openmm_simulation.ipynb`
-2. `02/02_alanine_dipeptide.ipynb`
-3. `03/03_other_python_environments.ipynb`
-4. `04/04_villin_headpiece.ipynb`
+- [01/01_first_openmm_simulation.ipynb](01/01_first_openmm_simulation.ipynb)
+- [02/02_alanine_dipeptide.ipynb](02/02_alanine_dipeptide.ipynb)
+- [03/03_run_openmm_on_a_hpc.ipynb](03/03_run_openmm_on_a_hpc.ipynb)
+- [03/03_run_openmm_on_google_colab.ipynb](03/03_run_openmm_on_google_colab.ipynb)
+- [04/04_villin_headpiece.ipynb](04/04_villin_headpiece.ipynb)

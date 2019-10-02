@@ -1,3 +1,4 @@
+
 # Installation of OpenMM on Google Colaboratory
 
 Google Colab allows anyone (with a Google account) to run Python code inside a web browser, without having to install any other software on the local computer. Everything is executed in the cloud in Google's servers on which a lot of useful software is pre-installed. This takes away many of the technical barriers when getting started with Python. Google Colab mainly exists as a free service for the machine learning and data science communities, but you can also use it for any other purpose of interest, in our case running molecular dynamics simulations.
@@ -31,4 +32,4 @@ Executing this code cell will install OpenMM on the Linux machine running the no
 
 In this course, Google Colab is only used as a fallback option, in case the alternatives are hampered by technical issues. It offers a great learning experience and GPU acceleration is convenient, but it does not support visualization of molecular dynamics simulations with NGLView, which is a major showstopper. Therefore, most of the hands-on session will be carried out in Jupyter notebooks running on your laptop.
 
-To start any notebook from this tutorial, ... TODO.
+To start any notebook from this tutorial on Google Colab, browse to https://colab.research.google.com/ and on the welcome screen, click on GITHUB in the orange bar. Enter the URL `https://github.com/molmod/openmm-tutorial-msbs` and press Enter. Select and open the desired notebook. You will then have to insert the code cell to install OpenMM above. When your simulation needs additional input files or generates output files of interest, additional code must be inserted to upload and download the inputs and outputs, respectively. A complete working example can be found here: [03/03_run_openmm_on_google_colab.ipynb](03/03_run_openmm_on_google_colab.ipynb).
