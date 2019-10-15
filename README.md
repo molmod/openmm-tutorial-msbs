@@ -1,6 +1,6 @@
 # Introductory OpenMM tutorial
 
-## 0. Conditions of use
+## Conditions of use
 
 The Python and Bash source code in this work are public domain and can be reused
 without any restrictions.
@@ -15,7 +15,7 @@ This tutorial shows how to use and install different software packages, which
 have their own conditions of use.
 
 
-## 1. Scope
+## Scope
 
 This tutorial was written for the course Molecular Simulations of Biological
 Systems (MSBS), a (very) introductory course for students of the MSc program
@@ -25,7 +25,7 @@ mechanics) to run sensible molecular dynamics simulations and to interpret the
 results correctly. This tutorial assumes the students have a basic knowledge of
 Python.
 
-This tutorial is strongly inspired by several online resources (tutorials,
+All material strongly inspired by several online resources (tutorials,
 documentation and examples) of the OpenMM, Python, NumPy, Matplotlib and
 other projects. The main pointers are:
 
@@ -46,7 +46,7 @@ OpenMM and related tools, the amount of information is simply overwhelming.
 The aim of this course is to provide a gentle introduction to many of the
 topics in the above references.
 
-## 2. Getting started
+## Getting started
 
 Practically all simulations in this tutorial are carried with OpenMM, which is
 described in extenso
@@ -119,35 +119,35 @@ Weaknesses:
 Instructions: [setup_on_a_hpc.md](setup_on_a_hpc.md)
 
 
-## 3. Overview of Tutorial Sections
+## Overview of Tutorial Sections
 
 The getting-started instructions showed you how to open a new notebook or to
 start any notebook from this tutorial. The tutorial consists of the following
 sections, to be followed more-or-less in order:
 
-**First steps:**
+**1. First steps:**
 
 - [01_first_steps/01_water.ipynb](01_first_steps/01_water.ipynb)
 
-**Different ways of simulating analine dipeptide:**
+**2. Different ways of simulating analine dipeptide:**
 
 - [02_alanine_dipeptide/01_force_fields.ipynb](02_alanine_dipeptide/01_force_fields.ipynb)
 
-**Running OpenMM notebooks in other places:**
+**3. Running OpenMM notebooks in other places:**
 
 - [03_elsewhere/01_run_openmm_on_a_hpc.ipynb](03_elsewhere/01_run_openmm_on_a_hpc.ipynb)
 - [03_elsewhere/02_run_openmm_on_google_colab.ipynb](03_elsewhere/02_run_openmm_on_google_colab.ipynb)
 
-**A short protein MD simulation:**
+**4. A short protein MD simulation:**
 
 - [04_protein/01_villin_headpiece.ipynb](04_protein/01_villin_headpiece.ipynb)
 
-**Analysis of MD trajectories:**
+**5. Analysis of MD trajectories:**
 
 - [05_analysis/01_internal_coordinates_averages.ipynb](05_analysis/01_internal_coordinates_averages.ipynb)
 - [05_analysis/02_physicochemical_properties.ipynb](05_analysis/02_physicochemical_properties.ipynb)
 - [05_analysis/03_alignment_principal_component_analysis.ipynb](05_analysis/03_alignment_principal_component_analysis.ipynb)
 
-**Visalization**
+**6. Visalization**
 
 - [06_visualization/visualization.md](06_visualization/visualization.md)
