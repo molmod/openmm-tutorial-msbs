@@ -31,11 +31,11 @@ Take the following steps:
     conda config --add channels conda-forge
     # The following creates a conda environment called openmm
     # in which a several packages are installed.
-    conda create -n openmm spyder jupyter numpy pandas scipy matplotlib ipympl
+    conda create -n openmm spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
     # activate the environment just created.
     conda activate openmm
     # install openmm and a few more related tools.
-    conda install -c omnia openmm mdtraj nglview
+    conda install -c omnia openmm mdtraj nglview openforcefield
     jupyter-nbextension enable nglview --py --sys-prefix
     # We'll also install VMD, in a separate conda environment
     # because it seems to interfere with jupyter notebooks.

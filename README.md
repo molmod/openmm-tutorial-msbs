@@ -128,6 +128,7 @@ sections, to be followed more-or-less in order:
 **1. First steps:**
 
 - [01_first_steps/01_water.ipynb](01_first_steps/01_water.ipynb)
+- [01_first_steps/02_lennard_jones.ipynb](01_first_steps/02_lennard_jones.ipynb)
 
 **2. Different ways of simulating analine dipeptide:**
 
@@ -151,3 +152,7 @@ sections, to be followed more-or-less in order:
 **6. Visalization**
 
 - [06_visualization/visualization.md](06_visualization/visualization.md)
+
+**7. Ligands**
+
+- [07_ligands/01_ibuprofen.ipynb](07_ligands/01_ibuprofen.ipynb)
