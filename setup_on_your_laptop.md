@@ -25,7 +25,7 @@ Take the following steps:
 
     c. Linux: open your preferred terminal emulator and enter the command alias `c`.
 
-4. Configure conda and install OpenMM (and other useful tools) by running the following commands. Copy-paste should work.
+4. Configure conda and install OpenMM and other useful tools) by running the following commands. Copy-paste should work, but on Windows you have to copy-paste line by line. (You can skip the comments.)
 
     ```bash
     conda config --add channels conda-forge
@@ -37,13 +37,6 @@ Take the following steps:
     # install openmm and a few more related tools.
     conda install -c omnia openmm mdtraj nglview openforcefield
     jupyter-nbextension enable nglview --py --sys-prefix
-    # We'll also install VMD, in a separate conda environment
-    # because it seems to interfere with jupyter notebooks.
-    conda create -n vmd vmd
-    # To start VMD, switch conda to the conda environment and start
-    # VMD.
-    conda activate vmd
-    vmd
     ```
 
 
@@ -83,7 +76,22 @@ Take the following steps:
     simtk.testInstallation.main()
     ```
 
-
 7. Start Spyder, a simple Python integrated development environment, enter the same two lines from the previous point in the editor and execute (click the green Play button). You should see the same output. Unlike notebooks, source code in Spyder is not grouped into cells. Unlike notebooks, a script in Spyder does not know remember variables from previous executions.
+
+8. Install VMD, which will be used for showing some visualization good practices.
+
+   a. Any operating system: go to [the VMD download page](https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD) and follow instructions.
+
+   b. On Linux, the following also works but might not be fully legal:
+
+      ```
+      # We'll also install VMD, in a separate conda environment
+      # because it seems to interfere with jupyter notebooks.
+      conda create -n vmd vmd
+      # To start VMD, switch conda to the conda environment and start
+      # VMD.
+      conda activate vmd
+      vmd
+      ```
 
 To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip). Unzip this archive and open the notebook from Jupyter,
