@@ -25,6 +25,7 @@ Take the following steps:
 
     c. Linux: open your preferred terminal emulator and enter the command alias `c`.
 
+
 4. Configure conda and install OpenMM and other useful tools) by running the following commands. Copy-paste should work, but on Windows you have to copy-paste line by line. (You can skip the comments.)
 
     ```bash
@@ -67,6 +68,7 @@ Take the following steps:
     All differences are within tolerance.
     ```
 
+
 6. Now is a good time to go through the [Jupyter Notebook Introduction](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#starting-the-notebook-server) to become familiar with its main features.
 
     Start a Jupyeter notebook, e.g. by entering `jupyter notebook` in the command-prompt. Create a new Python 3 notebook, enter the following two lines in the first code cell and execute it by clicking on the play button (or typing Shift+Enter):
@@ -76,7 +78,15 @@ Take the following steps:
     simtk.testInstallation.main()
     ```
 
+    If you get a "kernel error" on Windows, you might be running into the following issue (or a similar one): https://github.com/jupyter/notebook/issues/4907. this should be in principle solved with the `jupyter_client>=5.3.4` and `jupyter_core>=4.6.1`, available on conda-forge as of November 17, 2019. In case you still run into this issue, try to downgrade `jupyter_client` to version 5.3.1 as follows on your Conda prompt:
+
+    ```
+    conda install jupyter_client=5.3.1
+    ```
+
+
 7. Start Spyder, a simple Python integrated development environment, enter the same two lines from the previous point in the editor and execute (click the green Play button). You should see the same output. Unlike notebooks, source code in Spyder is not grouped into cells. Unlike notebooks, a script in Spyder does not know remember variables from previous executions.
+
 
 8. Install VMD, which will be used for showing some visualization good practices.
 
