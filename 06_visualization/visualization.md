@@ -1,19 +1,30 @@
 # Visualization
 
 ## 1. nglview, VMD and PyMOL
+
 In the previous notebooks, a relatively basic visualization of intermediate results was done with [nglview](http://nglviewer.org/nglview/latest/index.html). While nglview is convenient for a quick introspection inside a notebook, it only offers a fairly simple customization of the visual representation through its [Python API](http://nglviewer.org/nglview/latest/api.html).
 
 More advanced biomolecular visualization tools are available, of which [VMD](http://www.ks.uiuc.edu/Research/vmd/) and [PyMOL](https://pymol.org/2/) are popular choices. Both tools are comparable in functionality  (but obviously differ when going through the details). A major difference in practice is the distribution of both codes. VMD is free as in free beer, but not open source. One can download binaries and source code from its homepage. PyMol is in principle an open-source project, but binary packages (with several commercial enhancements) are sold for a mild price. For this tutorial, we will use VMD, so you can get you started without having to pay for a license.
 
 ## 2. Walk-through for VMD + good practices
 
-This tutorial will show you how to make the following visualization of the final structure of the Villin headpiece molecular dynamics simulation:
+This tutorial will show you how to make the following visualization of the final structure of the Villin headpiece molecular dynamics simulation, see `04_protein`:
 
 ![vmdscene](vmdscene.png)
 
 Note that the final geometry may be slightly different due to the random initialization of the atomic velocities. In any case, try to reproduce this image as well as possible. The instructions are based on good practices for making high-resolution publication-ready visualizations.
 
-### Activate the right conda environment
+### Load the trajectory (option 1, any operating system)
+
+- Start the VMD program.
+
+- Select the menu option `File` -> `New Molecule...` and load the file `init.pdb` from the directory `04_protein`.
+
+- Click on the first line in the VMD Main window.
+
+- Select the menu option `File` -> `Load Data Into Molecule...`, select the file `traj.dcd` from the directory `04_protein` and also select the option `Load all at once`. Then click the `Load` button and close the popup window.
+
+### Load the trajectory (option 2, Linux)
 
 In the introductory part of this tutorial, VMD was installed in a separate conda environment because it would otherwise interfere with Jupyter. Hence, we first need to switch to the correct conda environment:
 
@@ -21,14 +32,14 @@ In the introductory part of this tutorial, VMD was installed in a separate conda
 conda activate vmd
 ```
 
-### Open the trajectory in VMD
-
 The easiest way to load a trajectory in VMD, is to provide the topology and trajectory inputs on the command line:
 
 ```bash
 cd ../04_protein/
 vmd init.pdb traj.dcd
 ```
+
+### Play the trajectory
 
 After VMD has started, play the video (play button in the bottom-right of the main window) or skip to the last frame immediately. The default representation is not particularly clear or insightful. This choice is mainly motivated by the computational efficiency with which VMD can draw a lot of simple lines.
 
