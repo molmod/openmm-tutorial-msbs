@@ -103,5 +103,3 @@ Take the following steps:
       conda activate vmd
       vmd
       ```
-
-To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip). Unzip this archive and open the notebook from Jupyter,

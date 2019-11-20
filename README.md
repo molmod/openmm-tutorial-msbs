@@ -46,7 +46,7 @@ OpenMM and related tools, the amount of information is simply overwhelming.
 The aim of this course is to provide a gentle introduction to many of the
 topics in the above references.
 
-## Getting started
+## Installation of OpenMM
 
 Practically all simulations in this tutorial are carried with OpenMM, which is
 described in extenso
@@ -83,7 +83,7 @@ Weaknesses:
 - Your laptop could overheat when running longer simulations.
 - Yout laptop must remain powered on during calculations.
 
-Instructions: [setup_on_your_laptop.md](setup_on_your_laptop.md)
+Installation instructions: [setup_on_your_laptop.md](setup_on_your_laptop.md)
 
 ### Google Colab
 
@@ -102,7 +102,7 @@ Weaknesses:
 - A Google account required.
 - Trajectories cannot be visualized inside a notebook because nglview is not supported.
 
-Instructions: [setup_on_google_colab.md](setup_on_google_colab.md)
+Installation Instructions: [setup_on_google_colab.md](setup_on_google_colab.md)
 
 ### High-performance cluster
 
@@ -116,7 +116,36 @@ Weaknesses:
 - Some Linux knowledge is required.
 - Your calculations do not start instantly. Instead, you submit "jobs" which are executed when a compute node becomes available.
 
-Instructions: [setup_on_a_hpc.md](setup_on_a_hpc.md)
+Installation instructions: [setup_on_a_hpc.md](setup_on_a_hpc.md)
+
+
+## Starting the tutorial
+
+This section assumes you have just installed OpenMM, following the instructions of the previous section.
+
+### Laptop
+
+To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip) and unzip this archive.
+
+- On Windows open a Conda prompt and change the directory to where you unzipped the archive. If needed, first change to the correct drive, e.g. by typing the command `D:`, then use e.g. `cd` folowed by the name of the directory where the ZIP file was unpacked.
+
+- On MacOS or Linux, open any terminal emulator and change the directory to where you unzipped the archive. There is no need to change drives and the usage of `cd` is similar to Windows.
+
+Then enter the following commands:
+
+```bash
+conda activate openmm
+jupyter notebook
+```
+
+A browser window should pop up in which you can select and open a notebook. If
+you are not familiar with notebooks, the following resources can be helpful:
+[Jupyter Notebook Introduction](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#starting-the-notebook-server).
+
+### Other environments (Google Colab and HPC)
+
+Instructions for these environments are part of the tutorial below, see
+directory `03_elsewhere`.
 
 
 ## Overview of Tutorial Sections
