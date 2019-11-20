@@ -185,3 +185,8 @@ sections, to be followed more-or-less in order:
 **7. Ligands**
 
 - [07_ligands/01_ibuprofen.ipynb](07_ligands/01_ibuprofen.ipynb)
+
+
+## Trouble shooting
+
+A list of common problems is compiled here: [FAQ.md](FAQ.md)
