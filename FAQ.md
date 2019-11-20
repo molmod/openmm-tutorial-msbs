@@ -8,7 +8,7 @@ If you get a "kernel error" on Windows, you might be running into the following 
 
 ## Permission Error when loading trajectory with NGLView
 
-Windows users may not be able to load trajectories with NGLView. This is due a bug, for which the fix can be found here: 
+Windows users may not be able to load trajectories with NGLView. This is due a bug, for which the fix can be found here: https://github.com/arose/nglview/pull/863
 
 ## Cannot open DLL, import failed
 
