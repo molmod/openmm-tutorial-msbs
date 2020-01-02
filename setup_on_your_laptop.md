@@ -40,6 +40,8 @@ Take the following steps:
     jupyter-nbextension enable nglview --py --sys-prefix
     ```
 
+   The ``openforcefield`` package is not available for Windows. For now, Windows users should omit this from their installation. This means you will not be able to tackle the notebook in directory ``07_ligands``.
+
 
 5. Test your OpenMM installation by entering the following command on the command prompt:
 
