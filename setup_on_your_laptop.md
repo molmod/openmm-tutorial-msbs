@@ -32,7 +32,7 @@ Take the following steps:
     conda config --add channels conda-forge
     # The following creates a conda environment called openmm
     # in which a several packages are installed.
-    conda create -n openmm spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
+    conda create -n openmm 'python<3.8' spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
     # activate the environment just created.
     conda activate openmm
     # install openmm and a few more related tools.
@@ -40,8 +40,8 @@ Take the following steps:
     jupyter-nbextension enable nglview --py --sys-prefix
     ```
 
-   The ``openforcefield`` package is not available for Windows. For now, Windows users should omit this from their installation. This means you will not be able to tackle the notebook in directory ``07_ligands``.
-
+   The ``openforcefield`` package used to be unavailable for Windows, but this
+   should be fixed with the release of version 0.7.2  on 29/9/2020.
 
 5. Test your OpenMM installation by entering the following command on the command prompt:
 
