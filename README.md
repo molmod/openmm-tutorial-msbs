@@ -38,7 +38,7 @@ other projects. The main pointers are:
 * NumPy Users Guid: https://docs.scipy.org/doc/numpy/user/index.html
 * MatPlotLib website: https://matplotlib.org/
 * nglview: http://nglviewer.org/nglview/latest/
-* MDTraj: http://mdtraj.org/1.9.3/
+* MDTraj: http://mdtraj.org/
 * CHARMM-GUI: http://www.charmm-gui.org/
 
 Even though these resources contain all the background and details to learn

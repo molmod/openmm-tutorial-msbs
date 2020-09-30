@@ -57,7 +57,7 @@ Working with an HPC requires a basic knowledge of the Linux operating system. If
     conda config --add channels conda-forge
     conda create -n openmm jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
     conda activate openmm
-    conda install -c omnia openmm mdtraj nglview openforcefield
+    conda install -c omnia openmm mdtraj nglview openforcefield openforcefields openmoltools
     ```
 
 7. Run the following command to test the OpenMM software:
