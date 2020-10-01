@@ -21,7 +21,7 @@ print(sys.version)
 !conda config --set always_yes yes
 !conda config --add channels omnia
 !conda config --add channels conda-forge
-!conda create -n openmm python=3.6 openmm mdtraj rdkit openforcefield openbabel openforcefields openmoltools
+!conda create -n openmm python=3.6 openmm mdtraj rdkit openforcefield openbabel openmmforcefields openforcefields openmoltools pymbar
 sys.path.append('/usr/local/envs/openmm/lib/python3.6/site-packages')
 import simtk.testInstallation
 simtk.testInstallation.main()

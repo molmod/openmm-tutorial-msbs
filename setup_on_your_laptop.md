@@ -36,7 +36,7 @@ Take the following steps:
     # activate the environment just created.
     conda activate openmm
     # install openmm and a few more related tools.
-    conda install -c omnia openmm mdtraj nglview openforcefield openforcefields openmoltools
+    conda install -c omnia openmm mdtraj nglview openforcefield openmmforcefields openforcefields openmoltools pymbar
     jupyter-nbextension enable nglview --py --sys-prefix
     ```
 
