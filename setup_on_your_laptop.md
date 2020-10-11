@@ -2,6 +2,8 @@
 
 To run OpenMM simulations on your laptop, we will work with a standardized Python environment, Anaconda, which is supported on all major operating systems.
 
+Some of the more specialized packages (required for tutorial 07) are only used on Unix systems (Linux and macOS) by researchers in the field, and these have poor support on Windows. Luckily, on Windows 10, Microsoft distributes the Windows Subsystem for Linux 2 (WSL2), as of a May 2019. This allows you to run Linux inside your Windows operating system, giving you access to a small-scale version the software environment used on high-performance cluster. More details can be found in the [Official WSL installation instructions](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+
 Take the following steps:
 
 1. Download the Anaconda Python 3.7 installer for your operating system. The 64-bit version is strongly preferred if your hardware and operating system support it. (Most modern laptops do.) The installer can be downloaded from [the anaconda website](https://www.anaconda.com/distribution/).
@@ -10,7 +12,7 @@ Take the following steps:
 
     a. Windows: open the `.exe` file.
 
-    b. MacOS: ???
+    b. macOS: ???
 
     c. Linux: run `./Anaconda3-*-Linux-x86_64.sh -b -p ${HOME}/anaconda`.
        Add the following line to your `~.bashrc` file, which makes it convenient to
@@ -21,27 +23,48 @@ Take the following steps:
 
     a. Windows: run the application "Anaconda prompt" from the start menu.
 
-    b. MacOS: ???
+    b. macOS: ???
 
     c. Linux: open your preferred terminal emulator and enter the command alias `c`.
 
 
-4. Configure conda and install OpenMM and other useful tools) by running the following commands. Copy-paste should work, but on Windows you have to copy-paste line by line. (You can skip the comments.)
+4. Configure conda and install OpenMM and other useful tools).
 
-    ```bash
-    conda config --add channels conda-forge
-    # The following creates a conda environment called openmm
-    # in which a several packages are installed.
-    conda create -n openmm 'python<3.8' spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
-    # activate the environment just created.
-    conda activate openmm
-    # install openmm and a few more related tools.
-    conda install -c omnia openmm mdtraj nglview openforcefield openmmforcefields openforcefields openmoltools pymbar
-    jupyter-nbextension enable nglview --py --sys-prefix
-    ```
+   a. Windows: copy the following line by line in the anaconda terminal.
+      (The package `openmmforcields` is not supported and some special tricks
+      are needed to install the `openforcefields` package. Both are needed in
+      toturial 07.)
 
-   The ``openforcefield`` package used to be unavailable for Windows, but this
-   should be fixed with the release of version 0.7.2  on 29/9/2020.
+      ```bash
+      conda config --add channels conda-forge
+      # The following creates a conda environment called openmm
+      # in which a several packages are installed.
+      conda create -n openmm 'python<3.8' spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
+      # activate the environment just created.
+      conda activate openmm
+      # install openmm and a few more related tools, avoiding the openforcefield and openmmforcefields packages.
+      conda install -c omnia openmm mdtraj nglview openforcefields openmoltools pymbar
+      # install the git package to allow installation from github
+      conda install -c anaconda git
+      # install the openforcefield package through github.
+      install git+https://github.com/openforcefield/openforcefields@1.2.1
+      jupyter-nbextension enable nglview --py --sys-prefix
+      ```
+
+   b. macOS and Linux: run the following commands.
+      You can copy-paste all lines in one go.
+
+      ```bash
+      conda config --add channels conda-forge
+      # The following creates a conda environment called openmm
+      # in which a several packages are installed.
+      conda create -n openmm 'python<3.8' spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
+      # activate the environment just created.
+      conda activate openmm
+      # install openmm and a few more related tools.
+      conda install -c omnia openmm mdtraj nglview openforcefield openmmforcefields openforcefields openmoltools pymbar
+      jupyter-nbextension enable nglview --py --sys-prefix
+      ```
 
 5. Test your OpenMM installation by entering the following command on the command prompt:
 
