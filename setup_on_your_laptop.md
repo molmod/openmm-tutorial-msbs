@@ -47,7 +47,7 @@ Take the following steps:
       # install the git package to allow installation from github
       conda install -c anaconda git
       # install the openforcefield package through github.
-      install git+https://github.com/openforcefield/openforcefields@1.2.1
+      pip install git+https://github.com/openforcefield/openforcefields@1.2.1
       jupyter-nbextension enable nglview --py --sys-prefix
       ```
 
