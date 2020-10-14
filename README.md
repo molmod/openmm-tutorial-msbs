@@ -163,7 +163,7 @@ sections, to be followed more-or-less in order:
 
 - [02_alanine_dipeptide/01_force_fields.ipynb](02_alanine_dipeptide/01_force_fields.ipynb)
 
-**3. Running OpenMM notebooks in other places:**
+**3. Running OpenMM notebooks in other places:** (You can skip these for the MSBS course.)
 
 - [03_elsewhere/01_run_openmm_on_a_hpc.ipynb](03_elsewhere/01_run_openmm_on_a_hpc.ipynb)
 - [03_elsewhere/02_run_openmm_on_google_colab.ipynb](03_elsewhere/02_run_openmm_on_google_colab.ipynb)
@@ -182,7 +182,7 @@ sections, to be followed more-or-less in order:
 
 - [06_visualization/visualization.md](06_visualization/visualization.md)
 
-**7. Ligands**
+**7. Ligands** (This part is still under development and optional. It does not work natively under Windows, but it should work with the Windows Subsystem for Linux 2.)
 
 - [07_ligands/01_ibuprofen.ipynb](07_ligands/01_ibuprofen.ipynb)
 
