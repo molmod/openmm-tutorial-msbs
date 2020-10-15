@@ -3,3 +3,5 @@ scalar*.csv
 traj*.*
 init*.*
 tmp
+__pycache__
+hints.txt
