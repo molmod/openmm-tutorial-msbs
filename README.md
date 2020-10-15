@@ -184,7 +184,8 @@ sections, to be followed more-or-less in order:
 
 **7. Ligands** (This part is still under development and optional. It does not work natively under Windows, but it should work with the Windows Subsystem for Linux 2.)
 
-- [07_ligands/01_ibuprofen.ipynb](07_ligands/01_ibuprofen.ipynb)
+- [07_ligands/01_ibuprofen_gas_phase.ipynb](07_ligands/01_ibuprofen_gas_phase.ipynb)
+- [07_ligands/02_ibuprofen_solvent.ipynb](07_ligands/02_ibuprofen_solvent.ipynb)
 
 
 ## Trouble shooting
