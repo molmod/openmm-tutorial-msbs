@@ -39,7 +39,7 @@ Take the following steps:
       conda config --add channels conda-forge
       # The following creates a conda environment called openmm
       # in which a several packages are installed.
-      conda create -n openmm 'python<3.8' spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
+      conda create -n openmm "python<3.8" spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
       # activate the environment just created.
       conda activate openmm
       # install openmm and a few more related tools, avoiding the openforcefield and openmmforcefields packages.
@@ -58,7 +58,7 @@ Take the following steps:
       conda config --add channels conda-forge
       # The following creates a conda environment called openmm
       # in which a several packages are installed.
-      conda create -n openmm 'python<3.8' spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
+      conda create -n openmm "python<3.8" spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
       # activate the environment just created.
       conda activate openmm
       # install openmm and a few more related tools.
