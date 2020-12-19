@@ -8,8 +8,11 @@ for file in $(find . | grep 'md$'); do
   sed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' ${file}
 done
 
+# Remove nbconvert outputs
+rm */*.nbconvert.ipynb
+
 # Strip output cells from notebooks
-for file in $(find . | grep 'ipynb$'); do
+for file in $(git ls-files | grep 'ipynb$'); do
   echo Cleaning ${file}
   jupyter nbconvert ${file} --to notebook  --inplace --nbformat 4 --ClearOutputPreprocessor.enabled=True
 done

@@ -1,4 +1,5 @@
 .ipynb_checkpoints
+*.nbconvert.ipynb
 scalar*.csv
 traj*.*
 init*.*

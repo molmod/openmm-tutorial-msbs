@@ -1,6 +1,8 @@
 
 # Installation of OpenMM on Google Colaboratory
 
+:warning: WARNING. This document is kept here for future reference. However, the installation method described here easily breaks, depending on the version of OpenMM and the versions of various software libraries running on Google's servers.
+
 Google Colab allows anyone (with a Google account) to run Python code inside a web browser, without having to install any other software on the local computer. Everything is executed in the cloud in Google's servers on which a lot of useful software is pre-installed. This takes away many of the technical barriers when getting started with Python. Google Colab mainly exists as a free service for the machine learning and data science communities, but you can also use it for any other purpose of interest, in our case running molecular dynamics simulations.
 
 Before installing OpenMM in a Google Colab notebook, you first need to learn how Python and notebooks (on Google Colab) work. The following notebooks explains the basics:
@@ -21,8 +23,10 @@ print(sys.version)
 !conda config --set always_yes yes
 !conda config --add channels omnia
 !conda config --add channels conda-forge
-!conda create -n openmm python=3.6 openmm mdtraj rdkit openforcefield openbabel openmmforcefields openforcefields openmoltools pymbar
+!conda create -n openmm python=3.6 git rdkit openbabel openmm mdtraj nglview pymbar pdbfixer openmmforcefields openforcefields openmoltools parmed
 sys.path.append('/usr/local/envs/openmm/lib/python3.6/site-packages')
+# install the openforcefield package directly from github.
+!pip install git+https://github.com/openforcefield/openforcefields@1.3.0
 import simtk.testInstallation
 simtk.testInstallation.main()
 ```

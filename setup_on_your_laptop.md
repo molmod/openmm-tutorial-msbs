@@ -32,37 +32,41 @@ Take the following steps:
 
    a. Windows: copy the following line by line in the anaconda terminal.
       (The package `openmmforcields` is not supported and some special tricks
-      are needed to install the `openforcefields` package. Both are needed in
-      toturial 07.)
+      are needed to install the latest version of the `openforcefields` package.
+      Both are needed in toturial 07.)
 
       ```bash
       conda config --add channels conda-forge
       # The following creates a conda environment called openmm
       # in which a several packages are installed.
-      conda create -n openmm "python<3.8" spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
-      # activate the environment just created.
+      conda create -n openmm "python<3.8" git spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed
+      # Activate the environment just created.
       conda activate openmm
-      # install openmm and a few more related tools, avoiding the openforcefield and openmmforcefields packages.
-      conda install -c omnia openmm mdtraj nglview openforcefields openmoltools pymbar
-      # install the git package to allow installation from github
-      conda install -c anaconda git
-      # install the openforcefield package through github.
-      pip install git+https://github.com/openforcefield/openforcefields@1.2.1
+      # Install openmm and a few more related tools, avoiding the openforcefield and openmmforcefields packages.
+      conda install -c omnia openforcefield openmoltools  # openmmforcefields
+      # Install the latest version of the openforcefield package directly from github.
+      pip install git+https://github.com/openforcefield/openforcefields@1.3.0
+      # Enable nglview in jupyter notebooks
       jupyter-nbextension enable nglview --py --sys-prefix
       ```
 
    b. macOS and Linux: run the following commands.
       You can copy-paste all lines in one go.
+      (Some special tricks are needed to install the latest version of the
+      `openforcefields` package.)
 
       ```bash
       conda config --add channels conda-forge
       # The following creates a conda environment called openmm
       # in which a several packages are installed.
-      conda create -n openmm "python<3.8" spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel
-      # activate the environment just created.
+      conda create -n openmm "python<3.8" spyder jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed
+      # Activate the environment just created.
       conda activate openmm
-      # install openmm and a few more related tools.
-      conda install -c omnia openmm mdtraj nglview openforcefield openmmforcefields openforcefields openmoltools pymbar
+      # Install openmm and a few more related tools.
+      conda install -c omnia openforcefield openmoltools openmmforcefields
+      # Install the latest version of the openforcefield package directly from github
+      pip install git+https://github.com/openforcefield/openforcefields@1.3.0
+      # Enable nglview in jupyter notebooks
       jupyter-nbextension enable nglview --py --sys-prefix
       ```
 

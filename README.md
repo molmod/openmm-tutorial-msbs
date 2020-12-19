@@ -64,7 +64,7 @@ as a Python package. (The C++ interfaces is not covered in this tutorial.)
 For this tutorial, three environments can be used to perform simulations, each
 having there strengths and weaknesses. It is recommended to follow this tutorial
 by running Jupyter notebooks on your own laptop, as explained below. Google
-Colab can be used as a fallback in case the installation of OpenMM on your
+Colab might be used as a fallback in case the installation of OpenMM on your
 laptop failed. In section 3 of the tutorial, it is discussed how to transfer a
 notebook from your laptop to Google Colab or to an HPC environment (and back).
 
@@ -95,6 +95,7 @@ Strengths:
 
 Weaknesses:
 
+- :warning: The installation procedure is fragile. It is not guaranteed to work.
 - Your laptop must remain powered on during the calculations and your network connection cannot drop.
   Especially when connected through Eduroam, this can be challenging.
 - Output files are deleted after closing your notebook session.
