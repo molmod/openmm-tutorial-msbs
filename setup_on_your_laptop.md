@@ -52,8 +52,6 @@ Take the following steps:
 
    b. macOS and Linux: run the following commands.
       You can copy-paste all lines in one go.
-      (Some special tricks are needed to install the latest version of the
-      `openforcefields` package.)
 
       ```bash
       conda config --add channels conda-forge
@@ -63,9 +61,7 @@ Take the following steps:
       # Activate the environment just created.
       conda activate openmm
       # Install openmm and a few more related tools.
-      conda install -c omnia openforcefield openmoltools openmmforcefields
-      # Install the latest version of the openforcefield package directly from github
-      pip install git+https://github.com/openforcefield/openforcefields@1.3.0
+      conda install -c omnia openforcefield openforcefields openmoltools openmmforcefields
       # Enable nglview in jupyter notebooks
       jupyter-nbextension enable nglview --py --sys-prefix
       ```

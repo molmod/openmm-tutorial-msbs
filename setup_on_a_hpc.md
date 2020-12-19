@@ -57,9 +57,7 @@ Working with an HPC requires a basic knowledge of the Linux operating system. If
     conda config --add channels conda-forge
     conda create -n openmm git jupyter numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed
     conda activate openmm
-    conda install -c omnia openforcefield openmoltools openmmforcefields
-    # Install the latest version of the openforcefield package directly from github.
-    pip install git+https://github.com/openforcefield/openforcefields@1.3.0
+    conda install -c omnia openforcefield openforcefields openmoltools openmmforcefields
     ```
 
 7. Run the following command to test the OpenMM software:
