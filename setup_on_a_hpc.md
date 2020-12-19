@@ -82,6 +82,8 @@ Working with an HPC requires a basic knowledge of the Linux operating system. If
         # Activate the OpenMM software.
         source ${VSC_DATA}/miniconda/bin/activate
         conda activate openmm
+        # Set the number of threads
+        export OPENMM_CPU_THREADS=${SLURM_CPUS_ON_NODE}
         # Run the test.
         python test_openmm.py
         ```
