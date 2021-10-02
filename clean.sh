@@ -16,4 +16,3 @@ for file in $(git ls-files | grep 'ipynb$'); do
   echo Cleaning ${file}
   jupyter nbconvert ${file} --to notebook  --inplace --nbformat 4 --ClearOutputPreprocessor.enabled=True
 done
-

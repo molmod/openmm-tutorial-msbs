@@ -1,0 +1,35 @@
+repos:
+- repo: https://github.com/nbQA-dev/nbQA
+  rev: 1.1.1
+  hooks:
+    - id: nbqa-autopep8
+      args: [--nbqa-skip-celltags=before-import]
+    - id: nbqa-pyupgrade
+      args: [--py36-plus]
+    - id: nbqa-isort
+      args: [--nbqa-skip-celltags=before-import]
+    - id: nbqa-check-ast
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.0.1
+  hooks:
+    - id: check-yaml
+    - id: check-ast
+    - id: fix-byte-order-marker
+    - id: check-case-conflict
+    - id: check-merge-conflict
+    - id: end-of-file-fixer
+    - id: mixed-line-ending
+    - id: trailing-whitespace
+      exclude:  |
+        (?x)^(
+            .*\.pdb|
+            .*\.prmtop
+        )$
+- repo: https://github.com/kynan/nbstripout.git
+  rev: 0.5.0
+  hooks:
+    - id: nbstripout
+- repo: https://github.com/psf/black
+  rev: 21.9b0
+  hooks:
+    - id: black

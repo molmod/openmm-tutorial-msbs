@@ -55,43 +55,53 @@ def convert_sdf_to_pdb(fn_sdf, fn_pdb, resname="UNL"):
     # Convert bonds to neighbour dictionary, needed for the CONECT lines in PDB.
     neighbors = {}
     for ia, ib, bo in bonds:
-        neighbors.setdefault(ia, []).extend([ib]*bo)
-        neighbors.setdefault(ib, []).extend([ia]*bo)
+        neighbors.setdefault(ia, []).extend([ib] * bo)
+        neighbors.setdefault(ib, []).extend([ia] * bo)
 
     # Write the PDB file
-    hetatm_template = "".join([
-        "HETATM",
-        "{:5d}",
-        "{:>4s} ",
-        " ",
-        "{:<3s} ",
-        "A",
-        "   1",
-        "    ",
-        "{:8.3f}",
-        "{:8.3f}",
-        "{:8.3f}",
-        "  0.00",
-        "  0.00",
-        "          ",
-        "{:>2s}",
-        "\n",
-    ])
+    hetatm_template = "".join(
+        [
+            "HETATM",
+            "{:5d}",
+            "{:>4s} ",
+            " ",
+            "{:<3s} ",
+            "A",
+            "   1",
+            "    ",
+            "{:8.3f}",
+            "{:8.3f}",
+            "{:8.3f}",
+            "  0.00",
+            "  0.00",
+            "          ",
+            "{:>2s}",
+            "\n",
+        ]
+    )
     with open(fn_pdb, "w") as f:
         symbol_counters = {}
         for iatom, (atcoord, atsymbol) in enumerate(zip(atcoords, atsymbols)):
             c = symbol_counters.get(atsymbol, 0) + 1
             symbol_counters[atsymbol] = c
             atname = f"{atsymbol}{c}"
-            f.write(hetatm_template.format(
-                iatom+1, atname, resname,
-                atcoord[0], atcoord[1], atcoord[2],
-                atsymbol,
-            ))
+            f.write(
+                hetatm_template.format(
+                    iatom + 1,
+                    atname,
+                    resname,
+                    atcoord[0],
+                    atcoord[1],
+                    atcoord[2],
+                    atsymbol,
+                )
+            )
         for iatom, ineighs in sorted(neighbors.items()):
-            f.write("CONECT{:5d}{:s}\n".format(
-                iatom, "".join("{:5d}".format(ineigh) for ineigh in ineighs)
-            ))
+            f.write(
+                "CONECT{:5d}{:s}\n".format(
+                    iatom, "".join("{:5d}".format(ineigh) for ineigh in ineighs)
+                )
+            )
         f.write("END\n")
 
 
@@ -113,4 +123,4 @@ def estimate_volume(fn_pdb):
         high = (tf + vdw_radii).max()
         radii[irep] = (high - low) / 2
     # Compute average volume
-    return ((4/3)*np.pi*radii**3).mean()
+    return ((4 / 3) * np.pi * radii ** 3).mean()
