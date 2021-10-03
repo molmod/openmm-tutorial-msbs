@@ -26,12 +26,6 @@ Note that the final geometry may be slightly different due to the random initial
 
 ### Load the trajectory (option 2, Linux)
 
-In the introductory part of this tutorial, VMD was installed in a separate conda environment because it would otherwise interfere with Jupyter. Hence, we first need to switch to the correct conda environment:
-
-```bash
-conda activate vmd
-```
-
 The easiest way to load a trajectory in VMD, is to provide the topology and trajectory inputs on the command line:
 
 ```bash
