@@ -63,6 +63,22 @@ Weaknesses:
 
 Installation instructions: [setup_on_your_laptop.md](setup_on_your_laptop.md)
 
+### Interactive session on High-performance cluster
+
+Strengths:
+
+- Output files are stored on the cluster.
+- Easy visualization in the notebook with nglview.
+- You can work interactively.
+- You have access to more computational power.
+
+Weaknesses:
+
+- The installation requires some work.
+- There is a predefined duration of your interactive session. The session ends without warning, which may lose you some progress.
+- You must remain connected during the sessions.
+- This feature is relatively new and may have some flaws.
+
 ### High-performance cluster
 
 Strengths:
@@ -81,7 +97,7 @@ Installation instructions: [setup_on_a_hpc.md](setup_on_a_hpc.md)
 
 ## Starting the tutorial
 
-This section assumes you have just installed OpenMM on you laptop, following the instructions of the previous section.
+This section assumes you have just installed OpenMM on your laptop or on the HPC (for interactive sessions), following the instructions of the previous section.
 
 
 ### Laptop
@@ -105,6 +121,28 @@ A browser window should pop up in which you can select and open a notebook. If
 you are not familiar with notebooks, the following resources can be helpful:
 [Jupyter Lab Overview](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html).
 
+### Interactive Session on HPC (work in progress)
+
+To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip), upload it to the HPC cluster (instructions to be added) and unzip this archive.
+
+- On Windows open a Conda prompt and change the directory to where you unzipped the archive.
+  If needed, first change to the correct drive, e.g. by typing the command `D:`, then use e.g. `cd` folowed by the name of the directory where the ZIP file was unpacked.
+
+- On MacOS or Linux, open any terminal emulator and change the directory to where you unzipped the archive.
+  There is no need to change drives and the usage of `cd` is similar to Windows.
+
+Then enter the following commands:
+
+```bash
+conda activate openmm
+jupyter lab
+```
+
+A browser window should pop up in which you can select and open a notebook. If
+you are not familiar with notebooks, the following resources can be helpful:
+[Jupyter Lab Overview](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html).
+
+After opening the notebook, click 'Kernel' in the menu tabs and select 'Change Kernel'. Choose the environment that was created previously (by default: 'Python 3 openmm'). This is needed to use the packages that were installed in the conda environment that was created.
 
 ## Overview of Tutorial Sections
 
