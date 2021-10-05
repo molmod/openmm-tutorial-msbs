@@ -81,7 +81,7 @@ Weaknesses:
 - You must remain connected during the sessions.
 - This feature is relatively new and may have some flaws.
 
-Installation instructions: [setup_interactive_session_on_VSC.md](setup_interactive_session_on_VSC_laptop.md)
+Installation instructions: [setup_interactive_session_on_VSC.md](setup_interactive_session_on_VSC.md)
 
 ### High-performance cluster
 
@@ -127,26 +127,33 @@ you are not familiar with notebooks, the following resources can be helpful:
 
 ### Interactive Session on HPC (work in progress)
 
-To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip), upload it to the HPC cluster (instructions to be added) and unzip this archive.
+To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip), upload it to the user folder of the HPC cluster (instructions to be added) and unzip this archive.
 
-- On Windows open a Conda prompt and change the directory to where you unzipped the archive.
-  If needed, first change to the correct drive, e.g. by typing the command `D:`, then use e.g. `cd` folowed by the name of the directory where the ZIP file was unpacked.
+- Instructions to be added to upload the zip files.
 
-- On MacOS or Linux, open any terminal emulator and change the directory to where you unzipped the archive.
-  There is no need to change drives and the usage of `cd` is similar to Windows.
+- Navigate to https://login.hpc.ugent.be and follow the needed steps to log in.
 
-Then enter the following commands:
+- When you are logged in, click on the tab 'Interactive Apps' and select 'Jupyter Notebook'.
 
-```bash
-conda activate openmm
-jupyter lab
-```
+- Select a cluster and resources that you want to use. The more resources you require (hours, number of nodes and number of cores), the longer you will have to wait to get access to you session as there is a queue system in place (more information here: https://docs.vscentrum.be/en/latest/jobs/the_job_system_what_and_why.html). Normally, the use of following settings should ensure a near-immediate start of your session with workable resources for the notebooks in this tutorial:
 
-A browser window should pop up in which you can select and open a notebook. If
+    cluster = swalot
+    Time = 4 (hours)    (be aware that the session will finish after the requested time without warning and you may lose progress)
+    nodes = 1
+    cores = 2
+    The remaining settings do not need changing.
+
+- Click start session and a new screen will appear showing you whether you are in the queue or whether the session is about to start ('Your session is currently starting... Please be patient as this process can take a few minutes.'). 
+
+- After some time a button will appear saying 'Connect to Jupyter', click it. A jupyter environment should open in a new tab.
+
+- A browser window should pop up in which you can select and open a notebook. If
 you are not familiar with notebooks, the following resources can be helpful:
 [Jupyter Lab Overview](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html).
 
-After opening the notebook, click 'Kernel' in the menu tabs and select 'Change Kernel'. Choose the environment that was created previously (by default: 'Python 3 openmm'). This is needed to use the packages that were installed in the conda environment that was created.
+- After opening the notebook, click 'Kernel' in the menu tabs and select 'Change Kernel'. 
+Choose the environment that was created previously (if you followed the tutorial, this will be: 'Python 3 openmm').
+This is needed to use the packages that were installed in the conda environment that was created.
 
 ## Overview of Tutorial Sections
 
