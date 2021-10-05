@@ -27,7 +27,6 @@ The main references are:
 * MatPlotLib website: https://matplotlib.org/
 * nglview: http://nglviewer.org/nglview/latest/
 * MDTraj: http://mdtraj.org/
-* CHARMM-GUI: http://www.charmm-gui.org/
 
 Even though these resources contain all the background and details to learn OpenMM and related tools, the amount of information is simply overwhelming.
 The aim of this course is to provide a gentle introduction to many of the topics in the above references.
