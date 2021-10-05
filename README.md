@@ -142,7 +142,7 @@ To start any notebook from the tutorial, download [the ZIP file with the most re
     cores = 2
     The remaining settings do not need changing.
 
-- Click start session and a new screen will appear showing you whether you are in the queue or whether the session is about to start ('Your session is currently starting... Please be patient as this process can take a few minutes.'). 
+- Click start session and a new screen will appear showing you whether you are in the queue or whether the session is about to start ('Your session is currently starting... Please be patient as this process can take a few minutes.').
 
 - After some time a button will appear saying 'Connect to Jupyter', click it. A jupyter environment should open in a new tab.
 
@@ -150,7 +150,7 @@ To start any notebook from the tutorial, download [the ZIP file with the most re
 you are not familiar with notebooks, the following resources can be helpful:
 [Jupyter Lab Overview](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html).
 
-- After opening the notebook, click 'Kernel' in the menu tabs and select 'Change Kernel'. 
+- After opening the notebook, click 'Kernel' in the menu tabs and select 'Change Kernel'.
 Choose the environment that was created previously (if you followed the tutorial, this will be: 'Python 3 openmm').
 This is needed to use the packages that were installed in the conda environment that was created.
 

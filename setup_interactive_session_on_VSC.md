@@ -95,7 +95,7 @@ The VSC supercomputer center offers interactive sessions to run jupyter notebook
    ```bash
    python -m ipykernel install --user --name=openmm
    ```
-   
+
 9. You can now close the terminal as you do not need it for the remainder of the tutorial. Instead, navigate to https://login.hpc.ugent.be and follow the needed steps to log in.
 
 10. When you are logged in, click on the tab 'Interactive Apps' and select 'Jupyter Notebook'.
@@ -108,7 +108,7 @@ The VSC supercomputer center offers interactive sessions to run jupyter notebook
     - cores = 2
     The remaining settings do not need changing.
 
-12. Click start session and a new screen will appear showing you whether you are in the queue or whether the session is about to start ('Your session is currently starting... Please be patient as this process can take a few minutes.'). 
+12. Click start session and a new screen will appear showing you whether you are in the queue or whether the session is about to start ('Your session is currently starting... Please be patient as this process can take a few minutes.').
 
 13. After some time a button will appear saying 'Connect to Jupyter', click it. A jupyter environment should open in a new tab.
 
