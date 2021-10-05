@@ -1,6 +1,6 @@
 # Install OpenMM in an HPC environment.
 
-Working with an HPC requires a basic knowledge of the Linux operating system. If you have never used Linux before, this will be rich learning experience. Still, it is worth the trouble, because in a computational  research lab, any serious simulation is performed on an HPC. Calculations on your laptop or on Google Colab are only useful for teaching, preparing simulations or initial prototyping.
+Working with an HPC requires a basic knowledge of the Linux operating system. If you have never used Linux before, this will be rich learning experience. Still, it is worth the trouble, because in a computational  research lab, any serious simulation is performed on an HPC. Calculations on your laptop are only useful for teaching, preparing simulations or initial prototyping.
 
 1. Windows users that have not used Secure Shell (SSH) before, should first install a Secure Shell client. This is only needed on Windows, since MacOS and Linux come with a built-in `ssh` program. Th recommend SSH client for Windows is MobaXTerm (free version), which can be found here: https://mobaxterm.mobatek.net/
 
@@ -88,7 +88,7 @@ Working with an HPC requires a basic knowledge of the Linux operating system. If
    All differences are within tolerance.
    ```
 
-The VSC supercomputer center offers interactive sessions to run jupyter notebooks directly on the cluster. The next steps describe how to set this up and launch such an interactive session. Therefore, these steps are specifically for users with access to the VSC supercomputer center. The steps might be useful for users of other calculation centers which offer interactive jupyter notebooks on their cluster, but we do not offer support for that.
+The VSC supercomputer center offers interactive sessions to run jupyter notebooks directly on the cluster. The next steps describe how to set this up and launch such an interactive session. Unfortunately, this is only available for users with access to the VSC supercomputer center, although the following steps might be useful for users of other calculation centers which offer interactive jupyter notebooks on their cluster? However, we do not offer support for that.
 
 8. The following command adds the just created environment to the jupyter kernel so that it becomes available within the interactive jupyter notebook session.
 
@@ -96,16 +96,16 @@ The VSC supercomputer center offers interactive sessions to run jupyter notebook
    python -m ipykernel install --user --name=openmm
    ```
    
-9. You can now close the terminal as you do not need for the remainder of the installation and other notebooks. Instead, navigate to login.hpc.ugent.be and follow the needed      steps to log in.
+9. You can now close the terminal as you do not need it for the remainder of the tutorial. Instead, navigate to https://login.hpc.ugent.be and follow the needed steps to log in.
 
 10. When you are logged in, click on the tab 'Interactive Apps' and select 'Jupyter Notebook'.
 
 11. Select a cluster and resources that you want to use. The more resources you require (hours, number of nodes and number of cores), the longer you will have to wait to get access to you session as there is a queue system in place (more information here: https://docs.vscentrum.be/en/latest/jobs/the_job_system_what_and_why.html). Normally, the use of following settings should ensure a near-immediate start of your session with workable resources for the notebooks in this tutorial:
 
-    cluster = swalot
-    Time = 4 (hours)    (be aware that the session will finish after the requested time without warning and you may lose progress)
-    nodes = 1
-    cores = 2
+    - cluster = victini
+    - Time = 4 (hours)    (be aware that the session will finish after the requested time without warning and you may lose progress)
+    - nodes = 1
+    - cores = 2
     The remaining settings do not need changing.
 
 12. Click start session and a new screen will appear showing you whether you are in the queue or whether the session is about to start ('Your session is currently starting... Please be patient as this process can take a few minutes.'). 
