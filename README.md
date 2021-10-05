@@ -41,7 +41,7 @@ To access and customize all these features, and to write reproducible simulation
 Hence, to install OpenMM, you need (to create) a Python environment and install OpenMM as a Python package.
 (The C++ interface is not covered in this tutorial.)
 
-For this tutorial, two environments can be used to perform simulations, each having their strengths and weaknesses.
+For this tutorial, three environments can be used to perform simulations, each having their strengths and weaknesses.
 It is recommended to follow this tutorial by running Jupyter notebooks on your own laptop, as explained below.
 If you have access to the Flemish Supercomputer Center (VSC) (i.e. you are affiliated to a Flemish research institution), you may also run the simulations via an interactive session on the cluster as explained below. Note, however, that this feature is still in a trial-phase.
 In section 3 of the tutorial, it is discussed how to transfer a notebook from your laptop to an HPC environment (and back).
