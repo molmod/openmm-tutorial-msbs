@@ -1,4 +1,4 @@
-# Install OpenMM in an HPC environment.
+# Install OpenMM in an HPC environment for interactive use on VSC.
 
 Working with an HPC requires a basic knowledge of the Linux operating system. If you have never used Linux before, this will be rich learning experience. Still, it is worth the trouble, because in a computational  research lab, any serious simulation is performed on an HPC. Calculations on your laptop are only useful for teaching, preparing simulations or initial prototyping.
 
