@@ -40,10 +40,11 @@ GPU-accelerated calculations and it can carry out many types of advanced molecul
 
 To access and customize all these features, and to write reproducible simulation protocols, OpenMM simulations are implemented by writing Python scripts.
 Hence, to install OpenMM, you need (to create) a Python environment and install OpenMM as a Python package.
-(The C++ interfaces is not covered in this tutorial.)
+(The C++ interface is not covered in this tutorial.)
 
-For this tutorial, two environments can be used to perform simulations, each having there strengths and weaknesses.
+For this tutorial, two environments can be used to perform simulations, each having their strengths and weaknesses.
 It is recommended to follow this tutorial by running Jupyter notebooks on your own laptop, as explained below.
+If you have access to the Flemish Supercomputer Center (VSC) (i.e. you are affiliated to a Flemish research institution), you may also run the simulations via an interactive session on the cluster as explained below. Note, however, that this feature is still in a trial-phase.
 In section 3 of the tutorial, it is discussed how to transfer a notebook from your laptop to an HPC environment (and back).
 
 ### Your laptop
@@ -75,9 +76,12 @@ Strengths:
 Weaknesses:
 
 - The installation requires some work.
-- There is a predefined duration of your interactive session. The session ends without warning, which may lose you some progress.
+- There is a predefined duration of your interactive session.
+- The session ends without warning, which may lose you some progress.
 - You must remain connected during the sessions.
 - This feature is relatively new and may have some flaws.
+
+Installation instructions: [setup_interactive_session_on_VSC.md](setup_interactive_session_on_VSC_laptop.md)
 
 ### High-performance cluster
 
