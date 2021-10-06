@@ -58,12 +58,16 @@ Take the following steps:
    conda config --add channels conda-forge
    # The following creates a conda environment called openmm
    # in which a several packages are installed.
-   conda create -n openmm cudatoolkit=10.0 git jupyterlab numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed openff-toolkit openmoltools openmmforcefields
+   conda create -n openmm cudatoolkit=10.0 git jupyterlab numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed
    # Activate the environment just created.
    conda activate openmm
    # Enable nglview in jupyter notebooks
    jupyter-nbextension enable nglview --py --sys-prefix
    ```
+
+   With this setup, the notebooks in `07_ligands` will not work.
+   The software required to run these, is not available for Windows.
+   However, Linux and macOS users can install the following conda packages if they wish to try the notebooks in `07_ligands`: `openff-toolkit openmoltools openmmforcefields`
 
 1. Test your OpenMM installation by entering the following command on the command prompt:
 
