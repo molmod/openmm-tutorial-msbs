@@ -75,7 +75,7 @@ The following assumes that you have access to the account and are able to log in
    python -m ipykernel install --user --name=openmm
    ```
 
-8. Download the the notebooks for the turorials to the home folder of your account so that you can access them through the interactive jupyter session later on.
+8. Download the notebooks for the turorials to the home folder of your account so that you can access them through the interactive jupyter session later on.
 
    ```bash
    cd $VSC_HOME
