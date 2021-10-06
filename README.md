@@ -63,7 +63,7 @@ Weaknesses:
 
 Installation instructions: [setup_on_your_laptop.md](setup_on_your_laptop.md)
 
-### Interactive session on High-performance cluster
+### Interactive session on High-performance cluster (HPC)
 
 Strengths:
 
@@ -82,7 +82,7 @@ Weaknesses:
 
 Installation instructions: [setup_interactive_session_on_VSC.md](setup_interactive_session_on_VSC.md)
 
-### High-performance cluster
+### Non-interactive job submission on High-performance cluster (HPC)
 
 Strengths:
 
@@ -103,7 +103,7 @@ Installation instructions: [setup_on_a_hpc.md](setup_on_a_hpc.md)
 This section assumes you have just installed OpenMM on your laptop or on the HPC (for interactive sessions), following the instructions of the previous section.
 
 
-### Laptop
+### Your Laptop
 
 To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip) and unzip this archive.
 
@@ -128,29 +128,30 @@ you are not familiar with notebooks, the following resources can be helpful:
 
 To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip), upload it to the user folder of the HPC cluster (instructions to be added) and unzip this archive.
 
-- Instructions to be added to upload the zip files.
+1. Instructions to be added to upload the zip files.
 
-- Navigate to https://login.hpc.ugent.be and follow the needed steps to log in.
+1. Navigate to https://login.hpc.ugent.be and follow the needed steps to log in.
 
-- When you are logged in, click on the tab 'Interactive Apps' and select 'Jupyter Notebook'.
+1. When you are logged in, click on the tab 'Interactive Apps' and select 'Jupyter Notebook'.
 
-- Select a cluster and resources that you want to use. The more resources you require (hours, number of nodes and number of cores), the longer you will have to wait to get access to you session as there is a queue system in place (more information here: https://docs.vscentrum.be/en/latest/jobs/the_job_system_what_and_why.html). Normally, the use of following settings should ensure a near-immediate start of your session with workable resources for the notebooks in this tutorial:
+1. Select a cluster and resources that you want to use. The more resources you require (hours, number of nodes and number of cores), the longer you will have to wait to get access to you session as there is a queue system in place (more information here: https://docs.vscentrum.be/en/latest/jobs/the_job_system_what_and_why.html). Normally, the use of following settings should ensure a near-immediate start of your session with workable resources for the notebooks in this tutorial:
 
-    cluster = swalot
-    Time = 4 (hours)    (be aware that the session will finish after the requested time without warning and you may lose progress)
-    nodes = 1
-    cores = 2
-    The remaining settings do not need changing.
+   - cluster = swalot
+   - Time = 4 (hours)    (be aware that the session will finish after the requested time without warning and you may lose progress)
+   - nodes = 1
+   - cores = 2
 
-- Click start session and a new screen will appear showing you whether you are in the queue or whether the session is about to start ('Your session is currently starting... Please be patient as this process can take a few minutes.').
+   The remaining settings do not need changing.
 
-- After some time a button will appear saying 'Connect to Jupyter', click it. A jupyter environment should open in a new tab.
+1. Click start session and a new screen will appear showing you whether you are in the queue or whether the session is about to start ('Your session is currently starting... Please be patient as this process can take a few minutes.').
 
-- A browser window should pop up in which you can select and open a notebook. If
+1. After some time a button will appear saying 'Connect to Jupyter', click it. A jupyter environment should open in a new tab.
+
+1. A browser window should pop up in which you can select and open a notebook. If
 you are not familiar with notebooks, the following resources can be helpful:
 [Jupyter Lab Overview](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html).
 
-- After opening the notebook, click 'Kernel' in the menu tabs and select 'Change Kernel'.
+1. After opening the notebook, click 'Kernel' in the menu tabs and select 'Change Kernel'.
 Choose the environment that was created previously (if you followed the tutorial, this will be: 'Python 3 openmm').
 This is needed to use the packages that were installed in the conda environment that was created.
 

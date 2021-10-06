@@ -2,7 +2,8 @@
 
 Working with an HPC requires a basic knowledge of the Linux operating system. If you have never used Linux before, this will be rich learning experience. Still, it is worth the trouble, because in a computational  research lab, any serious simulation is performed on an HPC. Calculations on your laptop are only useful for teaching, preparing simulations or initial prototyping.
 
-1. Windows users that have not used Secure Shell (SSH) before, should first install a Secure Shell client. This is only needed on Windows, since MacOS and Linux come with a built-in `ssh` program. Th recommend SSH client for Windows is MobaXTerm (free version), which can be found here: https://mobaxterm.mobatek.net/
+1. Windows users that have not used Secure Shell (SSH) before, should first install a Secure Shell client. This is only needed on Windows, since MacOS and Linux come with a built-in `ssh` program.
+   The recommend SSH client for Windows is MobaXTerm (free version), which can be found here: https://mobaxterm.mobatek.net/
 
 
 2. You are now ready to request an HPC account, for which the exact procedure depends on your host institution. Students at Ghent University can [create a VSC account](request_vsc_account_ugent.md).
@@ -88,9 +89,9 @@ Working with an HPC requires a basic knowledge of the Linux operating system. If
    All differences are within tolerance.
    ```
 
-The VSC supercomputer center offers interactive sessions to run jupyter notebooks directly on the cluster. The next steps describe how to set this up and launch such an interactive session. Unfortunately, this is only available for users with access to the VSC supercomputer center, although the following steps might be useful for users of other calculation centers which offer interactive jupyter notebooks on their cluster? However, we do not offer support for that.
+The VSC supercomputer center offers interactive sessions to run Jupyter notebooks directly on the cluster. The next steps describe how to set this up and launch such an interactive session. Unfortunately, this is only available for users with access to the VSC supercomputer center, although the following steps might be useful for users of other calculation centers which offer interactive Jupyter notebooks on their cluster? However, we do not offer support for that.
 
-8. The following command adds the just created environment to the jupyter kernel so that it becomes available within the interactive jupyter notebook session.
+8. The following command adds the just created environment to the list of available kernels for Jupyter, so that it becomes available within the interactive Jupyter notebook session.
 
    ```bash
    python -m ipykernel install --user --name=openmm
@@ -106,11 +107,12 @@ The VSC supercomputer center offers interactive sessions to run jupyter notebook
     - Time = 4 (hours)    (be aware that the session will finish after the requested time without warning and you may lose progress)
     - nodes = 1
     - cores = 2
+
     The remaining settings do not need changing.
 
 12. Click start session and a new screen will appear showing you whether you are in the queue or whether the session is about to start ('Your session is currently starting... Please be patient as this process can take a few minutes.').
 
-13. After some time a button will appear saying 'Connect to Jupyter', click it. A jupyter environment should open in a new tab.
+13. After some time a button will appear saying 'Connect to Jupyter', click it. A Jupyter environment should open in a new tab.
 
 14. On the right side of the page, there is a tab saying 'New', click it and select the environment that you created earlier (by default, this was openmm).
 
@@ -143,4 +145,4 @@ The VSC supercomputer center offers interactive sessions to run jupyter notebook
 
    Finally, click on the :floppy_disk: icon on the top right of the `User Preferences` panel.
 
-16. For windows users: Be aware that when connected to the HPC, you are working in a linux environment even if you connect from your windows PC. So follow linux instructions where needed throughout the tutorial any time you are connected to the HPC.
+16. For Windows users: Be aware that when connected to the HPC, you are working in a Linux environment even if you connect from your Windows PC. So follow Linux instructions where needed throughout the tutorial any time you are connected to the HPC.
