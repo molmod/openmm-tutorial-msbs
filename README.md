@@ -14,7 +14,7 @@ This tutorial was written for the course Molecular Simulations of Biological Sys
 The main goal of the course is to enable these students (who have a limited background in statistical mechanics) to run sensible molecular dynamics simulations and to interpret the results correctly.
 This tutorial assumes the students have a basic knowledge of Python.
 
-All material strongly inspired by several online resources (tutorials, documentation and examples) of the OpenMM, Python, NumPy, Matplotlib and other projects.
+All materials are strongly inspired by several online resources (tutorials, documentation and examples) of the OpenMM, Python, NumPy, Matplotlib and other projects.
 The main references are:
 
 * OpenMM website: http://openmm.org/
@@ -33,7 +33,7 @@ The aim of this course is to provide a gentle introduction to many of the topics
 
 ## Installation of OpenMM
 
-Practically all simulations in this tutorial are carried with OpenMM, which is described extensively [here](http://docs.openmm.org/latest/userguide/library.html).
+Practically all simulations in this tutorial are carried out with OpenMM, which is described extensively [here](http://docs.openmm.org/latest/userguide/library.html).
 In short, OpenMM is a modern open-source biomolecular simulation toolkit: it supports many popular biomolecular force fields (AMBER, CHARMM, AMOEBA), it supports
 GPU-accelerated calculations and it can carry out many types of advanced molecular dynamics simulations.
 
@@ -44,7 +44,7 @@ Hence, to install OpenMM, you need (to create) a Python environment and install 
 For this tutorial, three environments can be used to perform simulations, each having their strengths and weaknesses.
 It is recommended to follow this tutorial by running Jupyter notebooks on your own laptop, as explained below.
 If you have access to the Flemish Supercomputer Center (VSC) (i.e. you are affiliated to a Flemish research institution), you may also run the simulations via an interactive session on the cluster as explained below. Note, however, that this feature is still in a trial-phase.
-In section 3 of the tutorial, it is discussed how to transfer a notebook from your laptop to an HPC environment (and back).
+In section 3 of the tutorial, it is discussed how to transfer a notebook from your laptop to an HPC environment (and back) for non-interactive job submissions.
 
 ### Your laptop
 
