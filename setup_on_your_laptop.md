@@ -10,7 +10,7 @@ For this course, WSL2 is optional and left to those interested in a little extra
 
 Take the following steps:
 
-1. Download the Anaconda Python 3.8 installer for your operating system.
+1. Download the Anaconda Python 3.9 installer for your operating system.
    The installer can be downloaded from [the anaconda website](https://www.anaconda.com/distribution/).
 
 1. Run the Anaconda Python installer.
