@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/nbQA-dev/nbQA
-  rev: 1.2.2
+  rev: 1.5.1
   hooks:
     - id: nbqa-autopep8
       args: [--nbqa-skip-celltags=before-import]
@@ -10,7 +10,7 @@ repos:
       args: [--nbqa-skip-celltags=before-import]
     - id: nbqa-check-ast
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.0.1
+  rev: v4.3.0
   hooks:
     - id: check-yaml
     - id: check-ast
@@ -26,10 +26,10 @@ repos:
             .*\.prmtop
         )$
 - repo: https://github.com/kynan/nbstripout.git
-  rev: 0.5.0
+  rev: 0.6.1
   hooks:
     - id: nbstripout
 - repo: https://github.com/psf/black
-  rev: 21.12b0
+  rev: 22.8.0
   hooks:
     - id: black
