@@ -123,4 +123,4 @@ def estimate_volume(fn_pdb):
         high = (tf + vdw_radii).max()
         radii[irep] = (high - low) / 2
     # Compute average volume
-    return ((4 / 3) * np.pi * radii ** 3).mean()
+    return ((4 / 3) * np.pi * radii**3).mean()
