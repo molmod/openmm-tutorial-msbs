@@ -2,11 +2,13 @@
 
 To run OpenMM simulations on your laptop, we will work with a standardized Python environment, Anaconda, which is supported on all major operating systems.
 
-Some of the more specialized packages (required for tutorial 07) are only used on Unix systems (Linux and macOS) by researchers in the field, and these have poor support on Windows.
+Some of the more specialized packages (required for tutorial `07_ligands`) are only used on Unix systems (Linux and macOS) by researchers in the field, and these have poor support on Windows.
 Luckily, on Windows 10, Microsoft distributes the Windows Subsystem for Linux 2 (WSL2), as of a May 2019.
-This allows you to run Linux inside your Windows operating system, giving you access to a small-scale version the software environment used on high-performance cluster.
+This allows you to run Linux inside your Windows operating system, giving you access to a small-scale version the software environment used on the high-performance cluster.
 More details can be found in the [Official WSL installation instructions](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 For this course, WSL2 is optional and left to those interested in a little extra hacking.
+
+:warning: **As of May 2022, installation of OpenMM on Windows seems to be broken.**
 
 Take the following steps:
 
@@ -39,35 +41,38 @@ Take the following steps:
 
    **Linux.** Open your preferred virtual terminal and enter the command alias `c`.
 
-
 1. Configure conda and install OpenMM (and other useful tools).
 
-   In this step, you all need to enter commands in a virtual terminal, the software equivalent of terminal computers from the 70's.
+   In this step, you all need to enter commands in a virtual terminal, the software equivalent of terminal computers from the 70s.
    Every command you enter will be executed after you press `Enter`.
    Possibly some output is shown as a result, but not always.
-   Virtual terminals are very powerful tools, but they are also picky!
+   Virtual terminals are powerful tools, but they are also picky!
    Almost every character or whitespace you type does matter.
 
    **Windows.** Copy the following lines **one by one** in the anaconda terminal.
 
    **macOS or Linux.** Run the following commands in a virtual terminal. You can copy-paste all lines in one go.
 
-   (Lines startin with `#` are comments and can be ignored.)
+   (Lines starting with `#` are comments and can be ignored.)
 
    ```bash
-   conda config --add channels conda-forge
-   # The following creates a conda environment called openmm
-   # in which a several packages are installed.
-   conda create -n openmm cudatoolkit=10.0 git jupyterlab numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed
-   # Activate the environment just created.
+   # Make sure your base environment is up-to-date.
+   conda update --all
+   # Make a new conda environment for OpenMM and activate conda-forge.
+   conda create -n openmm python
    conda activate openmm
-   # Enable nglview in jupyter notebooks
-   jupyter-nbextension enable nglview --py --sys-prefix
+   conda config --env --add channels conda-forge
+   conda config --env --set channel_priority strict
+   conda update --all
+   # The following install several packages in the openmm environment.
+   # This will take a while!
+   conda install cudatoolkit git jupyterlab numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed jupyter_contrib_nbextensions
+   # Enable nglview and spell checker in jupyter notebooks
+   jupyter nbextension enable spellchecker/main
+   jupyter nbextension enable nglview --py --sys-prefix
    ```
 
-   With this setup, the notebooks in `07_ligands` will not work.
-   The software required to run these, is not available for Windows.
-   However, Linux and macOS users can install the following conda packages if they wish to try the notebooks in `07_ligands`: `openff-toolkit openmoltools openmmforcefields`
+   You may have to close your terminal and re-open a new one, run `c` and `conda activate openmm` again before the following steps work.
 
 1. Test your OpenMM installation by entering the following command on the command prompt:
 
@@ -78,8 +83,8 @@ Take the following steps:
    You should see the following output (or something similar):
 
    ```
-   OpenMM Version: 7.6
-   Git Revision: ad113a0cb37991a2de67a08026cf3b91616bafbe
+   OpenMM Version: 7.7
+   Git Revision: 130124a3f9277b054ec40927360a6ad20c8f5fa6
 
    There are 2 Platforms available:
 
@@ -88,11 +93,10 @@ Take the following steps:
 
    Median difference in forces between platforms:
 
-   Reference vs. CPU: 6.2929e-06
+   Reference vs. CPU: 6.30535e-06
 
    All differences are within tolerance.
    ```
-
 
 1. Now is a good time to become more familiar with Jupyter Lab. The following link provide easy-to-follow guides, which will get you up to speed:
 
@@ -109,20 +113,10 @@ Take the following steps:
 
    This should show the same output as in the previous step.
 
-   By default, the line numbers are not shown next to source code in Jupyter Lab, while such numbering is actually very convenient.
+1. By default, line numbers are not shown next to source code in Jupyter Lab, while such numbering is actually convenient.
    The line numbers can be enabled permanently as follows.
    In the menu of Jupyter Lab, go to `Settings` > `Advanced Settings Editor`.
-   From the list, select `Notebook` and put the following in the `User Preferences` panel:
-
-   ```json
-   {
-       "codeCellConfig": {
-           "lineNumbers": true,
-       }
-   }
-   ```
-
-   Finally, click on the :floppy_disk: icon on the top right of the `User Preferences` panel.
+   From the list, select `Notebook` and check the box next to `Show Line Numbers`.
 
 1. Install VMD, which will be used for showing some visualization good practices.
    Go to [the VMD download page](https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD) and follow instructions.
