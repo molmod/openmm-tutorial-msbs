@@ -6,3 +6,4 @@ init*.*
 tmp
 __pycache__
 hints.txt
+.idea
