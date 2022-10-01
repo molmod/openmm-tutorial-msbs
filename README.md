@@ -44,10 +44,10 @@ For this tutorial, three environments can be used to perform simulations, each h
 
 - If you have access to the Flemish Supercomputer Center (VSC) (i.e. you are affiliated to a Flemish research institution), it is recommended to run the simulations via an interactive session on the cluster as explained below.
 - For all other users, it is recommended to follow this tutorial by running Jupyter notebooks on your own laptop.
-- For very simulations that take longer, section 3 of the tutorial explains how to transfer a notebook from your laptop to an HPC environment (and back) for non-interactive job submissions.
+- For simulations that take longer, section 3 of the tutorial explains how to transfer a notebook from your laptop to an HPC environment (and back) for non-interactive job submissions.
 
 
-### Interactive session on the High-performance cluster (HPC)
+### Interactive Jupyter Notebooks on the *Vlaams Supercomputer Centrum* High-performance cluster
 
 **Strengths:**
 
@@ -64,7 +64,7 @@ For this tutorial, three environments can be used to perform simulations, each h
 - You must remain connected during the sessions.
 - This feature is relatively new and may still have some hidden flaws.
 
-Installation instructions: [setup_interactive_session_on_VSC.md](setup_interactive_session_on_VSC.md).
+Installation instructions: [setup_interactive_vsc.md](setup_interactive_vsc.md).
 
 
 ### Your laptop
@@ -81,11 +81,12 @@ Installation instructions: [setup_interactive_session_on_VSC.md](setup_interacti
 - The installation requires some work.
 - Your laptop could overheat when running longer simulations.
 - Your laptop must remain powered on during calculations.
+- Currently not working on Windows.
 
-Installation instructions: [setup_on_your_laptop.md](setup_on_your_laptop.md).
+Instructions: [setup_laptop.md](setup_laptop.md).
 
 
-### Non-interactive job submission on the High-performance cluster (HPC)
+### Non-interactive job submission on a High-performance cluster (HPC)
 
 **Strengths:**
 
@@ -99,60 +100,7 @@ Installation instructions: [setup_on_your_laptop.md](setup_on_your_laptop.md).
   Instead, you submit "jobs" which are executed when a compute-node becomes available.
 - Non-interactive: the entire notebook is executed and you only get to see the results when it has all completed.
 
-Installation instructions: [setup_on_a_hpc.md](setup_on_a_hpc.md).
-
-
-## Starting the tutorial
-
-This section assumes you have just installed OpenMM on your laptop or on the HPC (for interactive sessions), following the instructions of the previous section.
-
-
-### Interactive Session on HPC
-
-To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip), upload it to the user folder of the HPC cluster and unzip this archive.
-
-1. Navigate to [login.hpc.ugent.be](https://login.hpc.ugent.be) and follow the needed steps to log in.
-   All the following steps assume you have successfully logged in.
-
-1. Upload and unpack the file `openmm-tutorial-msbs-master.zip` with the following steps:
-
-   - Click on `Files` in the blue top bar.
-   - Select `$VSC_DATA`
-   - On the new page that appears, select `Upload`. (blue button in the top left area of the page)
-   - Select the file `openmm-tutorial-msbs-master.zip` and upload.
-   - Click on the button `Open in Termimal`, which will open a new tab with a virtual terminal.
-   - In the virtual terminal, enter the following two commands:
-     ```bash
-     unzip openmm-tutorial-msbs-master.zip
-     exit
-     ```
-   - Close the browser tab with virtual terminal.
-   - Reload the `Files` page, which should reveal a new directory `openmm-tutorial-msbs-master`.
-
-1. Click on `Interactive Apps` in the top blue bar and select `Jupyter Notebook`.
-
-
-
-### Your Laptop
-
-To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip) and unzip this archive.
-
-- On Windows open a Conda prompt and change the directory to where you unzipped the archive.
-  If needed, first change to the correct drive, e.g. by typing the command `D:`, then use e.g. `cd` followed by the name of the directory where the ZIP file was unpacked.
-
-- On macOS or Linux, open any terminal emulator and change the directory to where you unzipped the archive.
-  There is no need to change drives and the usage of `cd` is similar to Windows.
-
-Then enter the following commands:
-
-```bash
-conda activate openmm
-jupyter lab
-```
-
-A browser window should pop up in which you can select and open a notebook. If
-you are not familiar with notebooks, the following resources can be helpful:
-[Jupyter Lab Overview](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html).
+Instructions: [setup_noninteractive_hpc.md](setup_noninteractive_hpc.md).
 
 
 ## Overview of Tutorial Sections
