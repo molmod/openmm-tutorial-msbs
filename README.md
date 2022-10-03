@@ -118,10 +118,9 @@ The tutorial consists of the following sections, to be followed more-or-less in 
 
 - [02_alanine_dipeptide/01_force_fields.ipynb](02_alanine_dipeptide/01_force_fields.ipynb)
 
-**3. Running OpenMM notebooks in other places:** (You can skip these for the MSBS course.)
+**3. Run demanding OpenMM notebooks as a non-interactive job:**
 
-- [03_elsewhere/01_run_openmm_on_a_hpc.ipynb](03_elsewhere/01_run_openmm_on_a_hpc.ipynb)
-- [03_elsewhere/02_run_openmm_on_google_colab.ipynb](03_elsewhere/02_run_openmm_on_google_colab.ipynb)
+- [03_noninteractive/01_run_openmm_on_a_hpc.ipynb](03_noninteractive/01_run_openmm_on_a_hpc.ipynb)
 
 **4. A short protein MD simulation:**
 
