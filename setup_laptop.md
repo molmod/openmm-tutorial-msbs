@@ -31,7 +31,7 @@ Take the following steps:
    ```
    Add the following line to your `~/.bashrc` file, which makes it convenient to activate the conda installation:
    ```bash
-   alias m='eval "$(/home/toon/mambaforge/bin/conda shell.bash hook)"'
+   alias m='eval "$(${USER}/mambaforge/bin/conda shell.bash hook)"'
    ```
    Close the terminal
 
