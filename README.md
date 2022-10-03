@@ -66,6 +66,7 @@ For this tutorial, three environments can be used to perform simulations, each h
 
 Installation instructions: [setup_interactive_vsc.md](setup_interactive_vsc.md).
 
+(For not affiliated with a Flemish University: [setup_interactive_hpc.md](setup_interactive_hpc.md).)
 
 ### Your laptop
 

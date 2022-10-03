@@ -2,18 +2,18 @@
 
 Working with an HPC requires a basic knowledge of the Linux operating system.
 If you have never used Linux before, this will be rich learning experience.
-Still, it is worth the trouble, because in a computational research lab, any serious simulation is performed on an HPC.
+Still, it is worth the trouble, because in a computational research lab, any serious simulation is performed on an high-performance cluster (HPC).
 Calculations on your laptop or on Google Colab are only useful for teaching, preparing simulations or initial prototyping.
 
 **Note for Windows users.**
 Be aware when connected to the HPC, you are working in a Linux environment even if you connect from your Windows PC.
 So follow Linux instructions where needed throughout the tutorial any time you are connected to the HPC.
 
-**Note for users not affiliated with a Ghent University.**
+**Note for users NOT affiliated with a Flemish University.**
 The instructions below will work for any HPC, except that the first three steps need to be replaced by another means of connecting to the cluster over SSH.
 This can typically be found in the user documentation of your host institution's supercomputing center.
 
-**Note for those with a UGent affiliation.**
+**Note for users affiliated with a Flemish University.**
 - The exact procedure to request an account depends on your host institution.
 Students at Ghent University can request a VSC account [here](https://www.ugent.be/hpc/en/access/policy/access#Students).
 - If you are not familiar with virtual terminals, we refer to the [the UGent Linux and HPC tutorials](https://www.ugent.be/hpc/en/support/documentation.htm) for some general background.
@@ -64,10 +64,10 @@ Students at Ghent University can request a VSC account [here](https://www.ugent.
    # Make a new environment for OpenMM, installing all the software, which takes some minutes.
    # The mamba create command is too long to fit on your screen.
    # Make sure you copy it completely.
-   mamba create -n py39openmm python=3.9 cudatoolkit git jupyterlab numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed jupyter_contrib_nbextensions
+   mamba create -n py39openmm python=3.9 cudatoolkit git 'jupyterlab>=3.4.4' numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed jupyter_contrib_nbextensions
    # Activate the OpenMM environment
    conda activate py39openmm
-   # Enable nglview and spell checker in jupyter notebooks.
+   # Enable nglview and spell checker in Jupyter Notebooks.
    jupyter nbextension enable spellchecker/main
    jupyter nbextension enable nglview --py --sys-prefix
    ```

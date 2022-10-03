@@ -81,14 +81,14 @@ The following is rather invasive and may remove more than you want.
 
 ## Installation part B: OpenMM
 
-Follow the installation instructions in [setup_on_a_hpc.md](setup_noninteractive_hpc.md).
-
+Follow the installation instructions in [setup_noninteractive_hpc.md](setup_noninteractive_hpc.md).
+(The test job submission can be skipped.)
 
 ## Installation part C: Final steps
 
 
-1. Start a new virtual terminal on the HPC, e.g. through [setup_on_a_hpc.md](setup_noninteractive_hpc.md).
-   Load the Python version in which the Jupyter notebooks will be executed,
+1. Start a new virtual terminal on the HPC, e.g. through [login.hpc.ugent.be](https://login.hpc.ugent.be).
+   Load the Python version in which the Jupyter Notebooks will be executed,
    and activate the OpenMM environment:
 
    ```bash
@@ -126,6 +126,7 @@ Follow the installation instructions in [setup_on_a_hpc.md](setup_noninteractive
 1. You can now close the terminal as you do not need it for the remaining steps.
    Instead, go back to [login.hpc.ugent.be](https://login.hpc.ugent.be) and click on `Interactive Apps` > `Jupyter Notebook`.
    A new page should open.
+   You may also use the experimental `Jupyter Lab` instead.
 
 1. Select a cluster and resources that you want to use.
    The more resources you require (hours, number of nodes and number of cores), the longer you will have to wait to get access to you session as there is a queue system in place (more information here: https://docs.vscentrum.be/en/latest/jobs/the_job_system_what_and_why.html).
@@ -153,8 +154,8 @@ Follow the installation instructions in [setup_on_a_hpc.md](setup_noninteractive
    Please be patient as this process can take a few minutes.
    ```
 
-1. After some time a button will appear saying `Connect to Jupyter`, click it.
-   A jupyter environment should open in a new tab.
+1. After some time, a button will appear saying `Connect to Jupyter`.
+   Click this button and a Jupyter Notebook (or Lab) should open in a new tab.
 
 1. On the right side of the page, there is a tab saying `New`, click it and select the environment that you created earlier.
    If you followed our instructions, it should be named `py39openmm`.
@@ -173,13 +174,12 @@ Follow the installation instructions in [setup_on_a_hpc.md](setup_noninteractive
 
 Either use the running Notebook session from the previous section, or start a new one, by repeating the first 4 steps from the previous section.
 
-1. Select and open a notebook of your choice.
+1. Select and open a Notebook of your choice.
    For example, to get started, open the notebook `01_first_steps/01_water.ipynb`.
-   If you are not familiar with notebooks, the following resources can be helpful: [Jupyter Notebook Documentation](https://jupyter-notebook.readthedocs.io/en/latest/notebook.html).
+   If you are not familiar with Jupyter Notebooks, the following resources can be helpful: [Jupyter Notebook Documentation](https://jupyter-notebook.readthedocs.io/en/latest/notebook.html).
 
-1. After opening a notebook, click `Kernel` in the menu tabs and select `Change Kernel`.
+1. After opening a Notebook, click `Kernel` in the menu tabs and select `Change Kernel`.
    Choose the environment that was created previously.
    If you followed our instructions, it should be named `py39openmm`.
-   This is needed to use the OpenMM environment that you created.
 
 1. Now you should be able to run everything in the Notebook you just opened.
