@@ -1,7 +1,6 @@
 """Utilities for setting up simulations with non-standard residues in OpenMMM."""
-import numpy as np
 import mdtraj
-
+import numpy as np
 
 __all__ = ["convert_sdf_to_pdb", "estimate_volume"]
 
@@ -98,9 +97,7 @@ def convert_sdf_to_pdb(fn_sdf, fn_pdb, resname="UNL"):
             )
         for iatom, ineighs in sorted(neighbors.items()):
             f.write(
-                "CONECT{:5d}{:s}\n".format(
-                    iatom, "".join("{:5d}".format(ineigh) for ineigh in ineighs)
-                )
+                "CONECT{:5d}{:s}\n".format(iatom, "".join(f"{ineigh:5d}" for ineigh in ineighs))
             )
         f.write("END\n")
 
@@ -123,4 +120,4 @@ def estimate_volume(fn_pdb):
         high = (tf + vdw_radii).max()
         radii[irep] = (high - low) / 2
     # Compute average volume
-    return ((4 / 3) * np.pi * radii ** 3).mean()
+    return ((4 / 3) * np.pi * radii**3).mean()
