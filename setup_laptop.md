@@ -76,7 +76,7 @@ Take the following steps:
    ```
 
    You may have to close your terminal and re-open a new one,
-   run `m` and `conda activate openmm` again before the following steps work.
+   run the commands `m` (Linux and macOS only) and `conda activate py39openmm` again before the following steps work.
 
 1. Test your OpenMM installation by entering the following command on the command prompt:
 
