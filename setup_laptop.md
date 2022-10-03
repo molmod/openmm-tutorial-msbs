@@ -130,20 +130,19 @@ Take the following steps:
 
 To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip) and unzip this archive.
 
-- On Windows open a Conda prompt and change the directory to where you unzipped the archive.
+- On **Windows** open a Conda prompt and change the directory to where you unzipped the archive.
   If needed, first change to the correct drive, e.g. by typing the command `D:`, then use e.g. `cd` followed by the name of the directory where the ZIP file was unpacked.
 
-- On macOS or Linux, open any terminal emulator and activate the mamba base environment:
+- On **macOS or Linux**, open any terminal emulator and activate the mamba base environment:
   ```bash
   m
   ```
   Then change the directory to where you unzipped the archive.
   There is no need to change drives and the usage of `cd` is similar to Windows.
 
-Finally, enter the following commands:
+Once you have the right *current directory* in your virtual terminal, enter the following commands:
 
 ```bash
-
 conda activate py39openmm
 jupyter lab
 ```
