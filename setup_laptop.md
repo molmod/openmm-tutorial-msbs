@@ -66,9 +66,11 @@ Take the following steps:
    ```bash
    # Make sure your base environment is up-to-date.
    mamba update --all
-   # Make a new environment for OpenMM and activate it.
-   # This will take a while.
+   # Make a new environment for OpenMM, installing all the software, which takes some minutes.
+   # The mamba create command is too long to fit on your screen.
+   # Make sure you copy it completely.
    mamba create -n py39openmm python=3.9 cudatoolkit git jupyterlab numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed jupyter_contrib_nbextensions
+   # Activate the OpenMM environment
    conda activate py39openmm
    # Enable nglview and spell checker in jupyter notebooks.
    jupyter nbextension enable spellchecker/main
