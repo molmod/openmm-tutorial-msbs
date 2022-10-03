@@ -24,7 +24,7 @@ Take the following steps:
    - **macOS, Linux and WSL.**
      Open a virtual terminal and enter the following command:
      ```bash
-     bash Mambaforge*-sh -b -p ${HOME}/mambaforge
+     bash Mambaforge*.sh -b -p ${HOME}/mambaforge
      ```
      Add the following line to your `~/.bashrc` file, which makes it convenient to activate the Mamba-forge installation:
      ```bash
