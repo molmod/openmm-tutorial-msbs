@@ -24,7 +24,8 @@ Students at Ghent University can request a VSC account [here](https://www.ugent.
 1. Navigate to [login.hpc.ugent.be](https://login.hpc.ugent.be) and follow the steps to log in.
 
 1. In the blue top bar click `Clusters` > `login Shell Access`.
-   A new tab should open with a black screen and a welcome message from the HPC cluster, containing some information on the current state of the cluster.
+   A new tab should open with a black screen and a welcome message from the HPC cluster,
+   containing some information on the current state of the cluster.
 
 1. Determine a suitable directory to install Mamba-forge, which will be used to install and OpenMM.
    The directory should have sufficient quota (several Gigabytes) to contain the OpenMM installation.
