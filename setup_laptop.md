@@ -6,7 +6,9 @@ For reasons of efficiency and robustness, we will in fact use a derivative of An
 :warning: **As of May 2022, the installation of OpenMM on Windows is broken.**
 Technical details of this issue can be found below.
 For now, Windows users are advised to run their calculations on a high-performance cluster (HPC), which typically runs on Linux.
-As explained below, the Windows Subsytem for Linux may be a workaround.
+As explained below, the Windows Subsytem for Linux may be a workaround, but it comes with yet other bugs, for which you need to apply workarounds.
+Some of the Windows issues are fairly old and don't seem to get fixed in short term.
+Most of the simulation software is developed for Unix platforms (macOS and Linux), and Windows is mainly an aftertought for most developers, which explains the poor support for Windows.
 
 
 ## Installation
@@ -55,10 +57,14 @@ Take the following steps:
      Copy the lines below **one by one** in the Anaconda prompt.
      Do not copy comment lines starting with a `#`.
 
-   - **macOS, Linux and WSL.**
+   - **macOS, Linux.**
      Run the following commands in a virtual terminal.
      You can copy-paste all lines in one go.
      (Lines starting with `#` are comments and are ignored.)
+
+   - **WSL.**
+     Same as for macOS and Linux, except that you have to you need to add `ipywidgets=7` at the end of the `mamba create` command.
+     (This is a workaround for a WSL-specific [bug](https://github.com/nglviewer/nglview/issues/1032), not need for other platoforms)
 
    Commands to be entered:
    ```bash
@@ -100,6 +106,14 @@ Take the following steps:
    Reference vs. CPU: 6.30535e-06
 
    All differences are within tolerance.
+   ```
+
+1. For **WSL** only: you need to install the IPython kernel of the `py39openmm` environment, before you can use it in Jupyter Notebooks.
+   (It is not clear yet why this is needed, probably another WSL-specific bug.)
+   You can install the kernel with the following command:
+
+   ```bash
+   python -m ipykernel install --user --name=py39openmm
    ```
 
 1. Now is a good time to become more familiar with Jupyter Lab. The following link provide easy-to-follow guides, which will get you up to speed:
@@ -147,35 +161,37 @@ conda activate py39openmm
 jupyter lab
 ```
 
-A browser window should pop up in which you can select and open a notebook. If
-you are not familiar with notebooks, the following resources can be helpful:
+- On **Windows, macOS and Linux**, a browser window should pop up in which you can select and open a notebook.
+- On **WSL**,
+
+If you are not familiar with notebooks, the following resources can be helpful:
 [Jupyter Lab Overview](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html).
 
 
-## Technical details of the Windows Issue
+## Technical details of the problem with running OpenMM natively on Windows
 
-> Error message on Windows
-> ```
-> (py39openmm) C:\Users\me>python -m openmm.testInstallation
-> Traceback (most recent call last):
-> File "C:\Users\me\mambaforge\envs\py39openmm\lib\runpy.py", line 188, in _run_module_as_main
-> mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
-> File "C:\Users\me\mambaforge\envs\py39openmm\lib\runpy.py", line 111, in get_module_details
-> import(pkg_name)
-> File "C:\Users\me\mambaforge\envs\py39openmm\lib\site-packages\openmm_init.py", line 19, in
-> from openmm.openmm import *
-> File "C:\Users\me\mambaforge\envs\py39openmm\lib\site-packages\openmm\openmm.py", line 13, in
-> from . import _openmm
-> ImportError: DLL load failed while importing _openmm: The specified module could not be found.
-> ```
->
-> References
-> - https://github.com/openmm/openmm/issues/3618
-> - https://github.com/uibcdf/PyUnitWizard/issues/22
->
-> **Windows Subsystem for Linux (WSL) = Potential workaround for Windows users**
->
-> As of Windows 10, Microsoft distributes the Windows Subsystem for Linux (WSL).
-> This allows you to run Linux inside your Windows operating system, giving you access to a small-scale version the software environment used on the high-performance cluster.
-> More details can be found in the [Official WSL installation instructions](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
-> For this course, WSL2 is optional and left to those interested in a little extra hacking.
+Error message on Windows
+```
+(py39openmm) C:\Users\me>python -m openmm.testInstallation
+Traceback (most recent call last):
+File "C:\Users\me\mambaforge\envs\py39openmm\lib\runpy.py", line 188, in _run_module_as_main
+mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+File "C:\Users\me\mambaforge\envs\py39openmm\lib\runpy.py", line 111, in get_module_details
+import(pkg_name)
+File "C:\Users\me\mambaforge\envs\py39openmm\lib\site-packages\openmm_init.py", line 19, in
+from openmm.openmm import *
+File "C:\Users\me\mambaforge\envs\py39openmm\lib\site-packages\openmm\openmm.py", line 13, in
+from . import _openmm
+ImportError: DLL load failed while importing _openmm: The specified module could not be found.
+```
+
+References:
+- https://github.com/openmm/openmm/issues/3618
+- https://github.com/uibcdf/PyUnitWizard/issues/22
+
+**Windows Subsystem for Linux (WSL) = Potential workaround for Windows users**
+
+As of Windows 10, Microsoft distributes the Windows Subsystem for Linux (WSL).
+This allows you to run Linux inside your Windows operating system, giving you access to a small-scale version the software environment used on the high-performance cluster.
+More details can be found in the [Official WSL installation instructions](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+For this course, WSL is optional and left to those interested in a little extra hacking.
