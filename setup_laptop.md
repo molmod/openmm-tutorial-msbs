@@ -57,14 +57,10 @@ Take the following steps:
      Copy the lines below **one by one** in the Anaconda prompt.
      Do not copy comment lines starting with a `#`.
 
-   - **macOS, Linux.**
+   - **macOS, Linux and WSL.**
      Run the following commands in a virtual terminal.
      You can copy-paste all lines in one go.
      (Lines starting with `#` are comments and are ignored.)
-
-   - **WSL.**
-     Same as for macOS and Linux, except that you have to you need to add `ipywidgets=7` at the end of the `mamba create` command.
-     (This is a workaround for a WSL-specific [bug](https://github.com/nglviewer/nglview/issues/1032), not need for other platoforms)
 
    Commands to be entered:
    ```bash
@@ -73,7 +69,7 @@ Take the following steps:
    # Make a new environment for OpenMM, installing all the software, which takes some minutes.
    # The mamba create command is too long to fit on your screen.
    # Make sure you copy it completely.
-   mamba create -n py39openmm python=3.9 cudatoolkit git 'jupyterlab>=3.4.4' numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed jupyter_contrib_nbextensions
+   mamba create -n py39openmm python=3.9 cudatoolkit git 'jupyterlab>=3.4.4' numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed jupyter_contrib_nbextensions ipywidgets=7
    # Activate the OpenMM environment
    conda activate py39openmm
    # Enable nglview and spell checker in Jupyter Notebooks.
@@ -167,8 +163,19 @@ jupyter lab
 If you are not familiar with notebooks, the following resources can be helpful:
 [Jupyter Lab Overview](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html).
 
+## Known issues
 
-## Technical details of the problem with running OpenMM natively on Windows
+### NGLView and ipywidgets-8
+
+For NGLView to work, one should avoid installing the most recent versions of `ipywidgets` and stick to version 7.*.
+
+More details can be found here:
+
+- https://github.com/nglviewer/nglview/issues/1032
+- https://github.com/jupyter-widgets/ipywidgets/issues/3552
+
+
+### Technical details of the problem with running OpenMM natively on Windows
 
 Error message on Windows
 ```
