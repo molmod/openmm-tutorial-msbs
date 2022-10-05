@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=_openmm
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=12
 #SBATCH --gpus-per-task=1
 #SBATCH --mem=5GB
 #SBATCH --time=5:00:00
