@@ -46,7 +46,7 @@ Follow the installation instructions in [setup_noninteractive_hpc.md](setup_noni
    - **Time (hours):** Fill in the time you will be working on the notebook.
      Your session will be killed when this time has passed.
    - **Number of nodes:** always `1` in this course.
-   - **Number of cores:** normally always `1`, unless you use Python libraries that can exploit multiple cores (and know how to do this).
+   - **Number of cores:** `2` (This may be useful for combining visualization and computation loads. Feel free to increase for heavier MD runs. OpenMM can efficiently use more.)
    - **IPython version:** pick something, does not matter
    - **Custom code:** fill in the following:
      ```bash
