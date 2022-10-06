@@ -147,7 +147,7 @@ This requires a few changes in the settings when running a Jupyter Notebook:
 - **Time (hours):** Fill in the time you will be working on the notebook.
   Your session will be killed when this time has passed.
 - **Number of nodes:** always `1` in this course.
-- **Number of cores:** `8` (This may be useful for combining visualization and computation loads. Feel free to increase for heavier MD runs. OpenMM can efficiently use more.)
+- **Number of cores:** `8` for `joltik`, `12` for `accelgor`.
 - **Number of GPUs:** `1`
 - **IPython version:** pick something, does not matter
 - **Custom code:** fill in the following:
