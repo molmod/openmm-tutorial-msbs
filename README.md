@@ -136,7 +136,7 @@ The tutorial consists of the following sections, to be followed more-or-less in 
 
 - [06_visualization/visualization.md](06_visualization/visualization.md)
 
-**7. Ligands** (This part is still under development and optional. It does not work natively under Windows, but it should work with the Windows Subsystem for Linux 2.)
+**7. Ligands** (This part is still under development and does not work at the moment.)
 
 - [07_ligands/01_ibuprofen_gas_phase.ipynb](07_ligands/01_ibuprofen_gas_phase.ipynb)
 - [07_ligands/02_ibuprofen_solvent.ipynb](07_ligands/02_ibuprofen_solvent.ipynb)

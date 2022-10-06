@@ -1,10 +1,10 @@
 **Disclaimer.**
-This is a draft for new installation instructions on VSC. It will supersede the current `setup_interactive_vsc.md`.
+This is a draft for new installation instructions on VSC.
+It will supersede the current `setup_interactive_vsc.md`.
 Other documents can still be useful in their own right, but may need to be generalized to work more easily for non-VSC users.
 Things to be done before this can be used:
-- Request OpenMM-7.7 module installation + some extra's: up-to-date Python, matplotlib, pandas, scipy.
-- Adapt instructions and `install_msbs_env.sh` for the newer versions.
-- Ideally, we'd use also IPython and Jupyter installed on the cluster.
+- Check `pymbar` API on final choice.
+- Ideally, we'd also use IPython and Jupyter installed on the cluster.
   It is not clear yet at this stage, how to make that work together with a venv containing extra Python packages.
 
 # Setup for interactive OpenMM Jupyter Notebooks on VSC clusters.
@@ -21,11 +21,11 @@ The following sections assume that you have access to the account and can log in
 
 ## Installation of additional Python packages
 
-We will use the OpenMM version that is already installed on the cluster, togehter with several other relevant Python packages.
-However, some more Python packages are needed for the tutorial, which need to be installed in your home directory.
+We will use the OpenMM and several other Python packages, which are already installed on the cluster.
+In addition, some more Python packages are needed for the tutorial, which need to be installed in your home directory.
 
-Take make this easier, we have prepared a job script `install_msbs_env.sh`, which can be submitted to any of the clusters, to prepare this software environment for you.
-This job script can be used as follows.
+Take make this easier, we have prepared a job script `job_install_msbs_foss-2021a.sh`, which can be submitted to any of the clusters, to prepare this software environment for you.
+You can use this job script as follows.
 
 1. Navigate to [login.hpc.ugent.be](https://login.hpc.ugent.be) and follow the steps to log in.
 
@@ -34,7 +34,7 @@ This job script can be used as follows.
    containing some information on the current state of the cluster.
 
 1. Download the notebooks for the tutorials to the `$VSC_DATA` folder of your account so that you can access them at any time during the tutorial.
-   This will also give you a copy of `install_msbs_env.sh` on the cluster.
+   This will also give you a copy of `job_install_msbs_foss-2021a.sh` on the cluster.
    Execute the following commands in the virtual terminal.
 
    ```bash
@@ -50,7 +50,7 @@ This job script can be used as follows.
    ```bash
    cd openmm-tutorial-msbs-master
    module swap cluster/slaking
-   sbatch install_msbs_env.sh
+   sbatch job_install_msbs_foss-2021a.sh
    ```
 
    You can `module swap` to any other cluster to repeate the installation on different types of hardware.
@@ -58,13 +58,13 @@ This job script can be used as follows.
 
    ```bash
    module swap cluster/victini
-   sbatch install_msbs_env.sh
+   sbatch job_install_msbs_foss-2021a.sh
    module swap cluster/joltik
-   sbatch install_msbs_env.sh
+   sbatch job_install_msbs_foss-2021a.sh
    module swap cluster/doduo
-   sbatch install_msbs_env.sh
+   sbatch job_install_msbs_foss-2021a.sh
    module swap cluster/accelgor
-   sbatch install_msbs_env.sh
+   sbatch job_install_msbs_foss-2021a.sh
    ```
 
    Note that these four clusters are production machines, and your job may have to wait in the queue for a while (days even) before resources become available to run the install script.
@@ -90,9 +90,8 @@ This job script can be used as follows.
    - **Custom code:** fill in the following:
      ```bash
      module purge
-     module load OpenMM/7.5.0-intel-2020b
-     module load matplotlib/3.3.3-intel-2020b
-     . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/3.8.6-GCCcore-10.2.0/bin/activate
+     module load OpenMM/7.7.0-foss-2021a MDTraj/1.9.7-foss-2021a matplotlib/3.4.2-foss-2021a jax/0.3.9-foss-2021a lxml/4.6.3-GCCcore-10.3.0 PyYAML/5.4.1-GCCcore-10.3.0
+     . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/3.9.5-GCCcore-10.3.0/bin/activate
      ```
    - **Extra Jupyter Arguments:** `--notebook-dir="${VSC_DATA}"`
    - **Extra sbatch arguments:** leave empty
@@ -133,3 +132,31 @@ Either use the running Notebook session from the previous section, or start a ne
 1. You should be able to run everything in the Notebook you just opened.
 
 If you are not familiar with Jupyter Notebooks, the following resources can be helpful: [Jupyter Notebook Documentation](https://jupyter-notebook.readthedocs.io/en/latest/notebook.html).
+
+
+## GPU Acceleration
+
+In the [Tier-2 infrastructure](https://www.ugent.be/hpc/en/infrastructure) overview, there are two clusters with GPUs (at the time of writing): Joltic and Accelgor.
+These machines are heavily used for production simulations, so getting an interactive session on them may require (sometimes days of) queueing time.
+In general, this is impractical, and you're better of using the GPU clusters for non-interactive work.
+That said, if a GPU is available, you can also run your notebooks interactively with GPU acceleration.
+
+This requires a few changes in the settings when running a Jupyter Notebook:
+
+- **Cluster:** `joltik` or `accelgor`
+- **Time (hours):** Fill in the time you will be working on the notebook.
+  Your session will be killed when this time has passed.
+- **Number of nodes:** always `1` in this course.
+- **Number of cores:** `8` (This may be useful for combining visualization and computation loads. Feel free to increase for heavier MD runs. OpenMM can efficiently use more.)
+- **Number of GPUs:** `1`
+- **IPython version:** pick something, does not matter
+- **Custom code:** fill in the following:
+  ```bash
+  module purge
+  module load OpenMM//7.7.0-foss-2021a-CUDA-11.3.1 MDTraj/1.9.7-foss-2021a matplotlib/3.4.2-foss-2021a jax/0.3.9-foss-2021a lxml/4.6.3-GCCcore-10.3.0 PyYAML/5.4.1-GCCcore-10.3.0
+  . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/3.9.5-GCCcore-10.3.0/bin/activate
+  export OPENMM_DEFAULT_PLATFORM=CUDA
+  ```
+- **Extra Jupyter Arguments:** `--notebook-dir="${VSC_DATA}"`
+- **Extra sbatch arguments:** leave empty
+- **I would like to receive an email when the session starts:** this may be useful when all resources are in use.

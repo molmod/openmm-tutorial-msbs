@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J install_msbs
+#SBATCH -J install_msbs_venv
 #SBATCH -N 1
 #SBATCH -t 1:00:00
 #SBATCH --mem=10GB
@@ -11,15 +11,8 @@
 # You can select another OpenMM version.
 # We also load matplotlib, to avoid re-installing it with pip.
 # Just make sure you know the corresponding Python version.
-OPENMM_VERSION='7.5.0-intel-2020b'
-MATPLOTLIB_VERSION='3.3.3-intel-2020b'
-PYTHON_VERSION='3.8.6-GCCcore-10.2.0'
-
-# TODO: Other modules we should request, in addition to a newer version of OpenMM:
-# - Pandas
-# - Matplotlib
-# - SciPy-bundle
-# - MDTraj (potential for optimized compilation)
+MODULE_REQUIREMENTS='OpenMM/7.7.0-foss-2022a MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-foss-2022a lxml/4.9.1-GCCcore-11.3.0 PyYAML/6.0-GCCcore-11.3.0'
+PYTHON_VERSION='3.10.4-GCCcore-11.3.0'
 
 ##########################################
 # No changes required beyond this point. #
@@ -31,15 +24,14 @@ if [[ -e "${ROOT}" ]]; then
     exit 0
 fi
 
-module load OpenMM/${OPENMM_VERSION}
-module load matplotlib/${MATPLOTLIB_VERSION}
+module load ${MODULE_REQUIREMENTS}
 echo "Modules loaded before installing:"
 module list
 
 python -m venv ${ROOT}
 . ${ROOT}/bin/activate
 pip install -U pip
-pip install -U notebook jupyterlab nglview ipywidgets==7.* ipympl pandas mdtraj pymbar parmed rdkit jupyter_contrib_nbextensions jupyterlab-spellchecker
+pip install -U notebook jupyterlab nglview ipywidgets==7.* ipympl pymbar parmed rdkit jupyter_contrib_nbextensions jupyterlab-spellchecker
 pip install -U git+https://github.com/openmm/pdbfixer.git
 pip install -U git+https://github.com/openforcefield/openff-toolkit.git@0.11.1
 jupyter nbextension enable spellchecker/main
@@ -49,6 +41,5 @@ echo "DONE!!"
 echo
 echo "# Custom code when launching a Jupyter Notebook with Open OnDemand"
 echo "module purge"
-echo "module load OpenMM/${OPENMM_VERSION}"
-echo "module load matplotlib/${MATPLOTLIB_VERSION}"
+echo "module load ${MODULE_REQUIREMENTS}"
 echo '. ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/'${PYTHON_VERSION}'/bin/activate'
