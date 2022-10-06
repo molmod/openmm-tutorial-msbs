@@ -15,6 +15,7 @@ cd ${SLURM_SUBMIT_DIR}
 
 # Set the number of threads.
 export OPENMM_CPU_THREADS=${SLURM_CPUS_PER_TASK}
+export OPENMM_DEFAULT_PLATFORM=CUDA
 
 # Run the notebook. (everything on a single line)
 time jupyter nbconvert --to notebook --execute --allow-errors --ExecutePreprocessor.timeout=-1 01_run_openmm_on_a_hpc.ipynb
