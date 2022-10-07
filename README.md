@@ -40,49 +40,51 @@ To access and customize all these features, and to write reproducible simulation
 Hence, to install OpenMM, you need (to create) a Python environment and install OpenMM as a Python package.
 (The C++ interface is not covered in this tutorial.)
 
-For this tutorial, three environments can be used to perform simulations, each having their strengths and weaknesses:
+For this tutorial, two environments can be used to perform simulations, each having their strengths and weaknesses:
 
-- If you have access to the Flemish Supercomputer Center (VSC) (i.e. you are affiliated to a Flemish research institution), it is recommended to run the simulations via an interactive session on the cluster as explained below.
+- If you are affiliated to a Flemish research institution, it is recommended to run the notebooks on the Tier-2 VSC cluster of Ghent University, as explained below.
+  (We also provide alternative instructions for running notebooks on any other HPC, in case you don't have VSC access, but you do want to use anoter HPC.)
 - For all other users, it is recommended to follow this tutorial by running Jupyter notebooks on your own laptop.
-- For simulations that take longer, section 3 of the tutorial explains how to transfer a notebook from your laptop to an HPC environment (and back) for non-interactive job submissions.
 
 
-### Interactive Jupyter Notebooks on the *Vlaams Supercomputer Centrum* High-performance cluster
+### Jupyter Notebooks on an HPC
 
 **Strengths:**
 
-- Output files are stored on the cluster.
-- Easy visualization in the notebook with nglview.
-- You can work interactively.
 - You have access to significant computational power, including GPUs.
+- For VSC users, no software, other than a web browser, is needed on your own laptop.
+- For VSC users, the installation is relatively simple.
+- It is possible to have calculations running while your laptop is switched off.
 
 **Weaknesses:**
 
-- The installation requires some work, but not much.
+- For non-VSC users, the installation can be tricky.
 - There is a predefined duration of your interactive session.
 - The session ends without warning, which may lose you some progress.
-- You must remain connected during the sessions.
+- You must remain connected for interactive Jupyter notebooks.
 - This feature is relatively new and may still have some hidden flaws.
 
-Installation instructions: [setup_vsc.md](setup_vsc.md).
+Installation instructions vor VSC users: [setup_vsc.md](setup_vsc.md).
 
-(For those not affiliated with a Flemish University, we also have more general instructions: [setup_hpc.md](setup_hpc.md).)
+General HPC instructions, if you don't have VSC access: [setup_hpc.md](setup_hpc.md).
 
-### Your laptop
+
+### Jupyter Notebooks on your laptop
 
 **Strengths:**
 
 - Calculations require no network.
+  (Installation does.)
 - Output files are stored locally.
-- Easy visualization in the notebook with nglview.
-- You can work interactively.
+  (They are easy to access, but it may also become a problem when they fill up your hard drive.)
 
 **Weaknesses:**
 
 - The installation requires a significant amount of work.
+- It is currently not working on Windows.
 - Your laptop could overheat when running longer simulations.
 - Your laptop must remain powered on during calculations.
-- This is currently not working on Windows.
+  (Keep it plugged into a power socket, because intensive calculations drain the battery very quickly.)
 
 Instructions: [setup_laptop.md](setup_laptop.md).
 
