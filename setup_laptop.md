@@ -69,16 +69,16 @@ Take the following steps:
    # Make a new environment for OpenMM, installing all the software, which takes some minutes.
    # The mamba create command is too long to fit on your screen.
    # Make sure you copy it completely.
-   mamba create -n py39openmm python=3.9 cudatoolkit=10 git 'jupyterlab>=3.4.4' numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed jupyter_contrib_nbextensions ipywidgets=7
+   mamba create -n openmm python cudatoolkit=10 git 'jupyterlab>=3.4.4' numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed jupyter_contrib_nbextensions ipywidgets=7
    # Activate the OpenMM environment
-   conda activate py39openmm
+   conda activate openmm
    # Enable nglview and spell checker in Jupyter Notebooks.
    jupyter nbextension enable spellchecker/main
    jupyter nbextension enable nglview --py --sys-prefix
    ```
 
    You may have to close your terminal and re-open a new one,
-   run the commands `m` (Linux and macOS only) and `conda activate py39openmm` again before the following steps work.
+   run the commands `m` (Linux and macOS only) and `conda activate openmm` again before the following steps work.
 
 1. Test your OpenMM installation by entering the following command on the command prompt:
 
@@ -104,12 +104,12 @@ Take the following steps:
    All differences are within tolerance.
    ```
 
-1. For **WSL** only: you need to install the IPython kernel of the `py39openmm` environment, before you can use it in Jupyter Notebooks.
+1. For **WSL** only: you need to install the IPython kernel of the `openmm` environment, before you can use it in Jupyter Notebooks.
    (It is not clear yet why this is needed, probably another WSL-specific bug.)
    You can install the kernel with the following command:
 
    ```bash
-   python -m ipykernel install --user --name=py39openmm
+   python -m ipykernel install --user --name=openmm
    ```
 
 1. Now is a good time to become more familiar with Jupyter Lab. The following link provide easy-to-follow guides, which will get you up to speed:
@@ -153,7 +153,7 @@ To start any notebook from the tutorial, download [the ZIP file with the most re
 Once you have the right *current directory* in your virtual terminal, enter the following commands:
 
 ```bash
-conda activate py39openmm
+conda activate openmm
 jupyter lab
 ```
 
@@ -167,7 +167,7 @@ If you are not familiar with notebooks, the following resources can be helpful:
 
 ### NGLView and ipywidgets-8
 
-For NGLView to work, one should avoid installing the most recent versions of `ipywidgets` and stick to version 7.*.
+For NGLView to work, one should avoid installing the most recent versions of `ipywidgets`. Install `ipywidgets-7` instead.
 
 More details can be found here:
 
@@ -179,15 +179,15 @@ More details can be found here:
 
 Error message on Windows
 ```
-(py39openmm) C:\Users\me>python -m openmm.testInstallation
+(openmm) C:\Users\me>python -m openmm.testInstallation
 Traceback (most recent call last):
-File "C:\Users\me\mambaforge\envs\py39openmm\lib\runpy.py", line 188, in _run_module_as_main
+File "C:\Users\me\mambaforge\envs\openmm\lib\runpy.py", line 188, in _run_module_as_main
 mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
-File "C:\Users\me\mambaforge\envs\py39openmm\lib\runpy.py", line 111, in get_module_details
+File "C:\Users\me\mambaforge\envs\openmm\lib\runpy.py", line 111, in get_module_details
 import(pkg_name)
-File "C:\Users\me\mambaforge\envs\py39openmm\lib\site-packages\openmm_init.py", line 19, in
+File "C:\Users\me\mambaforge\envs\openmm\lib\site-packages\openmm_init.py", line 19, in
 from openmm.openmm import *
-File "C:\Users\me\mambaforge\envs\py39openmm\lib\site-packages\openmm\openmm.py", line 13, in
+File "C:\Users\me\mambaforge\envs\openmm\lib\site-packages\openmm\openmm.py", line 13, in
 from . import _openmm
 ImportError: DLL load failed while importing _openmm: The specified module could not be found.
 ```

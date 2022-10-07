@@ -74,11 +74,8 @@ You can use this job script as follows.
    A new page should open.
    You may also use the experimental `Jupyter Lab` instead.
 
-1. Select a cluster and resources that you want to use.
+1. Select a cluster and the resources that you want to use.
    The more resources you request (hours, number of nodes and number of cores), the longer you will have to wait to get access to you session.
-   Your job is placed in a queue and will only start when the requested resources become available.
-   (More information here: https://docs.vscentrum.be/en/latest/jobs/the_job_system_what_and_why.html).
-   Normally, the following settings should ensure a near-immediate start of your session with workable resources for the notebooks in this tutorial:
 
    - **Cluster:** `slaking (interactive/debug)` (On this cluster, there is practically no queueing time.)
    - **Time (hours):** Fill in the time you will be working on the notebook.
@@ -99,6 +96,11 @@ You can use this job script as follows.
    Most of these settings are already correct by default.
 
 1. Scroll down and click the `Launch` button.
+
+   Your job is placed in a queue and will only start when the requested resources become available.
+   (More information here: https://docs.vscentrum.be/en/latest/jobs/the_job_system_what_and_why.html).
+   Normally, the above settings should ensure a near-immediate start of your session with workable resources for the notebooks in this tutorial:
+
    A new screen will appear showing the status of your request (queueing or about to start).
    Normally, you should get the following:
 

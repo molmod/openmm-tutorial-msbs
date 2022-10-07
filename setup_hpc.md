@@ -62,7 +62,9 @@ We assume the following:
 
 Submit a simple job script on the queue, in which you perform the same test.
 
-1. Run `nano job_openmm.sh` and add the following content, after which you save and close with `Ctrl-x`:
+1. Run `nano job_openmm.sh` and add the following content.
+   Change the variable `MSBS_ROOT` to match the location of your installation.
+   When done, save and close with `Ctrl-x`:
 
    ```bash
    #!/usr/bin/env bash
@@ -73,8 +75,8 @@ Submit a simple job script on the queue, in which you perform the same test.
    # Go to the directory where sbatch was executed.
    cd ${SLURM_SUBMIT_DIR}
    # Activate the OpenMM software.
-   ROOT=...
-   eval "$(${ROOT}/mambaforge/bin/conda shell.bash hook)"
+   MSBS_ROOT=${VSC_DATA}
+   eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"
    conda activate openmm
    # Set the number of threads
    export OPENMM_CPU_THREADS=${SLURM_CPUS_ON_NODE}
@@ -90,10 +92,6 @@ Submit a simple job script on the queue, in which you perform the same test.
    ```
 
 1. Verify that both files are present by running `ls`.
-
-1. Switch to the Slaking cluster:
-   `module swap cluster/slaking`.
-   (This is very specific for the VSC clusters in Ghent, may be different elsewhere.)
 
 1. Run the command `sbatch job_openmm.sh`.
 
@@ -120,16 +118,100 @@ Submit a simple job script on the queue, in which you perform the same test.
    All differences are within tolerance.
    ```
 
+1. Add the following to your `.bashrc` file, if you want to facilitate the activation of Mamba-forge, without having it always active:
 
-## Interactive notebooks
+   ```bash
+   MSBS_ROOT=${VSC_DATA}
+   alias m='eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"'
+   ```
 
-If your HPC runs an instance of [Open OnDemand](https://openondemand.org/), it is highly recommended to use it for interactive notebooks, instead of the following steps.
-The VSC clusters can be used this way, and you may find some useful information in the [Setup for VSC](setup_vsc.md).
+   where you manually change `${MSBS_ROOT}` to the directory where you installed Mamba-forge.
+
+
+## Interactive notebooks (with Open OnDemand)
+
+If your HPC runs an instance of [Open OnDemand](https://openondemand.org/), it is highly recommended to use it for interactive notebooks, instead of the hack explained in the next section.
+
+1. Connect to the Open OnDemand portal of your cluster.
+   The details of this works will different from cluster to cluster.
+   Consult the documentation of your HPC Center for more details.
+
+1. Click on `Interactive Apps` > `Jupyter Notebook`.
+   A new page should open.
+   You may also use the experimental `Jupyter Lab` instead.
+   (You HPC may not support Juptyer, in which case the remaining steps will not work.)
+
+1. Select a cluster and the resources that you want to use.
+
+   The details you need to fill in, will depend on how Open OnDemand is configured on your HPC.
+   Again, consult its documentation for more details.
+
+   You should at least take care of the following settings:
+
+   - **Time (hours):** Fill in the time you will be working on the notebook.
+     Your session will be killed when this time has passed.
+   - **Number of nodes:** always `1` in this course.
+   - **Number of cores:** `2` (This may be useful for combining visualization and computation loads. Feel free to increase for heavier MD runs. OpenMM can efficiently use more.)
+   - **Custom code:** Fill in the following ...
+     ```bash
+     module purge
+     eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"
+     conda activate openmm
+     ```
+   - **Extra Jupyter Arguments:** `--notebook-dir="${MSBS_ROOT}"`
+
+   where `${MSBS_ROOT}` should be replaced by the location of your installation.
+
+1. Scroll down and click the `Launch` button.
+
+   Your job is placed in a queue and will only start when the requested resources become available.
+
+   A new screen will appear showing the status of your request (queueing or about to start).
+   Normally, you should get the following:
+
+   ```
+   Your session is currently starting... Please be patient as this process can take a few minutes.
+   ```
+
+1. After a few seconds, a button will appear saying `Connect to Jupyter`.
+   Click this button and a Jupyter Notebook (or Lab) should open in a new tab.
+
+1. On the right side of the page, there is a tab saying `New`. Click it.
+
+1. Enter the following two lines in the first code cell and execute it by clicking on the play button in the toolbar (or typing Shift+Enter):
+
+   ```python
+   import openmm.testInstallation
+   openmm.testInstallation.main()
+   ```
+
+   You should see the following output (or something similar):
+
+   ```
+   OpenMM Version: 7.7
+   Git Revision: 130124a3f9277b054ec40927360a6ad20c8f5fa6
+
+   There are 2 Platforms available:
+
+   1 Reference - Successfully computed forces
+   2 CPU - Successfully computed forces
+
+   Median difference in forces between platforms:
+
+   Reference vs. CPU: 6.30535e-06
+
+   All differences are within tolerance.
+   ```
+
+
+
+## Interactive notebooks (without Open OnDemand)
+
 If you don't have access through Open OnDemand, the steps below give you a poor-man's approximation of what Open OnDemand can do.
-These steps do assume that you can SSH into compute nodes on which your jobs are running.
+These steps do assume that you can SSH into compute nodes (on which your jobs are running).
 That is allowed at VSC, but other HPC centers may be more restrictive.
 
-Finally, note that all steps below are mildly hacky, but do work on VSC.
+Note that the steps below are a hack, but they do work on VSC.
 Significant adaptations may be needed on other HPCs.
 
 1. Use a **first** virtual terminal and connect to the login node of your HPC with the `ssh` command.
@@ -140,10 +222,10 @@ Significant adaptations may be needed on other HPCs.
 
    You may user a configuration file `~.ssh/config`, such that you can reduce the amount of command-line arguments.
 
-1. Start an interactive Slurm job. (Note that the `module swap cluster/...` is very specific for VSC clusters in Gent. It gives you access to the debug cluster.)
+1. Start an interactive Slurm job.
+   (It is recommended to run this job on a cluster on which you have no queueing time.)
 
    ```bash
-   module swap cluster/slaking
    srun --pty -t 6:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem=10GB bash
    ```
 
@@ -167,7 +249,9 @@ Significant adaptations may be needed on other HPCs.
    ssh vsc4YYXX@login.hpc.UGent.be -L 2222:nodeZZZZ.slaking.os:22 -i ~/.ssh/id_rsa_vsc
    ```
 
+   You need to modify the hostname of the compute node, here `nodeZZZZ.slaking.os`, to match that of your interactive job.
    This makes it possible to connect to the compute node directly from your laptop with SSH in the following step.
+   (We are assuming this is allowed on your HPC.)
 
 1. Open a **third** virtual terminal and log into the compute node with the following port-forwarding options:
 
@@ -178,6 +262,8 @@ Significant adaptations may be needed on other HPCs.
    where the last option refers to your private key.
    (It may be named differently on your machine.)
    The numbers in `8901:localhost:8901` have to match the port number of your Jupyter server.
+
+   Note that you are indeed connecting to your own machine, `localhost`, which is then forwarded by SSH to the compute node of your interactive job.
 
 1. Open a web browser on your laptop and go the the URL ```http://localhost:8901/?token=...```.
    You should see a Jupyter session in your local browsers, with calculations running on the compute node.

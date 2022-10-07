@@ -30,7 +30,7 @@ The main references are:
 Even though these resources contain all the background and details to learn OpenMM and related tools, the amount of information is simply overwhelming.
 The aim of this course is to provide a gentle introduction to many of the topics in the above references.
 
-## Installation of OpenMM
+## Getting Started
 
 Practically all simulations in this tutorial are carried out with OpenMM, which is described extensively [here](http://docs.openmm.org/latest/userguide/library.html).
 In short, OpenMM is a modern open-source biomolecular simulation toolkit: it supports many popular biomolecular force fields (AMBER, CHARMM, AMOEBA), it supports
