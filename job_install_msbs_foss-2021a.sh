@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -J install_msbs_venv
 #SBATCH -N 1
-#SBATCH -t 1:00:00
+#SBATCH -t 0:10:00
 #SBATCH --mem=10GB
 
 # Note: this install script is designed to work well with
