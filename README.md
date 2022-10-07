@@ -42,9 +42,9 @@ Hence, to install OpenMM, you need (to create) a Python environment and install 
 
 For this tutorial, two environments can be used to perform simulations, each having their strengths and weaknesses:
 
-- If you are affiliated to a Flemish research institution, it is recommended to run the notebooks on the Tier-2 VSC cluster of Ghent University, as explained below.
-  (We also provide alternative instructions for running notebooks on any other HPC, in case you don't have VSC access, but you do want to use anoter HPC.)
-- For all other users, it is recommended to follow this tutorial by running Jupyter notebooks on your own laptop.
+- If you are affiliated to a Flemish research institution, it is recommended to run the notebooks on the [Tier-2 VSC cluster of Ghent University](https://www.ugent.be/hpc/), as explained below.
+  We also provide alternative instructions for any other HPC, which should only be followed when you don't have VSC access.
+- Those who cannot access any HPC (VSC or otherwise), can (try to) install OpenMM on their laptop.
 
 
 ### Jupyter Notebooks on an HPC
@@ -59,9 +59,9 @@ For this tutorial, two environments can be used to perform simulations, each hav
 **Weaknesses:**
 
 - For non-VSC users, the installation can be tricky.
-- There is a predefined duration of your interactive session.
-- The session ends without warning, which may lose you some progress.
-- You must remain connected for interactive Jupyter notebooks.
+- Interactive session have a pre-defined (by you) duration.
+  The session ends without warning, at which point you may lose you some of your work.
+- You must remain connected to the Internet for interactive Jupyter notebooks.
 - This feature is relatively new and may still have some hidden flaws.
 
 Setup for VSC users: [setup_vsc.md](setup_vsc.md).
@@ -124,8 +124,3 @@ The tutorial consists of the following sections, to be followed more or less in 
 
 - [07_ligands/01_ibuprofen_gas_phase.ipynb](07_ligands/01_ibuprofen_gas_phase.ipynb)
 - [07_ligands/02_ibuprofen_solvent.ipynb](07_ligands/02_ibuprofen_solvent.ipynb)
-
-
-## Troubleshooting
-
-A list of common problems is compiled here: [FAQ.md](FAQ.md)

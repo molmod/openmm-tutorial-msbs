@@ -1,6 +1,6 @@
 # Frequently asked questions
 
-This page contains some technical issues often encountered on Windows and how to solve them.
+This page contains some technical issues often encountered when installing OpenMM on Windows, and how to solve them.
 
 ## Permission Error when loading trajectory with NGLView
 
