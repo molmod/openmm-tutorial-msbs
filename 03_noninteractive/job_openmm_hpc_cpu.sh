@@ -1,19 +1,17 @@
 #!/bin/bash
-#SBATCH --job-name=_openmm
+#SBATCH --job-name=hpc-cpu
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=5GB
 #SBATCH --time=5:00:00
 
-# Activate OpenMM.
+# Setup our OpenMM environment
 eval "$(${VSC_DATA}/mambaforge/bin/conda shell.bash hook)"
-conda activate py39openmm
-
-# Go to the directory where qsub was executed.
-cd ${SLURM_SUBMIT_DIR}
-
+conda activate openmm
 # Set the number of threads.
 export OPENMM_CPU_THREADS=${SLURM_CPUS_PER_TASK}
+# Go to the directory where sbatch was called
+cd ${SLURM_SUBMIT_DIR}
 
 # Run the notebook. (everything on a single line)
-time jupyter nbconvert --to notebook --execute --allow-errors --ExecutePreprocessor.timeout=-1 01_run_openmm_on_a_hpc.ipynb
+time jupyter nbconvert --to notebook --execute --allow-errors --ExecutePreprocessor.timeout=-1 01_noninteractive_notebook_on_hpc.ipynb

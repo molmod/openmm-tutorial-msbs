@@ -1,10 +1,9 @@
 #!/bin/bash
-#SBATCH --job-name all-gpu
+#SBATCH --job-name=vsc-gpu
 #SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=12
 #SBATCH --gpus-per-task=1
-#SBATCH --mem=10GB
+#SBATCH --mem=5GB
 #SBATCH --time=5:00:00
 
 # Setup our OpenMM environment
@@ -18,4 +17,5 @@ export OPENMM_DEFAULT_PLATFORM=CUDA
 # Go to the directory where sbatch was called
 cd ${SLURM_SUBMIT_DIR}
 
-./runall.sh
+# Run the notebook. (everything on a single line)
+time jupyter nbconvert --to notebook --execute --allow-errors --ExecutePreprocessor.timeout=-1 01_noninteractive_notebook_on_hpc.ipynb

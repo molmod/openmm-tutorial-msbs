@@ -54,19 +54,19 @@ For this tutorial, three environments can be used to perform simulations, each h
 - Output files are stored on the cluster.
 - Easy visualization in the notebook with nglview.
 - You can work interactively.
-- You have access to significant computational power.
+- You have access to significant computational power, including GPUs.
 
 **Weaknesses:**
 
-- The installation requires some work.
+- The installation requires some work, but not much.
 - There is a predefined duration of your interactive session.
 - The session ends without warning, which may lose you some progress.
 - You must remain connected during the sessions.
 - This feature is relatively new and may still have some hidden flaws.
 
-Installation instructions: [setup_interactive_vsc.md](setup_interactive_vsc.md).
+Installation instructions: [setup_vsc.md](setup_vsc.md).
 
-(For not affiliated with a Flemish University: [setup_interactive_hpc.md](setup_interactive_hpc.md).)
+(For those not affiliated with a Flemish University, we also have more general instructions: [setup_hpc.md](setup_hpc.md).)
 
 ### Your laptop
 
@@ -79,29 +79,12 @@ Installation instructions: [setup_interactive_vsc.md](setup_interactive_vsc.md).
 
 **Weaknesses:**
 
-- The installation requires some work.
+- The installation requires a significant amount of work.
 - Your laptop could overheat when running longer simulations.
 - Your laptop must remain powered on during calculations.
-- Currently not working on Windows.
+- This is currently not working on Windows.
 
 Instructions: [setup_laptop.md](setup_laptop.md).
-
-
-### Non-interactive job submission on a High-performance cluster (HPC)
-
-**Strengths:**
-
-- Calculations run in the background on a remote machine. You can power off your laptop while they run.
-- You have access to more computational power.
-
-**Weaknesses:**
-
-- Some Linux knowledge is required.
-- Your calculations do not start instantly.
-  Instead, you submit "jobs" which are executed when a compute-node becomes available.
-- Non-interactive: the entire notebook is executed and you only get to see the results when it has all completed.
-
-Instructions: [setup_noninteractive_hpc.md](setup_noninteractive_hpc.md).
 
 
 ## Overview of Tutorial Sections
@@ -120,7 +103,7 @@ The tutorial consists of the following sections, to be followed more-or-less in 
 
 **3. Run demanding OpenMM notebooks as a non-interactive job:**
 
-- [03_noninteractive/01_run_openmm_on_a_hpc.ipynb](03_noninteractive/01_run_openmm_on_a_hpc.ipynb)
+- [03_noninteractive/01_noninteractive_notebook_on_hpc.ipynb](03_noninteractive/01_noninteractive_notebook_on_hpc.ipynb)
 
 **4. A short protein MD simulation:**
 
