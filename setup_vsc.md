@@ -32,15 +32,15 @@ You can use this job script as follows.
 
    ```bash
    cd $VSC_DATA
-   wget https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip
-   unzip master.zip
+   wget https://github.com/molmod/openmm-tutorial-msbs/archive/main.zip
+   unzip main.zip
    ```
 
-   This creates a directory `openmm-tutorial-msbs-master` with a copy of the latest version of the tutorial.
+   This creates a directory `openmm-tutorial-msbs-main` with a copy of the latest version of the tutorial.
    Enter this directory:
 
    ```bash
-   cd openmm-tutorial-msbs-master
+   cd openmm-tutorial-msbs-main
    ```
 
 1. Submit the installation job as follows:

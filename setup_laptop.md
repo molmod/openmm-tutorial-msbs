@@ -138,7 +138,7 @@ Take the following steps:
 
 ## Usage
 
-To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/master.zip) and unzip this archive.
+To start any notebook from the tutorial, download [the ZIP file with the most recent notebooks](https://github.com/molmod/openmm-tutorial-msbs/archive/main.zip) and unzip this archive.
 
 - On **Windows** open a Conda prompt and change the directory to where you unzipped the archive.
   If needed, first change to the correct drive, e.g. by typing the command `D:`, then use e.g. `cd` followed by the name of the directory where the ZIP file was unpacked.
