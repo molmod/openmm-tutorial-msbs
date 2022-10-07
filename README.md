@@ -64,9 +64,9 @@ For this tutorial, two environments can be used to perform simulations, each hav
 - You must remain connected for interactive Jupyter notebooks.
 - This feature is relatively new and may still have some hidden flaws.
 
-Installation instructions vor VSC users: [setup_vsc.md](setup_vsc.md).
+Setup for VSC users: [setup_vsc.md](setup_vsc.md).
 
-General HPC instructions, if you don't have VSC access: [setup_hpc.md](setup_hpc.md).
+General setup for other HPCs: [setup_hpc.md](setup_hpc.md).
 
 
 ### Jupyter Notebooks on your laptop
@@ -86,13 +86,12 @@ General HPC instructions, if you don't have VSC access: [setup_hpc.md](setup_hpc
 - Your laptop must remain powered on during calculations.
   (Keep it plugged into a power socket, because intensive calculations drain the battery very quickly.)
 
-Instructions: [setup_laptop.md](setup_laptop.md).
+Setup: [setup_laptop.md](setup_laptop.md).
 
 
 ## Overview of Tutorial Sections
 
-The getting-started instructions showed you how to open a new notebook or to start any notebook from this tutorial.
-The tutorial consists of the following sections, to be followed more-or-less in order:
+The tutorial consists of the following sections, to be followed more or less in order:
 
 **1. First steps:**
 
