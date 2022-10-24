@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/nbQA-dev/nbQA
-  rev: "1.5.2"
+  rev: "1.5.3"
   hooks:
     - id: nbqa-black
       args: ["--nbqa-skip-celltags=before-import"]
