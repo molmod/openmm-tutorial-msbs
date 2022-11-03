@@ -47,3 +47,8 @@ repos:
   hooks:
     - id: pyupgrade
       args: ["--py39-plus"]
+- repo: https://github.com/srstevenson/nb-clean
+  rev: "2.4.0"
+  hooks:
+    - id: nb-clean
+      args: ["--remove-empty-cells", "--preserve-cell-metadata", "tags", "--"]
