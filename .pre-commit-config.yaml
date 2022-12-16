@@ -30,11 +30,11 @@ repos:
   hooks:
     - id: nbstripout
 - repo: https://github.com/psf/black
-  rev: "22.10.0"
+  rev: "22.12.0"
   hooks:
     - id: black
 - repo: https://github.com/pycqa/isort
-  rev: "5.10.1"
+  rev: "5.11.1"
   hooks:
     - id: isort
 - repo: https://github.com/pre-commit/pygrep-hooks
@@ -43,7 +43,7 @@ repos:
     - id: python-no-eval
     - id: python-use-type-annotations
 - repo: https://github.com/asottile/pyupgrade
-  rev: "v3.3.0"
+  rev: "v3.3.1"
   hooks:
     - id: pyupgrade
       args: ["--py39-plus"]
