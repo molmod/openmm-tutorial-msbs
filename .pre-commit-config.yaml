@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/nbQA-dev/nbQA
-  rev: "1.5.3"
+  rev: "1.6.0"
   hooks:
     - id: nbqa-black
       args: ["--nbqa-skip-celltags=before-import"]
@@ -34,7 +34,7 @@ repos:
   hooks:
     - id: black
 - repo: https://github.com/pycqa/isort
-  rev: "5.11.1"
+  rev: "5.11.4"
   hooks:
     - id: isort
 - repo: https://github.com/pre-commit/pygrep-hooks
