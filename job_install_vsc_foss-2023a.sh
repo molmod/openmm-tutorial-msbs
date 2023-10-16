@@ -31,7 +31,7 @@ module list
 python -m venv ${ROOT}
 . ${ROOT}/bin/activate
 pip install -U pip
-pip install -U notebook jupyterlab nglview ipywidgets ipympl pymbar parmed rdkit
+pip install -U notebook jupyterlab nglview ipywidgets ipympl pymbar parmed rdkit pytz
 pip install -U git+https://github.com/openmm/pdbfixer.git
 pip install -U git+https://github.com/openforcefield/openff-toolkit.git
 
