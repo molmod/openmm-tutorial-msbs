@@ -31,11 +31,9 @@ module list
 python -m venv ${ROOT}
 . ${ROOT}/bin/activate
 pip install -U pip
-pip install -U notebook jupyterlab nglview ipywidgets==7.* ipympl pymbar parmed rdkit jupyter_contrib_nbextensions jupyterlab-spellchecker
+pip install -U notebook jupyterlab nglview ipywidgets ipympl pymbar parmed rdkit
 pip install -U git+https://github.com/openmm/pdbfixer.git
-pip install -U git+https://github.com/openforcefield/openff-toolkit.git@0.11.1
-jupyter nbextension enable spellchecker/main
-jupyter nbextension enable nglview --py --sys-prefix
+pip install -U git+https://github.com/openforcefield/openff-toolkit.git
 
 echo "DONE!!"
 echo
