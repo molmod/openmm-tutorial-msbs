@@ -17,7 +17,7 @@ The following sections assume that you have access to your VSC account and can l
 We will use the OpenMM and several other Python packages, which are already installed on the cluster.
 In addition, some more Python packages are needed for the tutorial, which need to be installed in your account.
 
-Take make this easier, we prepared a job script `job_install_vsc_foss-2021a.sh`, which can be submitted to any of the clusters, to prepare this software environment for you.
+Take make this easier, we prepared a job script `job_install_vsc_foss-2023a.sh`, which can be submitted to any of the clusters, to prepare this software environment for you.
 You can use this job script as follows.
 
 1. Navigate to [login.hpc.ugent.be](https://login.hpc.ugent.be) and follow the steps to log in.
@@ -27,7 +27,7 @@ You can use this job script as follows.
    containing some information on the current state of the cluster.
 
 1. Download the notebooks for the tutorials to the `$VSC_DATA` folder of your account so that you can access them at any time during the tutorial.
-   This will also give you a copy of `job_install_vsc_foss-2021a.sh` on the cluster.
+   This will also give you a copy of `job_install_vsc_foss-2023a.sh` on the cluster.
    Execute the following commands in the virtual terminal.
 
    ```bash
@@ -47,7 +47,7 @@ You can use this job script as follows.
 
    ```bash
    module swap cluster/donphan
-   sbatch job_install_vsc_foss-2021a.sh
+   sbatch job_install_vsc_foss-2023a.sh
    ```
 
    You can `module swap` to any other cluster to repeat the installation on different types of hardware.
@@ -55,13 +55,13 @@ You can use this job script as follows.
 
    ```bash
    module swap cluster/victini
-   sbatch job_install_vsc_foss-2021a.sh
+   sbatch job_install_vsc_foss-2023a.sh
    module swap cluster/joltik
-   sbatch job_install_vsc_foss-2021a.sh
+   sbatch job_install_vsc_foss-2023a.sh
    module swap cluster/doduo
-   sbatch job_install_vsc_foss-2021a.sh
+   sbatch job_install_vsc_foss-2023a.sh
    module swap cluster/accelgor
-   sbatch job_install_vsc_foss-2021a.sh
+   sbatch job_install_vsc_foss-2023a.sh
    ```
 
    Note that these four clusters are production machines, and your job may have to wait in the queue for a while (days even) before resources become available to run the install script.
@@ -86,8 +86,8 @@ You can use this job script as follows.
    - **Custom code:** Fill in the following ...
      ```bash
      module purge
-     module load OpenMM/7.7.0-foss-2021a MDTraj/1.9.7-foss-2021a matplotlib/3.4.2-foss-2021a jax/0.3.9-foss-2021a lxml/4.6.3-GCCcore-10.3.0 PyYAML/5.4.1-GCCcore-10.3.0
-     . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/3.9.5-GCCcore-10.3.0/bin/activate
+     module load OpenMM/8.0.0-foss-2022a MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-foss-2022a jax/0.3.25-foss-2022a lxml/4.9.2-GCCcore-12.3.0 PyYAML/6.0-GCCcore-12.3.0
+     . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/6.0-GCCcore-12.3.0/bin/activate
      ```
    - **Extra Jupyter Arguments:** `--notebook-dir="${VSC_DATA}"`
    - **Extra sbatch arguments:** leave empty
