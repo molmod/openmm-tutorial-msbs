@@ -70,9 +70,8 @@ You can use this job script as follows.
 ## Test OpenMM in an Interactive Jupyter Notebook
 
 1. You can now close the terminal, as it is no longer needed.
-   Instead, go back to [login.hpc.ugent.be](https://login.hpc.ugent.be) and click on `Interactive Apps` > `Jupyter Notebook`.
+   Instead, go back to [login.hpc.ugent.be](https://login.hpc.ugent.be) and click on `Interactive Apps` > `Jupyter Lab`.
    A new page should open.
-   You may also use the experimental `Jupyter Lab` instead.
 
 1. Select a cluster and the resources that you want to use.
    The more resources you request (hours, number of nodes and number of cores), the longer you will have to wait to get access to you session.
@@ -81,8 +80,9 @@ You can use this job script as follows.
    - **Time (hours):** Fill in the time you will be working on the notebook.
      Your session will be killed when this time has passed.
    - **Number of nodes:** always `1` in this course.
-   - **Number of cores:** `2` (This may be useful for combining visualization and computation loads. Feel free to increase for heavier MD runs. OpenMM can efficiently use more.)
-   - **IPython version:** pick something, does not matter
+   - **Number of cores per node:** `2` (This may be useful for combining visualization and computation loads. Feel free to increase for heavier MD runs. OpenMM can efficiently use more.)
+   - **Mode:** not needeed, leave blank
+   - **JupyterLab version:** leave default
    - **Custom code:** Fill in the following ...
      ```bash
      module purge
@@ -109,9 +109,9 @@ You can use this job script as follows.
    ```
 
 1. After a few seconds, a button will appear saying `Connect to Jupyter`.
-   Click this button and a Jupyter Notebook (or Lab) should open in a new tab.
+   Click this button and a Jupyter Lab should open in a new tab.
 
-1. On the right side of the page, there is a tab saying `New`. Click it.
+1. Click on the tab `Python 3 (ipykernel)`, a new notebook should open.
 
 1. Enter the following two lines in the first code cell and execute it by clicking on the play button in the toolbar (or typing Shift+Enter):
 
@@ -123,7 +123,7 @@ You can use this job script as follows.
    You should see the following output (or something similar):
 
    ```
-   OpenMM Version: 7.7
+   OpenMM Version: 8.0
    Git Revision: 130124a3f9277b054ec40927360a6ad20c8f5fa6
 
    There are 2 Platforms available:
@@ -141,7 +141,7 @@ You can use this job script as follows.
 
 ## Running a Notebook from the tutorial.
 
-Either use the running Notebook session from the previous section, or start a new one, by repeating the first 4 steps from the previous section.
+Either use the running JupterLab session from the previous section, or start a new one, by repeating the first 4 steps from the previous section.
 
 1. Select and open a Notebook of your choice.
    For example, to get started, open the notebook `01_first_steps/01_water.ipynb`.
@@ -166,12 +166,13 @@ This requires a few changes in the settings when running a Jupyter Notebook:
 - **Number of nodes:** always `1` in this course.
 - **Number of cores:** `8` for `joltik`, `12` for `accelgor`.
 - **Number of GPUs:** `1`
-- **IPython version:** pick something, does not matter
-- **Custom code:** fill in the following:
-  ```bash
-  module purge
-  module load OpenMM//7.7.0-foss-2021a-CUDA-11.3.1 MDTraj/1.9.7-foss-2021a matplotlib/3.4.2-foss-2021a jax/0.3.9-foss-2021a lxml/4.6.3-GCCcore-10.3.0 PyYAML/5.4.1-GCCcore-10.3.0
-  . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/3.9.5-GCCcore-10.3.0/bin/activate
+   - **Mode:** not needeed, leave blank
+   - **JupyterLab version:** leave default
+   - **Custom code:** Fill in the following ...
+     ```bash
+     module purge
+     module load OpenMM/8.0.0-foss-2022a MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-foss-2022a jax/0.3.25-foss-2022a lxml/4.9.1-GCCcore-11.3.0 PyYAML/6.0-GCCcore-11.3.0
+     . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/3.10.4-GCCcore-11.3.0/bin/activate
   export OPENMM_DEFAULT_PLATFORM=CUDA
   ```
 - **Extra Jupyter Arguments:** `--notebook-dir="${VSC_DATA}"`
