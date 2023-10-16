@@ -77,7 +77,7 @@ You can use this job script as follows.
 1. Select a cluster and the resources that you want to use.
    The more resources you request (hours, number of nodes and number of cores), the longer you will have to wait to get access to you session.
 
-   - **Cluster:** `slaking (interactive/debug)` (On this cluster, there is practically no queueing time.)
+   - **Cluster:** `donphan (interactive/debug)` (On this cluster, there is practically no queueing time.)
    - **Time (hours):** Fill in the time you will be working on the notebook.
      Your session will be killed when this time has passed.
    - **Number of nodes:** always `1` in this course.
