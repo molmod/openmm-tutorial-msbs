@@ -11,8 +11,8 @@
 # You can select another OpenMM version.
 # We also load matplotlib, to avoid re-installing it with pip.
 # Just make sure you know the corresponding Python version.
-MODULE_REQUIREMENTS='OpenMM/7.7.0-foss-2021a MDTraj/1.9.7-foss-2021a matplotlib/3.4.2-foss-2021a jax/0.3.9-foss-2021a lxml/4.6.3-GCCcore-10.3.0 PyYAML/5.4.1-GCCcore-10.3.0'
-PYTHON_VERSION='3.9.5-GCCcore-10.3.0'
+MODULE_REQUIREMENTS='OpenMM/8.0.0-foss-2022a MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-foss-2022a lxml/4.9.1-GCCcore-11.3.0 PyYAML/6.0-GCCcore-11.3.0'
+PYTHON_VERSION='3.10.4-GCCcore-11.3.0'
 
 ##########################################
 # No changes required beyond this point. #
@@ -31,7 +31,7 @@ module list
 python -m venv ${ROOT}
 . ${ROOT}/bin/activate
 pip install -U pip
-pip install -U notebook jupyterlab nglview ipywidgets ipympl pymbar parmed rdkit
+pip install -U notebook jupyterlab nglview ipywidgets ipympl pymbar parmed rdkit pytz
 pip install -U git+https://github.com/openmm/pdbfixer.git
 pip install -U git+https://github.com/openforcefield/openff-toolkit.git
 
