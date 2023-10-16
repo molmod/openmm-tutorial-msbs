@@ -1,7 +1,7 @@
-# Setup on VSC clusters.
+# Setup on VSC clusters
 
 The [Flemish Supercomputer Center (VSC)](https://www.vscentrum.be/) offers interactive sessions to run Jupyter notebooks directly on the cluster.
-The instructions below are written for students and researchers affiliated with on of the Flemish universities, and they assume you are using the Tier-2 cluster at Ghent University, to which all VSC users have access.
+The instructions below are written for students and researchers affiliated with on of the Flemish universities, and it is assumed that you are using the Tier-2 cluster at Ghent University, to which all VSC users have access.
 
 For those without VSC access, we also have [a more generic setup for high-performance clusters](setup_hpc.md).
 
@@ -17,7 +17,7 @@ The following sections assume that you have access to your VSC account and can l
 We will use the OpenMM and several other Python packages, which are already installed on the cluster.
 In addition, some more Python packages are needed for the tutorial, which need to be installed in your account.
 
-Take make this easier, we prepared a job script `job_install_vsc_foss-2023a.sh`, which can be submitted to any of the clusters, to prepare this software environment for you.
+Take make this easier, we prepared a job script `job_install_vsc_foss-2022a.sh`, which can be submitted to any of the clusters, to prepare this software environment for you.
 You can use this job script as follows.
 
 1. Navigate to [login.hpc.ugent.be](https://login.hpc.ugent.be) and follow the steps to log in.
@@ -27,7 +27,7 @@ You can use this job script as follows.
    containing some information on the current state of the cluster.
 
 1. Download the notebooks for the tutorials to the `$VSC_DATA` folder of your account so that you can access them at any time during the tutorial.
-   This will also give you a copy of `job_install_vsc_foss-2023a.sh` on the cluster.
+   This will also give you a copy of `job_install_vsc_foss-2022a.sh` on the cluster.
    Execute the following commands in the virtual terminal.
 
    ```bash
@@ -47,7 +47,7 @@ You can use this job script as follows.
 
    ```bash
    module swap cluster/donphan
-   sbatch job_install_vsc_foss-2023a.sh
+   sbatch job_install_vsc_foss-2022a.sh
    ```
 
    You can `module swap` to any other cluster to repeat the installation on different types of hardware.
@@ -55,13 +55,13 @@ You can use this job script as follows.
 
    ```bash
    module swap cluster/victini
-   sbatch job_install_vsc_foss-2023a.sh
-   module swap cluster/joltik
-   sbatch job_install_vsc_foss-2023a.sh
+   sbatch job_install_vsc_foss-2022a.sh
    module swap cluster/doduo
-   sbatch job_install_vsc_foss-2023a.sh
+   sbatch job_install_vsc_foss-2022a.sh
+   module swap cluster/joltik
+   sbatch job_install_vsc_foss-2022a.sh
    module swap cluster/accelgor
-   sbatch job_install_vsc_foss-2023a.sh
+   sbatch job_install_vsc_foss-2022a.sh
    ```
 
    Note that these four clusters are production machines, and your job may have to wait in the queue for a while (days even) before resources become available to run the install script.
