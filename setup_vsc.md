@@ -108,10 +108,11 @@ You can use this job script as follows.
    Your session is currently starting... Please be patient as this process can take a few minutes.
    ```
 
-1. After a few seconds, a button will appear saying `Connect to Jupyter`.
+1. After a few seconds, a button will appear saying `Connect to Jupyter Lab`.
    Click this button and a Jupyter Lab should open in a new tab.
 
-1. Click on the tab `Python 3 (ipykernel)`, a new notebook should open.
+1. In the `Launcher` tab, under `Notebook`, click on `Python 3 (ipykernel)`.
+   A new notebook should open.
 
 1. Enter the following two lines in the first code cell and execute it by clicking on the play button in the toolbar (or typing Shift+Enter):
 
@@ -124,7 +125,7 @@ You can use this job script as follows.
 
    ```
    OpenMM Version: 8.0
-   Git Revision: 130124a3f9277b054ec40927360a6ad20c8f5fa6
+   Git Revision: Unknown
 
    There are 2 Platforms available:
 
@@ -144,11 +145,15 @@ You can use this job script as follows.
 Either use the running JupterLab session from the previous section, or start a new one, by repeating the first 4 steps from the previous section.
 
 1. Select and open a Notebook of your choice.
-   For example, to get started, open the notebook `01_first_steps/01_water.ipynb`.
+   For example, to get started, find and open the notebook `openmm-tutorial-msbs-main/01_first_steps/01_water.ipynb`.
 
 1. You should be able to run everything in the Notebook you just opened.
 
-If you are not familiar with Jupyter Notebooks, the following resources can be helpful: [Jupyter Notebook Documentation](https://jupyter-notebook.readthedocs.io/en/latest/notebook.html).
+   If you are not familiar with Jupyter Notebooks, the following resources can be helpful [Jupyter Notebook Documentation](https://jupyter-notebook.readthedocs.io/en/latest/notebook.html).
+
+1. Stop Jupyter Lab:
+    - Click on `File` (in Jupyter Lab, not your browser), then `Shutdown` and then confirm.
+    - On `login.hpc.ugent.be`, the job will be marked as completed and you can safely delete it.
 
 
 ## GPU Acceleration
@@ -178,3 +183,16 @@ This requires a few changes in the settings when running a Jupyter Notebook:
 - **Extra Jupyter Arguments:** `--notebook-dir="${VSC_DATA}"`
 - **Extra sbatch arguments:** leave empty
 - **I would like to receive an email when the session starts:** this may be useful when all resources are in use, meaning your session cannot start instantly.
+
+Once connected to Jupyter Lab, run the following test again in a new notebook:
+
+```python
+import openmm.testInstallation
+openmm.testInstallation.main()
+```
+
+You should see the following output (or something similar):
+
+```
+TODO
+```
