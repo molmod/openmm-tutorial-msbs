@@ -46,7 +46,7 @@ You can use this job script as follows.
 1. Submit the installation job as follows:
 
    ```bash
-   module swap cluster/slaking
+   module swap cluster/donphan
    sbatch job_install_vsc_foss-2021a.sh
    ```
 
