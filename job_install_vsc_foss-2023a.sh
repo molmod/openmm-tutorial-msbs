@@ -11,7 +11,7 @@
 # You can select another OpenMM version.
 # We also load matplotlib, to avoid re-installing it with pip.
 # Just make sure you know the corresponding Python version.
-MODULE_REQUIREMENTS='OpenMM/8.0.0-foss-2022a MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-foss-2022a lxml/4.9.2-GCCcore-12.3.0 PyYAML/6.0-GCCcore-12.3.0'
+MODULE_REQUIREMENTS='GCCcore OpenMM/8.0.0-foss-2022a MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-foss-2022a lxml/4.9.2-GCCcore-12.3.0 PyYAML/6.0-GCCcore-12.3.0'
 PYTHON_VERSION='3.11.3-GCCcore-12.3.0'
 
 ##########################################
