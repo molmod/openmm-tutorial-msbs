@@ -60,7 +60,7 @@ For this tutorial, two environments can be used to perform simulations, each hav
 
 - For non-VSC users, the installation can be tricky.
 - Interactive session have a pre-defined (by you) duration.
-  The session ends without warning, at which point you may lose you some of your work.
+  The session ends without warning, at which point you may lose some of your work.
 - You must remain connected to the Internet for interactive Jupyter notebooks.
 - This feature is relatively new and may still have some hidden flaws.
 
