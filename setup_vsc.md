@@ -87,7 +87,7 @@ You can use this job script as follows.
      ```bash
      module purge
      module load OpenMM/8.0.0-foss-2022a MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-foss-2022a jax/0.3.25-foss-2022a lxml/4.9.2-GCCcore-12.3.0 PyYAML/6.0-GCCcore-12.3.0
-     . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/6.0-GCCcore-12.3.0/bin/activate
+     . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/3.11.3-GCCcore-12.3.0/bin/activate
      ```
    - **Extra Jupyter Arguments:** `--notebook-dir="${VSC_DATA}"`
    - **Extra sbatch arguments:** leave empty
