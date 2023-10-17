@@ -69,7 +69,7 @@ Take the following steps:
    # Make a new environment for OpenMM, installing all the software, which takes some minutes.
    # The mamba create command is too long to fit on your screen.
    # Make sure you copy it completely.
-   mamba create -n openmm python cudatoolkit git jupyterlab> numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed
+   mamba create -n openmm python cudatoolkit git jupyterlab numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed
    # Activate the OpenMM environment
    mamba activate openmm
    ```

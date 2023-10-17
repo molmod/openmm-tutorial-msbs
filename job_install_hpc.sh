@@ -29,13 +29,12 @@ eval "$(${ROOT}/mambaforge/bin/conda shell.bash hook)"
 
 # Make sure your base environment is up-to-date.
 mamba update --all -y
+
 # Make a new environment for OpenMM, installing all the software, which takes some minutes.
-mamba create -n openmm -y python cudatoolkit=10 git 'jupyterlab>=3.4.4' numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed jupyter_contrib_nbextensions ipywidgets=7
+mamba create -n openmm python cudatoolkit git jupyterlab numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed
+
 # Activate the OpenMM environment
 conda activate openmm
-# Enable nglview and spell checker in Jupyter Notebooks.
-jupyter nbextension enable spellchecker/main
-jupyter nbextension enable nglview --py --sys-prefix
 
 # Test the installation
 python -m openmm.testInstallation
