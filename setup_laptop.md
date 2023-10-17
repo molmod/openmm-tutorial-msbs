@@ -30,7 +30,7 @@ Take the following steps:
      ```
      Add the following line to your `~/.bashrc` file, which makes it convenient to activate the Mambaforge installation:
      ```bash
-     alias m='eval "$(${HOME}/mambaforge/bin/conda shell.bash hook)"'
+     alias m='eval "$(${HOME}/mambaforge/bin/conda shell.bash hook)"; source ${HOME}/mambaforge/etc/profile.d/mamba.sh'
      ```
      Close the terminal
 

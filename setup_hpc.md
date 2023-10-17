@@ -91,6 +91,7 @@ Submit a simple job script on the queue, in which you perform the same test.
    # Activate the OpenMM software.
    MSBS_ROOT=${VSC_DATA}
    eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"
+   source ${MSBS_ROOT}/mambaforge/etc/profile.d/mamba.sh
    mamba activate openmm
    # Set the number of threads
    export OPENMM_CPU_THREADS=${SLURM_CPUS_ON_NODE}
@@ -119,8 +120,8 @@ Submit a simple job script on the queue, in which you perform the same test.
 1. Add the following to your `.bashrc` file, if you want to facilitate the activation of Mamba-forge, without having it always active:
 
    ```bash
-   MSBS_ROOT=${VSC_DATA}
-   alias m='eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"'
+   export MSBS_ROOT=${VSC_DATA}
+   alias m='eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"; source ${MSBS_ROOT}/mambaforge/etc/profile.d/mamba.sh'
    ```
 
 
@@ -150,6 +151,7 @@ If your HPC runs an instance of [Open OnDemand](https://openondemand.org/), it i
      ```bash
      module purge
      eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"
+     source ${MSBS_ROOT}/mambaforge/etc/profile.d/mamba.sh
      mamba activate openmm
      ```
    - **Extra Jupyter Arguments:** `--notebook-dir="${MSBS_ROOT}"`

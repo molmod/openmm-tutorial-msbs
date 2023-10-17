@@ -26,6 +26,7 @@ bash Mambaforge-Linux-x86_64.sh -bfp ${MSBS_ROOT}/mambaforge
 
 # Activate Mamba-forge.
 eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"
+source ${MSBS_ROOT}/mambaforge/etc/profile.d/mamba.sh
 
 # Make sure your base environment is up-to-date.
 mamba update --all -y
