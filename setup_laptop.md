@@ -1,7 +1,7 @@
 # Setup of OpenMM and Jupyterlab on your laptop
 
 To run OpenMM simulations on your laptop, we will work with a standardized Python environment, Anaconda, which is supported on all major operating systems.
-For reasons of efficiency and robustness, we will in fact use a derivative of Anaconda, called Mamba-forge.
+For reasons of efficiency and robustness, we will in fact use a derivative of Anaconda, called Mambaforge.
 
 :warning: **As of May 2022, the installation of OpenMM on Windows is broken.**
 Technical details of this issue can be found below.
@@ -15,7 +15,7 @@ Most of the simulation software is developed for Unix platforms (macOS and Linux
 
 Take the following steps:
 
-1. Download the [Mamba-forge installer](https://conda-forge.org/miniforge/)
+1. Download the [Mambaforge installer](https://conda-forge.org/miniforge/)
    that matches the operating system and CPU architecture of your laptop.
 
 1. Run the Mambaforge installer.
@@ -28,7 +28,7 @@ Take the following steps:
      ```bash
      bash Mambaforge*.sh -b -p ${HOME}/mambaforge
      ```
-     Add the following line to your `~/.bashrc` file, which makes it convenient to activate the Mamba-forge installation:
+     Add the following line to your `~/.bashrc` file, which makes it convenient to activate the Mambaforge installation:
      ```bash
      alias m='eval "$(${HOME}/mambaforge/bin/conda shell.bash hook)"'
      ```
@@ -45,7 +45,7 @@ Take the following steps:
    - **Linux and WSL.**
      Open your preferred virtual terminal and enter the command alias `m`.
 
-1. Configure conda and install OpenMM (and other useful tools).
+1. Configure Mambaforge and install OpenMM (and other useful tools).
 
    In this step, you all need to enter commands in a virtual terminal, the software equivalent of terminal computers from the 70s.
    Every command you enter will be executed after you press `Enter`.
@@ -75,7 +75,7 @@ Take the following steps:
    ```
 
    You may have to close your terminal and re-open a new one,
-   run the commands `m` (Linux and macOS only) and `conda activate openmm` again before the following steps work.
+   run the commands `m` (Linux and macOS only) and `mamba activate openmm` again before the following steps work.
 
 1. Test your OpenMM installation by entering the following command on the command prompt:
 

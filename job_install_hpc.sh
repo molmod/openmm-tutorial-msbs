@@ -25,7 +25,7 @@ wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforg
 bash Mambaforge-Linux-x86_64.sh -bfp ${MSBS_ROOT}/mambaforge
 
 # Activate Mamba-forge.
-eval "$(${ROOT}/mambaforge/bin/conda shell.bash hook)"
+eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"
 
 # Make sure your base environment is up-to-date.
 mamba update --all -y
@@ -34,7 +34,7 @@ mamba update --all -y
 mamba create -n openmm python cudatoolkit git jupyterlab numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed
 
 # Activate the OpenMM environment
-conda activate openmm
+mamba activate openmm
 
 # Test the installation
 python -m openmm.testInstallation

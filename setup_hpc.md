@@ -45,17 +45,28 @@ We assume the following:
    The last part should be something along the following lines:
 
    ```
-   OpenMM Version: 7.7
-   Git Revision: 130124a3f9277b054ec40927360a6ad20c8f5fa6
+   OpenMM Version: 8.0
+   Git Revision: a7800059645f4471f4b91c21e742fe5aa4513cda
 
-   There are 2 Platforms available:
+   There are 4 Platforms available:
 
    1 Reference - Successfully computed forces
    2 CPU - Successfully computed forces
+   3 CUDA - Successfully computed forces
+   1 warning generated.
+   1 warning generated.
+   1 warning generated.
+   1 warning generated.
+   4 OpenCL - Successfully computed forces
 
    Median difference in forces between platforms:
 
-   Reference vs. CPU: 6.30535e-06
+   Reference vs. CPU: 6.2894e-06
+   Reference vs. CUDA: 6.74325e-06
+   CPU vs. CUDA: 7.39638e-07
+   Reference vs. OpenCL: 6.74399e-06
+   CPU vs. OpenCL: 7.76254e-07
+   CUDA vs. OpenCL: 2.11141e-07
 
    All differences are within tolerance.
    ```
@@ -80,7 +91,7 @@ Submit a simple job script on the queue, in which you perform the same test.
    # Activate the OpenMM software.
    MSBS_ROOT=${VSC_DATA}
    eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"
-   conda activate openmm
+   mamba activate openmm
    # Set the number of threads
    export OPENMM_CPU_THREADS=${SLURM_CPUS_ON_NODE}
    # Run the test.
@@ -103,23 +114,7 @@ Submit a simple job script on the queue, in which you perform the same test.
    After the job is submitted, you can safely log out (type `exit`), even switch off your laptop, and connect later to check the status of the job.
    When the job status is `C` (completed), or it is no longer present in the output of `squeue`, the job was executed and corresponding output files will be created.
 
-1. The output of the test job should be similar to:
-
-   ```
-   OpenMM Version: 7.7
-   Git Revision: 130124a3f9277b054ec40927360a6ad20c8f5fa6
-
-   There are 2 Platforms available:
-
-   1 Reference - Successfully computed forces
-   2 CPU - Successfully computed forces
-
-   Median difference in forces between platforms:
-
-   Reference vs. CPU: 6.30535e-06
-
-   All differences are within tolerance.
-   ```
+1. The output of the test job should be the same as that of the previous test.
 
 1. Add the following to your `.bashrc` file, if you want to facilitate the activation of Mamba-forge, without having it always active:
 
