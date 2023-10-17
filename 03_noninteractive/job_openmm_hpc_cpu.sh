@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=hpc-cpu
+#SBATCH --job-name=openmm-hpc-cpu
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=5GB

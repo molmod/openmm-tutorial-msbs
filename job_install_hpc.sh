@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J install_msbs_venv
+#SBATCH -J install-msbs-mamba
 #SBATCH -N 1
 #SBATCH -t 1:00:00
 #SBATCH --mem=5GB

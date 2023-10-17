@@ -7,16 +7,19 @@ If this is your first experience with the Linux operating system, it's recommend
 
 Note that we have tested the steps on a VSC cluster, but they should be easily adopted to any other HPC.
 We assume the following:
-- Access a virtual terminal on the HPC, using an SSH connection.
-- Your cluster uses the Slurm scheduler. (If not, only some trivial changes are needed.)
 
+- You have access to a virtual terminal on the HPC, using an SSH connection.
+- Your cluster uses the Slurm scheduler.
+  (If not, you need some trivial changes are needed, depending on the scheduler software.)
+- If you are not working on a VSC cluster, replace `$VSC_DATA` in the instructions below and in the shell scripts by another location where you have a few GB of space.
+- Your using the `bash` shell in your virtual terminal.
 
 ## Installation
 
 1. Use an SSH client to connect to a login node of the cluster.
 
 1. Download the notebooks for the tutorials to the `$VSC_DATA` folder of your account so that you can access them at any time during the tutorial.
-   This will also give you a copy of `job_install_vsc_foss-2021a.sh` on the cluster.
+   This will also give you a copy of `job_install_hpc.sh` on the cluster.
    Execute the following commands in the virtual terminal.
 
    ```bash
@@ -35,7 +38,7 @@ We assume the following:
 1. Submit the installation job as follows:
 
    ```bash
-   sbatch job_install_hpc_mambaforge.sh
+   sbatch job_install_hpc.sh
    ```
 
 1. Check the output of the installation job.
@@ -125,8 +128,6 @@ Submit a simple job script on the queue, in which you perform the same test.
    alias m='eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"'
    ```
 
-   where you manually change `${MSBS_ROOT}` to the directory where you installed Mamba-forge.
-
 
 ## Interactive notebooks (with Open OnDemand)
 
@@ -136,10 +137,8 @@ If your HPC runs an instance of [Open OnDemand](https://openondemand.org/), it i
    The details of this works will different from cluster to cluster.
    Consult the documentation of your HPC Center for more details.
 
-1. Click on `Interactive Apps` > `Jupyter Notebook`.
-   A new page should open.
-   You may also use the experimental `Jupyter Lab` instead.
-   (You HPC may not support Juptyer, in which case the remaining steps will not work.)
+1. Click on `Interactive Apps` > `Jupyter Lab`.
+   (Your HPC may not support Juptyer, in which case the remaining steps will not work.)
 
 1. Select a cluster and the resources that you want to use.
 
@@ -156,7 +155,7 @@ If your HPC runs an instance of [Open OnDemand](https://openondemand.org/), it i
      ```bash
      module purge
      eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"
-     conda activate openmm
+     mamba activate openmm
      ```
    - **Extra Jupyter Arguments:** `--notebook-dir="${MSBS_ROOT}"`
 
@@ -220,36 +219,34 @@ Significant adaptations may be needed on other HPCs.
    ssh vsc4YYXX@login.hpc.UGent.be -i ~/.ssh/id_rsa_vsc
    ```
 
-   You may user a configuration file `~.ssh/config`, such that you can reduce the amount of command-line arguments.
+   You may use a configuration file `~.ssh/config` to reduce the amount of command-line arguments.
 
 1. Start an interactive Slurm job.
-   (It is recommended to run this job on a cluster on which you have no queueing time.)
+   (It is recommended to run this job on a debug cluster or partition on which you have no queueing time.)
 
    ```bash
-   srun --pty -t 6:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem=10GB bash
+   srun --pty -t 6:00:00 --nodes=1 --ntasks=1 --cpus-per-task=2 --mem=10GB bash
    ```
 
 1. Start a Jupyter Notebook server in the interactive job:
 
    ```bash
    m
-   conda activate openmm
-   jupyter notebook --no-browser --port=8901
+   mamba activate openmm
+   jupyter lab --no-browser --port=8901
    ```
 
    Take note of the URL printed in the terminal: ```http://localhost:8901/?token=...```.
    You will need to enter this URL in your browser in one of the last steps.
    You may also use another port number, provided you used the same port consistently in all commands.
 
-   (We could not get Jupyter Lab to work yet in this way.)
-
 1. Open a **second** virtual terminal and log into the login node of the cluster with the following port-forwarding options:
 
    ```bash
-   ssh vsc4YYXX@login.hpc.UGent.be -L 2222:nodeZZZZ.slaking.os:22 -i ~/.ssh/id_rsa_vsc
+   ssh vsc4YYXX@login.hpc.UGent.be -L 2222:nodeZZZZ.donphan.os:22 -i ~/.ssh/id_rsa_vsc
    ```
 
-   You need to modify the hostname of the compute node, here `nodeZZZZ.slaking.os`, to match that of your interactive job.
+   You need to modify the hostname of the compute node, here `nodeZZZZ.donphan.os`, to match the compute node of your interactive job.
    This makes it possible to connect to the compute node directly from your laptop with SSH in the following step.
    (We are assuming this is allowed on your HPC.)
 

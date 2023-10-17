@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=vsc-gpu
+#SBATCH --job-name=openmm-vsc-gpu
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=12
 #SBATCH --gpus-per-task=1
@@ -7,7 +7,7 @@
 #SBATCH --time=5:00:00
 
 # Setup our OpenMM environment
-module load OpenMM/7.7.0-foss-2021a-CUDA-11.3.1 MDTraj/1.9.7-foss-2021a matplotlib/3.4.2-foss-2021a jax/0.3.9-foss-2021a lxml/4.6.3-GCCcore-10.3.0 PyYAML/5.4.1-GCCcore-10.3.0
+module load OpenMM/8.0.0-foss-2022a-CUDA-11.7.0 MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-foss-2022a jax/0.3.25-foss-2022a lxml/4.9.1-GCCcore-11.3.0 PyYAML/6.0-GCCcore-11.3.0
 . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/3.9.5-GCCcore-10.3.0/bin/activate
 
 # Set the number of threads.

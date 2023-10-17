@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J install_msbs_venv
+#SBATCH -J install-msbs-vsc
 #SBATCH -N 1
 #SBATCH -t 0:10:00
 #SBATCH --mem=10GB

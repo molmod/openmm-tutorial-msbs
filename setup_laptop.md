@@ -18,7 +18,7 @@ Take the following steps:
 1. Download the [Mamba-forge installer](https://github.com/conda-forge/miniforge#mambaforge)
    that matches the operating system and CPU architecture of your laptop.
 
-1. Run the Mamba-firge installer.
+1. Run the Mambaforge installer.
 
    - **Bare Windows.**
      Run the `.exe` installer.
@@ -165,17 +165,7 @@ If you are not familiar with notebooks, the following resources can be helpful:
 
 ## Known issues
 
-### NGLView and ipywidgets-8
-
-For NGLView to work, one should avoid installing the most recent versions of `ipywidgets`. Install `ipywidgets-7` instead.
-
-More details can be found here:
-
-- https://github.com/nglviewer/nglview/issues/1032
-- https://github.com/jupyter-widgets/ipywidgets/issues/3552
-
-
-### Technical details of the problem with running OpenMM natively on Windows
+### Technical details of the problem when running OpenMM natively on Windows
 
 Error message on Windows
 ```
@@ -195,6 +185,7 @@ ImportError: DLL load failed while importing _openmm: The specified module could
 References:
 - https://github.com/openmm/openmm/issues/3618
 - https://github.com/uibcdf/PyUnitWizard/issues/22
+
 
 **Windows Subsystem for Linux (WSL) = Potential workaround for Windows users**
 

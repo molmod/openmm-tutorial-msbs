@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name cpu-hpc
+#SBATCH --job-name all-cpu-hpc
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8

@@ -1,9 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name gpu-vsc
+#SBATCH --job-name all-cpu-vsc
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
-#SBATCH --gpus-per-task=1
 #SBATCH --mem=10GB
 #SBATCH --time=5:00:00
 
@@ -13,8 +12,6 @@ module load OpenMM/8.0.0-foss-2022a MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-fos
 
 # Set the number of threads.
 export OPENMM_CPU_THREADS=${SLURM_CPUS_PER_TASK}
-# Use CUDA for GPUs
-export OPENMM_DEFAULT_PLATFORM=CUDA
 # Go to the directory where sbatch was called
 cd ${SLURM_SUBMIT_DIR}
 
