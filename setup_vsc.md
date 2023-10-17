@@ -134,7 +134,7 @@ You can use this job script as follows.
 
    Median difference in forces between platforms:
 
-   Reference vs. CPU: 6.30535e-06
+   Reference vs. CPU: 6.30696e-06
 
    All differences are within tolerance.
    ```
@@ -194,5 +194,32 @@ openmm.testInstallation.main()
 You should see the following output (or something similar):
 
 ```
-TODO
+
+OpenMM Version: 8.0
+Git Revision: Unknown
+
+There are 4 Platforms available:
+
+1 Reference - Successfully computed forces
+2 CPU - Successfully computed forces
+3 CUDA - Successfully computed forces
+4 OpenCL 
+
+1 warning generated.
+1 warning generated.
+1 warning generated.
+1 warning generated.
+
+- Successfully computed forces
+
+Median difference in forces between platforms:
+
+Reference vs. CPU: 6.30607e-06
+Reference vs. CUDA: 6.72855e-06
+CPU vs. CUDA: 7.37843e-07
+Reference vs. OpenCL: 6.74399e-06
+CPU vs. OpenCL: 7.66047e-07
+CUDA vs. OpenCL: 2.14437e-07
+
+All differences are within tolerance.
 ```
