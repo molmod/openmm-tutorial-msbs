@@ -15,7 +15,7 @@ Most of the simulation software is developed for Unix platforms (macOS and Linux
 
 Take the following steps:
 
-1. Download the [Mamba-forge installer](https://github.com/conda-forge/miniforge#mambaforge)
+1. Download the [Mamba-forge installer](https://conda-forge.org/miniforge/)
    that matches the operating system and CPU architecture of your laptop.
 
 1. Run the Mambaforge installer.
@@ -69,12 +69,9 @@ Take the following steps:
    # Make a new environment for OpenMM, installing all the software, which takes some minutes.
    # The mamba create command is too long to fit on your screen.
    # Make sure you copy it completely.
-   mamba create -n openmm python cudatoolkit=10 git 'jupyterlab>=3.4.4' numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed jupyter_contrib_nbextensions ipywidgets=7
+   mamba create -n openmm python cudatoolkit git jupyterlab> numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed
    # Activate the OpenMM environment
-   conda activate openmm
-   # Enable nglview and spell checker in Jupyter Notebooks.
-   jupyter nbextension enable spellchecker/main
-   jupyter nbextension enable nglview --py --sys-prefix
+   mamba activate openmm
    ```
 
    You may have to close your terminal and re-open a new one,
@@ -89,19 +86,19 @@ Take the following steps:
    You should see the following output (or something similar):
 
    ```
-   OpenMM Version: 7.7
-   Git Revision: 130124a3f9277b054ec40927360a6ad20c8f5fa6
+    OpenMM Version: 8.0
+    Git Revision: a7800059645f4471f4b91c21e742fe5aa4513cda
 
-   There are 2 Platforms available:
+    There are 2 Platforms available:
 
-   1 Reference - Successfully computed forces
-   2 CPU - Successfully computed forces
+    1 Reference - Successfully computed forces
+    2 CPU - Successfully computed forces
 
-   Median difference in forces between platforms:
+    Median difference in forces between platforms:
 
-   Reference vs. CPU: 6.30535e-06
+    Reference vs. CPU: 6.2963e-06
 
-   All differences are within tolerance.
+    All differences are within tolerance.
    ```
 
 1. For **WSL** only: you need to install the IPython kernel of the `openmm` environment, before you can use it in Jupyter Notebooks.
@@ -153,7 +150,7 @@ To start any notebook from the tutorial, download [the ZIP file with the most re
 Once you have the right *current directory* in your virtual terminal, enter the following commands:
 
 ```bash
-conda activate openmm
+mamba activate openmm
 jupyter lab
 ```
 
