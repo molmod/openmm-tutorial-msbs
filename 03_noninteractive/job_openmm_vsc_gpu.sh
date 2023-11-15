@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=openmm-vsc-gpu
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=12
-#SBATCH --gpus-per-task=1
+#SBATCH --gpus-per-node=1
+#SBATCH --cpus-per-gpu=12
 #SBATCH --mem=5GB
 #SBATCH --time=5:00:00
 
