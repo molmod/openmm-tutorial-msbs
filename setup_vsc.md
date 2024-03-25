@@ -203,7 +203,7 @@ There are 4 Platforms available:
 1 Reference - Successfully computed forces
 2 CPU - Successfully computed forces
 3 CUDA - Successfully computed forces
-4 OpenCL 
+4 OpenCL
 
 1 warning generated.
 1 warning generated.
