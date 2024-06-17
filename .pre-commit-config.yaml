@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/nbQA-dev/nbQA
-  rev: "1.7.0"
+  rev: "1.8.5"
   hooks:
     - id: nbqa-black
       args: ["--nbqa-skip-celltags=before-import"]
@@ -10,7 +10,7 @@ repos:
       args: ["--nbqa-skip-celltags=before-import"]
     - id: nbqa-check-ast
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: "v4.5.0"
+  rev: "v4.6.0"
   hooks:
     - id: check-yaml
     - id: check-ast
@@ -26,15 +26,15 @@ repos:
             .*\.prmtop
         )$
 - repo: https://github.com/kynan/nbstripout.git
-  rev: "0.6.1"
+  rev: "0.7.1"
   hooks:
     - id: nbstripout
 - repo: https://github.com/psf/black
-  rev: "23.9.1"
+  rev: "24.4.2"
   hooks:
     - id: black
 - repo: https://github.com/pycqa/isort
-  rev: "5.12.0"
+  rev: "5.13.2"
   hooks:
     - id: isort
 - repo: https://github.com/pre-commit/pygrep-hooks
@@ -43,12 +43,12 @@ repos:
     - id: python-no-eval
     - id: python-use-type-annotations
 - repo: https://github.com/asottile/pyupgrade
-  rev: "v3.15.0"
+  rev: "v3.16.0"
   hooks:
     - id: pyupgrade
       args: ["--py39-plus"]
 - repo: https://github.com/srstevenson/nb-clean
-  rev: "3.0.1"
+  rev: "3.3.0"
   hooks:
     - id: nb-clean
       args: ["--remove-empty-cells", "--preserve-cell-metadata", "tags", "--"]
