@@ -209,9 +209,14 @@ From the repository run the following command:
 ./run_container.sh docker
 ```
 
-n.b. replace `docker` with `podman` if you installed `podman` instead
+n.b. Replace `docker` with `podman` if you installed `podman` instead. Also if you're using podman in a Linux environment, you need to add the following lines to your `/etc/containers/registries.conf` file, otherwise podman won't be able to locate the docker image defined in the `run_container.sh` file.
 
-It should download the container image (only the first time), and start a Jupyter Lab session from the container.
+```
+[registries.search]
+registries = ['docker.io']
+```
+
+After you run the command, the script should download the container image (only the first time), and start a Jupyter Lab session from the container.
 
 3. Copy the Jupyter Lab's URL from the command line output and paste it into the browser.
 
