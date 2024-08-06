@@ -190,3 +190,34 @@ As of Windows 10, Microsoft distributes the Windows Subsystem for Linux (WSL).
 This allows you to run Linux inside your Windows operating system, giving you access to a small-scale version the software environment used on the high-performance cluster.
 More details can be found in the [Official WSL installation instructions](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 For this course, WSL is optional and left to those interested in a little extra hacking.
+
+
+## Docker-based environment
+
+Docker is a virtualization tool (think of it as a virtual computer inside of your physical computer/laptop) that helps with creating a pre-defined working environment. The benefit of using this method is that it doesn't require going through the lengthy installation steps, and the whole process takes less than 10 mins to set up. The downside of this approach is that you may find the container abstraction confusing, but it's worthwhile to learn how docker works, as many modern software projects support this approach.
+
+1. Install docker or podman on your machine
+
+In order to use a docker image, you must first install Docker Desktop on your computer. Go to their [website](https://www.docker.com/products/docker-desktop/), and download the latest version compatible with your operating system e.g. MacOS.
+
+Docker Desktop is free to use for individuals, but if you're working in an enterprise environment, consider using [podman](https://podman.io/docs/installation), which has a much more permissive license (Apache 2.0).
+
+2. Download the container image and start a new container
+
+From the repository run the following command:
+```
+./run_container.sh docker
+```
+
+n.b. Replace `docker` with `podman` if you installed `podman` instead. Also if you're using podman in a Linux environment, you need to add the following lines to your `/etc/containers/registries.conf` file, otherwise podman won't be able to locate the docker image defined in the `run_container.sh` file.
+
+```
+[registries.search]
+registries = ['docker.io']
+```
+
+After you run the command, the script should download the container image (only the first time), and start a Jupyter Lab session from the container.
+
+3. Copy the Jupyter Lab's URL from the command line output and paste it into the browser.
+
+Look for the line that starts with `http://127.0.0.1:8888:lab?token=`. Copy the entire line and paste it into the browser, and you should be able to access the Jupyter Lab server and get started on the tutorial.
