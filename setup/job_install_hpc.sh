@@ -10,7 +10,7 @@
 # They are all a little different.
 
 # Everything will be installed under MSBS_ROOT.
-MSBS_ROOT=${VSC_DATA}
+MSBS_ROOT=${VSC_DATA}/msbs
 
 if [[ -e "${MSBS_ROOT}/mambaforge" ]]; then
     echo "Installation root already exists: ${MSBS_ROOT}/mambaforge"
@@ -18,11 +18,12 @@ if [[ -e "${MSBS_ROOT}/mambaforge" ]]; then
     exit 0
 fi
 
-
 # Download and install Mamba-forge
-cd ${MSBS_ROOT}
-wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh
-bash Mambaforge-Linux-x86_64.sh -bfp ${MSBS_ROOT}/mambaforge
+(
+  cd ${MSBS_ROOT}
+  wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh
+  bash Mambaforge-Linux-x86_64.sh -bfp ${MSBS_ROOT}/mambaforge
+)
 
 # Activate Mamba-forge.
 eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"
@@ -32,7 +33,7 @@ source ${MSBS_ROOT}/mambaforge/etc/profile.d/mamba.sh
 mamba update --all -y
 
 # Make a new environment for OpenMM, installing all the software, which takes some minutes.
-mamba create -n openmm python cudatoolkit git jupyterlab numpy pandas scipy matplotlib ipympl rdkit openbabel openmm mdtraj nglview pymbar pdbfixer parmed
+mamba create -n openmm --file=environment.yaml
 
 # Activate the OpenMM environment
 mamba activate openmm

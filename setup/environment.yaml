@@ -1,23 +1,29 @@
-name: base
-channels:
-  - conda-forge
 dependencies:
-  - python=3.9
+  - python
   - openmm
+  - cudatoolkit
   - git
   - jupyterlab
   - numpy
   - pandas
   - scipy
   - matplotlib
+  - ipywidget
   - ipympl
   - rdkit
   - openbabel
+  - mdtraj
   - nglview
+  - pymbar
   - pdbfixer
   - parmed
-  - mamba
-  - pip
+  - jax
+  - ruff
+  - pre-commit
+  - jupyterlab-git
+  - python-lsp-ruff
+  - jupyterlab-lsp
+  - jedi-language-server
+  - jupyter-resource-usage
   - pip:
-    - mdtraj
-    - pymbar
+    - jupyterlab-code-formatter
