@@ -7,7 +7,8 @@
 #SBATCH --time=5:00:00
 
 # Setup our OpenMM environment
-eval "$(${VSC_DATA}/mambaforge/bin/conda shell.bash hook)"
+export MSBS_HOME=${VSC_DATA}/msbs
+eval "$(${MSBS_HOME}/mambaforge/bin/conda shell.bash hook)"
 conda activate openmm
 # Set the number of threads.
 export OPENMM_CPU_THREADS=${SLURM_CPUS_PER_TASK}

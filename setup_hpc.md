@@ -11,19 +11,21 @@ We assume the following:
 - You have access to a virtual terminal on the HPC, using an SSH connection.
 - Your cluster uses the Slurm scheduler.
   (If not, you need some trivial changes are needed, depending on the scheduler software.)
-- If you are not working on a VSC cluster, replace `$VSC_DATA` in the instructions below and in the shell scripts by another location where you have a few GB of space.
+- If you are not working on a VSC cluster, replace `${VSC_DATA}/msbs` in the instructions below and in the shell scripts by another location where you have a few GB of space.
 - Your familiar with using the `bash` shell in your virtual terminal.
 
 ## Installation
 
 1. Use an SSH client to connect to a login node of the cluster.
 
-1. Download the notebooks for the tutorials to the `$VSC_DATA` folder of your account so that you can access them at any time during the tutorial.
+1. Download the notebooks for the tutorials to the `${VSC_DATA}/msbs` folder of your account so that you can access them at any time during the tutorial.
    This will also give you a copy of `job_install_hpc.sh` on the cluster.
    Execute the following commands in the virtual terminal.
 
    ```bash
-   cd $VSC_DATA
+   export MSBS_ROOT=${VSC_DATA}/msbs
+   mkdir -p ${MSBS_ROOT}
+   cd ${MSBS_ROOT}
    git clone https://github.com/molmod/openmm-tutorial-msbs.git
    ```
 
@@ -95,17 +97,10 @@ Submit a simple job script on the queue, in which you perform the same test.
    # Set the number of threads
    export OPENMM_CPU_THREADS=${SLURM_CPUS_ON_NODE}
    # Run the test.
-   python test_openmm.py
+   python -m openmm.testInstallation
    ```
 
-1. Run `nano test_openmm.py` and add the following content, after which you save and close with `Ctrl-x`:
-
-   ```python
-   import openmm.testInstallation
-   openmm.testInstallation.main()
-   ```
-
-1. Verify that both files are present by running `ls`.
+1. Verify that the file is present by running `ls`.
 
 1. Run the command `sbatch job_openmm.sh`.
 
@@ -114,19 +109,20 @@ Submit a simple job script on the queue, in which you perform the same test.
    After the job is submitted, you can safely log out (type `exit`), even switch off your laptop, and connect later to check the status of the job.
    When the job status is `C` (completed), or it is no longer present in the output of `squeue`, the job was executed and corresponding output files will be created.
 
-1. The output of the test job should be the same as that of the previous test.
+1. The output of the test job can be found in a file `slurm-*.txt`,
+   where `*` is to be replaced by the Slurm Job ID of your test job.
 
 1. Add the following to your `.bashrc` file, if you want to facilitate the activation of Mamba-forge, without having it always active:
 
    ```bash
-   export MSBS_ROOT=${VSC_DATA}
+   export MSBS_ROOT=${VSC_DATA}/msbs
    alias m='eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"; source ${MSBS_ROOT}/mambaforge/etc/profile.d/mamba.sh'
    ```
 
 
 ## Interactive notebooks (with Open OnDemand)
 
-If your HPC runs an instance of [Open OnDemand](https://openondemand.org/), it is highly recommended to use it for interactive notebooks, instead of the hack explained in the next section.
+If your HPC runs an instance of [Open OnDemand](https://openondemand.org/), we highly recommended using it for interactive notebooks, instead of the hack explained in the next section.
 
 1. Connect to the Open OnDemand portal of your cluster.
    The details of this works will different from cluster to cluster.
@@ -168,7 +164,7 @@ If your HPC runs an instance of [Open OnDemand](https://openondemand.org/), it i
    Your session is currently starting... Please be patient as this process can take a few minutes.
    ```
 
-1. After a few seconds, a button will appear saying `Connect to Jupyter`.
+1. After a minute, a button will appear saying `Connect to Jupyter`.
    Click this button and a Jupyter Notebook (or Lab) should open in a new tab.
 
 1. On the right side of the page, there is a tab saying `New`. Click it.
