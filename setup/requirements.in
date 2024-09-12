@@ -71,7 +71,7 @@ pooch==1.7.0
 zipfile36==0.1.3
 glob2==0.7
 pbr==5.11.1
-pycryptodome==3.18.0  # updated by dependabot
+pycryptodome==3.19.1  # updated by dependabot
 typing_extensions==4.6.3
 pathlib2==2.3.7.post1
 rich==13.4.2
