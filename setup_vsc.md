@@ -26,21 +26,28 @@ You can use this job script as follows.
    A new tab should open with a black screen and a welcome message from the HPC cluster,
    containing some information on the current state of the cluster.
 
-1. Download the notebooks for the tutorials to the `$VSC_DATA` folder of your account so that you can access them at any time during the tutorial.
+1. Prepare a working directory for the course under `$VSC_DATA` by
+   entering the following commands:
+
+   ```bash
+   cd $VSC_DATA
+   mkdir msbs
+   cd msbs
+   ```
+
+1. Download the notebooks for the tutorials to the `$VSC_DATA/msbs` folder of your account so that you can access them at any time during the tutorial.
    This will also give you a copy of `job_install_vsc.sh` on the cluster.
    Execute the following commands in the virtual terminal.
 
    ```bash
-   cd $VSC_DATA
-   wget https://github.com/molmod/openmm-tutorial-msbs/archive/main.zip
-   unzip main.zip
+   git clone https://github.com/molmod/openmm-tutorial-msbs.git
    ```
 
-   This creates a directory `openmm-tutorial-msbs-main` with a copy of the latest version of the tutorial.
-   Enter this directory:
+   This creates a directory `openmm-tutorial-msbs` with a copy of the latest version of the tutorial.
+   Enter the `setup` directory under `openmm-tutorial-msbs`:
 
    ```bash
-   cd openmm-tutorial-msbs-main
+   cd openmm-tutorial-msbs/setup
    ```
 
 1. Submit the installation job as follows:
@@ -54,8 +61,6 @@ You can use this job script as follows.
    To cover all CPU architectures, run the following:
 
    ```bash
-   module swap cluster/victini
-   sbatch job_install_vsc.sh
    module swap cluster/doduo
    sbatch job_install_vsc.sh
    module swap cluster/joltik
@@ -83,13 +88,14 @@ You can use this job script as follows.
    - **Number of cores per node:** `2` (This may be useful for combining visualization and computation loads. Feel free to increase for heavier MD runs. OpenMM can efficiently use more.)
    - **Mode:** not needeed, leave blank
    - **JupyterLab version:** leave default
-   - **Custom code:** Fill in the following ...
-     ```bash
-     module purge
-     module load OpenMM/8.0.0-foss-2022a MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-foss-2022a jax/0.3.25-foss-2022a lxml/4.9.1-GCCcore-11.3.0 PyYAML/6.0-GCCcore-11.3.0
-     . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/3.10.4-GCCcore-11.3.0/bin/activate
-     ```
-   - **Extra Jupyter Arguments:** `--notebook-dir="${VSC_DATA}"`
+   - **Custom code:**
+       ```bash
+       source ${VSC_DATA}/msbs/venvs/activate.sh
+       ```
+   - **Extra Jupyter Arguments:**
+       ```bash
+       --notebook-dir="${VSC_DATA}/msbs"
+       ```
    - **Extra sbatch arguments:** leave empty
    - **I would like to receive an email when the session starts:** no need to check this.
 
@@ -101,7 +107,7 @@ You can use this job script as follows.
    (More information here: https://docs.vscentrum.be/en/latest/jobs/the_job_system_what_and_why.html).
    Normally, the above settings should ensure a near-immediate start of your session with workable resources for the notebooks in this tutorial:
 
-   A new screen will appear showing the status of your request (queueing or about to start).
+   A new screen will appear showing the status of your request (queuing or about to start).
    Normally, you should get the following:
 
    ```
@@ -142,10 +148,10 @@ You can use this job script as follows.
 
 ## Running a Notebook from the tutorial.
 
-Either use the running JupterLab session from the previous section, or start a new one, by repeating the first 4 steps from the previous section.
+Either use the running Jupter Lab session from the previous section, or start a new one, by repeating the first 4 steps from the previous section.
 
 1. Select and open a Notebook of your choice.
-   For example, to get started, find and open the notebook `openmm-tutorial-msbs-main/01_first_steps/01_water.ipynb`.
+   For example, to get started, find and open the notebook `openmm-tutorial-msbs/01_first_steps/01_water.ipynb`.
 
 1. You should be able to run everything in the Notebook you just opened.
 
@@ -173,14 +179,15 @@ This requires a few changes in the settings when running a Jupyter Notebook:
 - **Number of GPUs:** `1`
    - **Mode:** not needeed, leave blank
    - **JupyterLab version:** leave default
-   - **Custom code:** Fill in the following ...
-     ```bash
-     module purge
-     module load OpenMM/8.0.0-foss-2022a-CUDA-11.7.0 MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-foss-2022a jax/0.3.25-foss-2022a lxml/4.9.1-GCCcore-11.3.0 PyYAML/6.0-GCCcore-11.3.0
-     . ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/3.10.4-GCCcore-11.3.0/bin/activate
-  export OPENMM_DEFAULT_PLATFORM=CUDA
-  ```
-- **Extra Jupyter Arguments:** `--notebook-dir="${VSC_DATA}"`
+   - **Custom code:**
+       ```bash
+       source ${VSC_DATA}/msbs/venvs/activate.sh
+       export OPENMM_DEFAULT_PLATFORM=CUDA
+       ```
+   - **Extra Jupyter Arguments:**
+       ```bash
+       --notebook-dir="${VSC_DATA}/msbs"
+       ```
 - **Extra sbatch arguments:** leave empty
 - **I would like to receive an email when the session starts:** this may be useful when all resources are in use, meaning your session cannot start instantly.
 
@@ -194,7 +201,6 @@ openmm.testInstallation.main()
 You should see the following output (or something similar):
 
 ```
-
 OpenMM Version: 8.0
 Git Revision: Unknown
 

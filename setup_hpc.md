@@ -1,4 +1,4 @@
-# Setup on a HPC.
+# Setup on an HPC
 
 The instructions below also work on the VSC clusters, but our instructions in [setup_vsc.md](setup_vsc.md) are much better suited for users of the [Flemish Supercomputing Centre](https://www.vscentrum.be/).
 
@@ -12,7 +12,7 @@ We assume the following:
 - Your cluster uses the Slurm scheduler.
   (If not, you need some trivial changes are needed, depending on the scheduler software.)
 - If you are not working on a VSC cluster, replace `$VSC_DATA` in the instructions below and in the shell scripts by another location where you have a few GB of space.
-- Your using the `bash` shell in your virtual terminal.
+- Your familiar with using the `bash` shell in your virtual terminal.
 
 ## Installation
 
