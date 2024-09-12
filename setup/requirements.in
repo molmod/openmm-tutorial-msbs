@@ -9,7 +9,7 @@ meson-python==0.13.2
 meson==1.1.1
 
 # /apps/gent/RHEL8/cascadelake-ib/software/Pillow/10.0.0-GCCcore-12.3.0
-Pillow==10.0.0
+Pillow==10.3.0
 
 # /apps/gent/RHEL8/cascadelake-ib/software/MDTraj/1.9.9-gfbf-2023a
 mdtraj==1.9.9
