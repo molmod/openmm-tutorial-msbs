@@ -155,7 +155,7 @@ CacheControl==0.12.14
 platformdirs==3.8.0
 distlib==0.3.6
 pycparser==2.21
-idna==3.4
+idna==3.7
 psutil==5.9.5
 toml==0.10.2
 asn1crypto==1.5.1
