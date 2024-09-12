@@ -7,3 +7,7 @@ tmp
 __pycache__
 hints.txt
 .idea
+.vscode
+venvs
+setup/pip_inspect.json
+slurm-*.*
