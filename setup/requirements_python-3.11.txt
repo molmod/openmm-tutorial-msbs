@@ -256,6 +256,12 @@ jaraco-classes==3.2.3
     #   -r requirements.in
     #   keyring
     #   keyrings-alt
+jax==0.4.32
+    # via -r requirements.in
+jaxlib==0.4.32
+    # via
+    #   -r requirements.in
+    #   jax
 jedi==0.19.1
     # via
     #   ipython
@@ -398,6 +404,10 @@ meson-python==0.13.2
     # via -r requirements.in
 mistune==3.0.2
     # via nbconvert
+ml-dtypes==0.4.0
+    # via
+    #   jax
+    #   jaxlib
 mock==5.0.2
     # via -r requirements.in
 more-itertools==9.1.0
@@ -450,10 +460,14 @@ numpy==1.25.1
     #   contourpy
     #   deap
     #   ipympl
+    #   jax
+    #   jaxlib
     #   matplotlib
     #   mdtraj
+    #   ml-dtypes
     #   nglview
     #   numexpr
+    #   opt-einsum
     #   pandas
     #   pdbfixer
     #   pymbar
@@ -463,6 +477,8 @@ openff-toolkit @ git+https://github.com/openforcefield/openff-toolkit.git@0.16.4
     # via -r requirements.in
 openmm==8.1.1
     # via pdbfixer
+opt-einsum==3.3.0
+    # via jax
 overrides==7.7.0
     # via jupyter-server
 packaging==23.1
@@ -496,7 +512,7 @@ pathspec==0.11.1
     # via -r requirements.in
 pbr==5.11.1
     # via -r requirements.in
-pdbfixer @ git+https://github.com/openmm/pdbfixer.git@f9aae0bcfd7b95661cb524c5e52ac71f6b71bf7b
+pdbfixer @ git+https://github.com/openmm/pdbfixer.git@1.9
     # via -r requirements.in
 pexpect==4.8.0
     # via
@@ -680,6 +696,8 @@ scandir==1.10.0
 scipy==1.11.1
     # via
     #   -r requirements.in
+    #   jax
+    #   jaxlib
     #   mdtraj
     #   pymbar
 secretstorage==3.3.3

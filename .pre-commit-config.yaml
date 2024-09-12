@@ -1,23 +1,24 @@
 repos:
-- repo: https://github.com/nbQA-dev/nbQA
-  rev: "1.8.7"
+- repo: https://github.com/Lucas-C/pre-commit-hooks
+  rev: v1.5.5
   hooks:
-    - id: nbqa-black
-      args: ["--nbqa-skip-celltags=before-import"]
-    - id: nbqa-pyupgrade
-      args: ["--py39-plus"]
-    - id: nbqa-isort
-      args: ["--nbqa-skip-celltags=before-import"]
-    - id: nbqa-check-ast
+    - id: remove-crlf
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: "v4.6.0"
+  rev: v4.6.0
   hooks:
-    - id: check-yaml
+    - id: check-added-large-files
     - id: check-ast
-    - id: fix-byte-order-marker
     - id: check-case-conflict
+    - id: check-executables-have-shebangs
+    - id: check-json
     - id: check-merge-conflict
+    - id: check-symlinks
+    - id: check-toml
+    - id: debug-statements
+    - id: detect-private-key
+    - id: destroyed-symlinks
     - id: end-of-file-fixer
+    - id: fix-byte-order-marker
     - id: mixed-line-ending
     - id: trailing-whitespace
       exclude:  |
@@ -25,30 +26,14 @@ repos:
             .*\.pdb|
             .*\.prmtop
         )$
-- repo: https://github.com/kynan/nbstripout.git
-  rev: "0.7.1"
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.6.3
   hooks:
-    - id: nbstripout
-- repo: https://github.com/psf/black
-  rev: "24.8.0"
-  hooks:
-    - id: black
-- repo: https://github.com/pycqa/isort
-  rev: "5.13.2"
-  hooks:
-    - id: isort
-- repo: https://github.com/pre-commit/pygrep-hooks
-  rev: "v1.10.0"
-  hooks:
-    - id: python-no-eval
-    - id: python-use-type-annotations
-- repo: https://github.com/asottile/pyupgrade
-  rev: "v3.17.0"
-  hooks:
-    - id: pyupgrade
-      args: ["--py39-plus"]
+    - id: ruff-format
+    - id: ruff
+      args: ["--fix", "--show-fixes"]
 - repo: https://github.com/srstevenson/nb-clean
   rev: "3.3.0"
   hooks:
     - id: nb-clean
-      args: ["--remove-empty-cells", "--preserve-cell-metadata", "tags", "--"]
+      args: ["--remove-empty-cells", "--preserve-cell-metadata", "tags", "slideshow", "--"]

@@ -81,7 +81,7 @@ def convert_sdf_to_pdb(fn_sdf, fn_pdb, resname="UNL"):
     )
     with open(fn_pdb, "w") as f:
         symbol_counters = {}
-        for iatom, (atcoord, atsymbol) in enumerate(zip(atcoords, atsymbols)):
+        for iatom, (atcoord, atsymbol) in enumerate(zip(atcoords, atsymbols, strict=False)):
             c = symbol_counters.get(atsymbol, 0) + 1
             symbol_counters[atsymbol] = c
             atname = f"{atsymbol}{c}"
