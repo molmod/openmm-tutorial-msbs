@@ -88,7 +88,7 @@ Submit a simple job script on the queue, in which you perform the same test.
    # Go to the directory where sbatch was executed.
    cd ${SLURM_SUBMIT_DIR}
    # Activate the OpenMM software.
-   MSBS_ROOT=${VSC_DATA}
+   MSBS_ROOT=${VSC_DATA}/msbs
    eval "$(${MSBS_ROOT}/mambaforge/bin/conda shell.bash hook)"
    source ${MSBS_ROOT}/mambaforge/etc/profile.d/mamba.sh
    mamba activate openmm

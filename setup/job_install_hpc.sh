@@ -33,7 +33,18 @@ source ${MSBS_ROOT}/mambaforge/etc/profile.d/mamba.sh
 mamba update --all -y
 
 # Make a new environment for OpenMM, installing all the software, which takes some minutes.
-mamba create -n openmm --file=environment.yaml
+mamba env create -f environment.yaml
+
+# Write or update the jupyterlab default configuration
+CENV=${MSBS_ROOT}/mambaforge/envs/openmm
+mkdir -p ${CENV}/share/jupyter/lab/settings/
+cp overrides.json ${CENV}/share/jupyter/lab/settings/
+mkdir -p ${CENV}/etc/ipython/
+cp ipython_kernel_config.py ${CENV}/etc/ipython/
+
+# Update the default matplotlib settings
+mkdir -p ${CENV}/etc/matplotlib/
+cp matplotlibrc ${CENV}/etc/matplotlib/
 
 # Activate the OpenMM environment
 mamba activate openmm
