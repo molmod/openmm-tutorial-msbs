@@ -169,7 +169,7 @@ imagesize==1.4.1
 virtualenv==20.23.1
 
 # /apps/gent/RHEL8/cascadelake-ib/software/cryptography/41.0.1-GCCcore-12.3.0
-cryptography==41.0.1
+cryptography==43.0.1
 
 # /apps/gent/RHEL8/cascadelake-ib/software/Python/3.11.3-GCCcore-12.3.0
 flit_core==3.9.0
