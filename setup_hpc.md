@@ -24,15 +24,14 @@ We assume the following:
 
    ```bash
    cd $VSC_DATA
-   wget https://github.com/molmod/openmm-tutorial-msbs/archive/main.zip
-   unzip main.zip
+   git clone https://github.com/molmod/openmm-tutorial-msbs.git
    ```
 
-   This creates a directory `openmm-tutorial-msbs-main` with a copy of the latest version of the tutorial.
-   Enter this directory:
+   This creates a directory `openmm-tutorial-msbs` with a copy of the latest version of the tutorial.
+   Enter the `setup` directory under `openmm-tutorial-msbs`:
 
    ```bash
-   cd openmm-tutorial-msbs-main
+   cd openmm-tutorial-msbs/setup
    ```
 
 1. Submit the installation job as follows:
