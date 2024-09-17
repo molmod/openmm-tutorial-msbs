@@ -86,7 +86,6 @@ You can use this job script as follows.
      Your session will be killed when this time has passed.
    - **Number of nodes:** always `1` in this course.
    - **Number of cores per node:** `2` (This may be useful for combining visualization and computation loads. Feel free to increase for heavier MD runs. OpenMM can efficiently use more.)
-   - **Mode:** not needeed, leave blank
    - **JupyterLab version:** leave default
    - **Custom code:**
        ```bash
