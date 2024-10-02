@@ -54,7 +54,7 @@ cat > ${ROOT}/venvs/activate.sh << EOL
 # Load software environment
 # By uncommenting the purge, the notebooks start faster,
 # it becomes mandatory to select "None (advanced)" for JupyterLab version in OnDemand
-# module purge
+module purge
 module load ${MODULE_REQUIREMENTS}
 source ${ROOT}/venvs/\${VSC_ARCH_LOCAL}\${VSC_ARCH_SUFFIX}/${PYTHON_VERSION}/bin/activate
 
@@ -69,7 +69,9 @@ EOL
 echo 'DONE!!'
 echo
 echo '# Settins for Jupyter Lab Interactive App at login.hpc.ugent.be'
+echo '# JupyterLab version'
+echo 'None (advanced)'
 echo '# Custom code:'
 echo 'source ${VSC_DATA}/msbs/venvs/activate.sh'
 echo '# Extra Jupyter Arguments:'
-echo '--notebook-dir="${VSC_DATA}/msbs"'
+echo '--notebook-dir="${VSC_DATA}/msbs/openmm-tutorial-msbs"'

@@ -184,8 +184,8 @@ ParmED==4.2.2
 pymbar==4.0.3
 git+https://github.com/openmm/pdbfixer.git@1.9
 git+https://github.com/openforcefield/openff-toolkit.git@0.16.4
-jax==0.4.32
-jaxlib==0.4.32
+jax==0.4.33
+jaxlib==0.4.33
 
 # Not convenient to load from modules because difficult to configure
 # and extend if not installed in a venv
@@ -195,12 +195,8 @@ ipywidgets==8.1.5
 ipympl==0.9.4
 pre-commit==3.8.0
 ruff==0.6.4
-jupyterlab-git==0.50.1
 python-lsp-ruff==2.2.2
 jupyterlab-lsp==5.1.0
-jupyterlab-code-formatter==3.0.2
-jedi-language-server==0.41.4
-jupyter-resource-usage==1.1.0
 
 # Compatibility issues of dependencies in modules
 matplotlib==3.9.2
