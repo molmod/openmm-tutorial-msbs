@@ -52,7 +52,9 @@ cp matplotlibrc ${VENV}/etc/matplotlib/
 # Write or update the central activate script
 cat > ${ROOT}/venvs/activate.sh << EOL
 # Load software environment
-module purge
+# By uncommenting the purge, the notebooks start faster,
+# it becomes mandatory to select "None (advanced)" for JupyterLab version in OnDemand
+# module purge
 module load ${MODULE_REQUIREMENTS}
 source ${ROOT}/venvs/\${VSC_ARCH_LOCAL}\${VSC_ARCH_SUFFIX}/${PYTHON_VERSION}/bin/activate
 

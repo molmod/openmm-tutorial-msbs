@@ -57,7 +57,9 @@ You can use this job script as follows.
    sbatch job_install_vsc.sh
    ```
 
-   You can `module swap` to any other cluster to repeat the installation on different types of hardware.
+
+1. Optionally, if you have sufficient storage on your `$VSC_DATA` partition, which is not the case for most students,
+   you can `module swap` to any other cluster to repeat the installation on different types of hardware.
    To cover all CPU architectures, run the following:
 
    ```bash
@@ -86,14 +88,14 @@ You can use this job script as follows.
      Your session will be killed when this time has passed.
    - **Number of nodes:** always `1` in this course.
    - **Number of cores per node:** `2` (This may be useful for combining visualization and computation loads. Feel free to increase for heavier MD runs. OpenMM can efficiently use more.)
-   - **JupyterLab version:** leave default
+   - **JupyterLab version:** `None (advanced)`
    - **Custom code:**
        ```bash
        source ${VSC_DATA}/msbs/venvs/activate.sh
        ```
    - **Extra Jupyter Arguments:**
        ```bash
-       --notebook-dir="${VSC_DATA}/msbs"
+       --notebook-dir="${VSC_DATA}/msbs/openmm-tutorial-msbs"
        ```
    - **Extra sbatch arguments:** leave empty
    - **I would like to receive an email when the session starts:** no need to check this.
@@ -172,21 +174,20 @@ This requires a few changes in the settings when running a Jupyter Notebook:
 
 - **Cluster:** `joltik` or `accelgor`
 - **Time (hours):** Fill in the time you will be working on the notebook.
-  Your session will be killed when this time has passed.
+ Your session will be killed when this time has passed.
 - **Number of nodes:** always `1` in this course.
 - **Number of cores:** `8` for `joltik`, `12` for `accelgor`.
 - **Number of GPUs:** `1`
-   - **Mode:** not needeed, leave blank
-   - **JupyterLab version:** leave default
-   - **Custom code:**
-       ```bash
-       source ${VSC_DATA}/msbs/venvs/activate.sh
-       export OPENMM_DEFAULT_PLATFORM=CUDA
-       ```
-   - **Extra Jupyter Arguments:**
-       ```bash
-       --notebook-dir="${VSC_DATA}/msbs"
-       ```
+- **JupyterLab version:** `None (advanced)`
+- **Custom code:**
+   ```bash
+   source ${VSC_DATA}/msbs/venvs/activate.sh
+   export OPENMM_DEFAULT_PLATFORM=CUDA
+   ```
+- **Extra Jupyter Arguments:**
+   ```bash
+   --notebook-dir="${VSC_DATA}/msbs/openmm-tutorial-msbs"
+   ```
 - **Extra sbatch arguments:** leave empty
 - **I would like to receive an email when the session starts:** this may be useful when all resources are in use, meaning your session cannot start instantly.
 
