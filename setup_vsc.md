@@ -97,8 +97,10 @@ You can use this job script as follows.
        ```bash
        --notebook-dir="${VSC_DATA}/msbs/openmm-tutorial-msbs"
        ```
-   - **Extra sbatch arguments:** leave empty
+   - **Reservation id** none
+   - **Extra qsub arguments:** leave empty
    - **I would like to receive an email when the session starts:** no need to check this.
+   - **Show advanced options:** no need to check this.
 
    Most of these settings are already correct by default.
 
