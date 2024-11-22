@@ -745,7 +745,7 @@ tomli-w==1.0.0
     # via -r requirements.in
 tomlkit==0.11.8
     # via -r requirements.in
-tornado==6.4.1
+tornado==6.4.2
     # via
     #   ipykernel
     #   jupyter-client
