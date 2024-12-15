@@ -22,7 +22,7 @@ You can use this job script as follows.
 
 1. Navigate to [login.hpc.ugent.be](https://login.hpc.ugent.be) and follow the steps to log in.
 
-1. In the blue top bar, click `Clusters` > `login Shell Access`.
+1. In the blue top bar, click `Clusters` > `>_ RHEL8 Login node Shell Access`.
    A new tab should open with a black screen and a welcome message from the HPC cluster,
    containing some information on the current state of the cluster.
 
@@ -35,7 +35,8 @@ You can use this job script as follows.
    cd msbs
    ```
 
-1. Download the notebooks for the tutorials to the `$VSC_DATA/msbs` folder of your account so that you can access them at any time during the tutorial.
+1. Download the notebooks for the tutorials to the `$VSC_DATA/msbs` folder of your account
+   so that you can access them at any time during the tutorial.
    This will also give you a copy of `job_install_vsc.sh` on the cluster.
    Execute the following commands in the virtual terminal.
 
@@ -57,7 +58,6 @@ You can use this job script as follows.
    sbatch job_install_vsc.sh
    ```
 
-
 1. Optionally, if you have sufficient storage on your `$VSC_DATA` partition, which is not the case for most students,
    you can `module swap` to any other cluster to repeat the installation on different types of hardware.
    To cover all CPU architectures, run the following:
@@ -77,17 +77,24 @@ You can use this job script as follows.
 ## Test OpenMM in an Interactive Jupyter Notebook
 
 1. You can now close the terminal, as it is no longer needed.
-   Instead, go back to [login.hpc.ugent.be](https://login.hpc.ugent.be) and click on `Interactive Apps` > `Jupyter Lab`.
+   Instead, go back to [login.hpc.ugent.be](https://login.hpc.ugent.be)
+   and click on `Interactive Apps` > `Jupyter Lab`.
    A new page should open.
 
 1. Select a cluster and the resources that you want to use.
-   The more resources you request (hours, number of nodes and number of cores), the longer you will have to wait to get access to you session.
+   The more resources you request (hours, number of nodes and number of cores),
+   the longer you will have to wait to get access to you session.
 
-   - **Cluster:** `donphan (interactive/debug)` (On this cluster, there is practically no queueing time.)
+   - **Cluster:** `donphan (interactive/debug)` (On this cluster, there is practically no queuing time.)
    - **Time (hours):** Fill in the time you will be working on the notebook.
      Your session will be killed when this time has passed.
    - **Number of nodes:** always `1` in this course.
-   - **Number of cores per node:** `2` (This may be useful for combining visualization and computation loads. Feel free to increase for heavier MD runs. OpenMM can efficiently use more.)
+   - **Number of cores per node:** `2`
+     (This may be useful for combining visualization and computation loads.
+     OpenMM can efficiently use multiple CPU cores.
+     Feel free to increase for heavier MD runs,
+     but keep in mind that you can used at most eight cores on donphas,
+     summed over all running jobs.)
    - **JupyterLab version:** `None (advanced)`
    - **Custom code:**
        ```bash
@@ -100,15 +107,18 @@ You can use this job script as follows.
    - **Reservation id:** none
    - **Extra qsub arguments:** leave empty
    - **I would like to receive an email when the session starts:** no need to check this.
-   - **Show advanced options:** no need to check this.
+   - **Show advanced options:** yes.
+
+   In the advanced options, select 120 seconds for the timeout.
 
    Most of these settings are already correct by default.
 
-1. Scroll down and click the `Launch` button.
+1. Scroll down and click the blue `Launch` button.
 
    Your job is placed in a queue and will only start when the requested resources become available.
    (More information here: https://docs.vscentrum.be/en/latest/jobs/the_job_system_what_and_why.html).
-   Normally, the above settings should ensure a near-immediate start of your session with workable resources for the notebooks in this tutorial:
+   Normally, the above settings should ensure a near-immediate start of your session
+   with workable resources for the notebooks in this tutorial.
 
    A new screen will appear showing the status of your request (queuing or about to start).
    Normally, you should get the following:
@@ -117,13 +127,14 @@ You can use this job script as follows.
    Your session is currently starting... Please be patient as this process can take a few minutes.
    ```
 
-1. After a few seconds, a button will appear saying `Connect to Jupyter Lab`.
+1. After a few seconds, a green button will appear saying `Connect to Jupyter Lab`.
    Click this button and a Jupyter Lab should open in a new tab.
 
 1. In the `Launcher` tab, under `Notebook`, click on `Python 3 (ipykernel)`.
    A new notebook should open.
 
-1. Enter the following two lines in the first code cell and execute it by clicking on the play button in the toolbar (or typing Shift+Enter):
+1. Enter the following two lines in the first code cell and execute it
+   by clicking on the play button in the toolbar (or typing Shift+Enter):
 
    ```python
    import openmm.testInstallation
@@ -143,7 +154,7 @@ You can use this job script as follows.
 
    Median difference in forces between platforms:
 
-   Reference vs. CPU: 6.30696e-06
+   Reference vs. CPU: 6.29574e-06
 
    All differences are within tolerance.
    ```
@@ -151,10 +162,12 @@ You can use this job script as follows.
 
 ## Running a Notebook from the tutorial.
 
-Either use the running Jupter Lab session from the previous section, or start a new one, by repeating the first 4 steps from the previous section.
+Either use the running Jupyter Lab session from the previous section,
+or start a new one, by repeating the first 4 steps from the previous section.
 
 1. Select and open a Notebook of your choice.
-   For example, to get started, find and open the notebook `openmm-tutorial-msbs/01_first_steps/01_water.ipynb`.
+   For example, to get started, find and open the notebook
+   `openmm-tutorial-msbs/01_first_steps/01_water.ipynb`.
 
 1. You should be able to run everything in the Notebook you just opened.
 
@@ -162,14 +175,19 @@ Either use the running Jupter Lab session from the previous section, or start a 
 
 1. Stop Jupyter Lab:
     - Click on `File` (in Jupyter Lab, not your browser), then `Shutdown` and then confirm.
-    - On `login.hpc.ugent.be`, the job will be marked as completed and you can safely delete it.
+    - On `login.hpc.ugent.be`, the job will be marked as completed.
+      You can safely delete it.
 
 
 ## GPU Acceleration
 
+:warning: This section is outdated. It is no longer compatible with the version of OpenMM installed at VSC.
+
 In the [Tier-2 infrastructure](https://www.ugent.be/hpc/en/infrastructure) overview, there are two clusters with GPUs (at the time of writing): Joltic and Accelgor.
-These machines are heavily used for production simulations, so getting an interactive session on them may require (sometimes days of) queueing time.
-In general, this is impractical, and you are better of using the GPU clusters for non-interactive work, as will be explained later.
+These machines are heavily used for production simulations,
+so getting an interactive session on them may require (sometimes days of) queuing time.
+In general, this is impractical, and we recommend using the GPU clusters for non-interactive work,
+as will be explained later.
 That said, if a GPU is available, you can also run your notebooks interactively with GPU acceleration.
 
 This requires a few changes in the settings when running a Jupyter Notebook:
