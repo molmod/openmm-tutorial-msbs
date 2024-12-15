@@ -11,3 +11,5 @@ hints.txt
 venvs
 setup/pip_inspect.json
 slurm-*.*
+Untitled*.ipynb
+.virtual_documents

@@ -1,3 +1,30 @@
+# /apps/gent/RHEL8/cascadelake-ib/software/OpenMM/8.0.0-foss-2023a
+# openmm==8.0.0  # Not on PyPI
+
+# /apps/gent/RHEL8/cascadelake-ib/modules/all/OpenForceField-Toolkit/0.16.0-foss-2023a
+apsw==3.46.0.0
+bson==0.5.10
+cached-property==1.5.2
+cachetools==5.3.3
+git+https://github.com/openforcefield/openff-toolkit.git@0.16.0
+# intermol==0.1.2  # Not on PyPI
+# OpenForceField-Amber-FF-Ports==0.0.4
+# OpenForceField-ForceFields==2024.04.0
+# OpenForceField-Interchange==0.3.27
+# OpenForceField-Models==0.1.2
+# OpenForceField-NAGL-Models==0.2.0
+# OpenForceField-Toolkit==0.16.0
+# OpenForceField-Units==0.2.2
+# OpenForceField-Utilities==0.1.12
+PyJWT==2.8.0
+python-constraint==1.4.0
+qcelemental==0.26.0
+qcportal==0.55
+#SMIRNOFF-Plugins==2024.01.0
+#SMIRNOFF99Frosst==1.1.0
+xmltodict==0.13.0
+zstandard==0.18.0
+
 # /apps/gent/RHEL8/cascadelake-ib/software/lxml/4.9.2-GCCcore-12.3.0
 lxml==4.9.2
 
@@ -183,7 +210,6 @@ jsonschema==4.18.0
 ParmED==4.2.2
 pymbar==4.0.3
 git+https://github.com/openmm/pdbfixer.git@1.9
-git+https://github.com/openforcefield/openff-toolkit.git@0.16.4
 jax==0.4.33
 jaxlib==0.4.33
 

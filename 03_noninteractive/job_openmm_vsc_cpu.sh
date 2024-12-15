@@ -5,10 +5,11 @@
 #SBATCH --mem=5GB
 #SBATCH --time=5:00:00
 
-# Setup our OpenMM environment
-module load OpenMM/8.0.0-foss-2022a MDTraj/1.9.7-foss-2022a matplotlib/3.5.2-foss-2022a jax/0.3.25-foss-2022a lxml/4.9.1-GCCcore-11.3.0 PyYAML/6.0-GCCcore-11.3.0
-. ${VSC_DATA}/venvs/${VSC_ARCH_LOCAL}/3.10.4-GCCcore-11.3.0/bin/activate
+# Setup an OpenMM environment with CUDA support
+ml load OpenMM/8.0.0-foss-2023a JupyterLab/4.0.5-GCCcore-12.3.0
 
+# Suppress irrelevant warnings
+export PYDEVD_DISABLE_FILE_VALIDATION=1
 # Set the number of threads.
 export OPENMM_CPU_THREADS=${SLURM_CPUS_PER_TASK}
 # Go to the directory where sbatch was called

@@ -10,6 +10,7 @@
 
 MODULE_REQUIREMENTS="
 OpenMM/8.0.0-foss-2023a
+OpenForceField-Toolkit/0.16.0-foss-2023a
 MDTraj/1.9.9-gfbf-2023a
 lxml/4.9.2-GCCcore-12.3.0
 PyYAML/6.0-GCCcore-12.3.0
