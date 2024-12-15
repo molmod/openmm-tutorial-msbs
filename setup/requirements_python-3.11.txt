@@ -432,7 +432,7 @@ notebook-shim==0.2.4
     # via
     #   jupyterlab
     #   notebook
-numexpr==2.8.4
+numexpr==2.8.5
     # via
     #   -r requirements.in
     #   pymbar
