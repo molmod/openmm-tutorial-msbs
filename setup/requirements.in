@@ -146,7 +146,7 @@ jaraco.classes==3.2.3
 netifaces==0.11.0
 cloudpickle==2.2.1
 pastel==0.2.1
-urllib3==1.26.19  # updated by dependabot
+urllib3==2.5.0  # updated by dependabot
 ipaddress==1.0.23
 liac-arff==2.5.0
 # jsonschema==4.17.3  # conflict with Jupyter Lab
