@@ -1066,7 +1066,7 @@ ujson==5.10.0
     # via -r requirements_python-3.13.in
 uri-template==1.3.0
     # via jsonschema
-urllib3==2.4.0
+urllib3==2.5.0
     # via
     #   -r requirements_python-3.13.in
     #   dulwich
