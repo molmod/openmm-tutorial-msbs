@@ -1,0 +1,4 @@
+# Not available or up-to-date in VSC modules
+ParmED==4.2.2
+pymbar==4.0.3
+git+https://github.com/openmm/pdbfixer.git@1.11
