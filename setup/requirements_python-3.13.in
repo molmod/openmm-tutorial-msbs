@@ -229,7 +229,7 @@ toml==0.10.2
 tomli_w==1.2.0
 tomlkit==0.13.2
 ujson==5.10.0
-urllib3==2.5.0
+urllib3==2.5.0  # BUMPED DUE TO SECURITY ISSUE
 wcwidth==0.2.13
 webencodings==0.5.1
 xlrd==2.0.1
