@@ -9,7 +9,7 @@ hints.txt
 .idea
 .vscode
 venvs
-setup/pip_inspect.json
+setup/pip-inspect.json
 slurm-*.*
 Untitled*.ipynb
 .virtual_documents

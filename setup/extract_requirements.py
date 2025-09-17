@@ -1,9 +1,14 @@
 #!/usr/bin/env python
+"""Extract Python packages installed in software modules.
+
+Run `pip inspect > pip-inspect.json` before calling this script.
+"""
+
 import json
 
 
 def main():
-    with open("pip_inspect.json") as fh:
+    with open("pip-inspect.json") as fh:
         data = json.load(fh)
 
     modules = {}
@@ -18,9 +23,9 @@ def main():
         module = "/".join(words)
         modules.setdefault(module, []).append(f"{name}=={version}")
 
-    for module, reqs in modules.items():
+    for module, reqs in sorted(modules.items()):
         print(f"# {module}")
-        for req in reqs:
+        for req in sorted(reqs):
             print(req)
         print()
 

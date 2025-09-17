@@ -8,7 +8,9 @@
 # the Tier-2 cluster in Ghent, on which OpenMM is already
 # installed.
 
+PYTHON_VERSION='3.13.1-GCCcore-14.2.0'
 MODULE_REQUIREMENTS="
+Python/${PYTHON_VERSION}
 matplotlib/3.10.3-gfbf-2025a
 MDTraj/1.11.0-foss-2025a
 nglview/3.1.4-foss-2025a
@@ -20,12 +22,10 @@ scikit-learn/1.7.0-gfbf-2025a
 SciPy-bundle/2025.06-gfbf-2025a
 tqdm/4.67.1-GCCcore-14.2.0
 "
-
 MODULE_REQUIREMENTS=$(tr '\n' ' ' <<< ${MODULE_REQUIREMENTS})
-PYTHON_VERSION='3.13.1-GCCcore-14.2.0'
 PYTHON_RELEASE=$(awk -F. '{print $1"."$2}' <<< ${PYTHON_VERSION})
 VSC_ARCH="${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}"
-PIP_TOOLS="pip==24.2 build==1.2.1 pip-tools==7.4.1 pyproject-hooks==1.1.0"
+PIP_TOOLS="pip==25.2 build==1.3.0 pip-tools==7.5.0 pyproject-hooks==1.2.0"
 ROOT=${VSC_DATA}/msbs
 VENV=${ROOT}/venvs/${VSC_ARCH}/${PYTHON_VERSION}
 
@@ -39,7 +39,7 @@ module load ${MODULE_REQUIREMENTS}
 echo "Modules loaded before installing:"
 module list
 
-python -m venv ${VENV} --system-site-packages
+python -m venv ${VENV} # --system-site-packages
 source ${VENV}/bin/activate
 pip install ${PIP_TOOLS}
 
