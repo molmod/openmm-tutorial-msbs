@@ -9,15 +9,20 @@
 # installed.
 
 MODULE_REQUIREMENTS="
-OpenMM/8.0.0-foss-2023a
-OpenForceField-Toolkit/0.16.0-foss-2023a
-MDTraj/1.9.9-gfbf-2023a
-lxml/4.9.2-GCCcore-12.3.0
-PyYAML/6.0-GCCcore-12.3.0
-RDKit/2024.03.3-foss-2023a
+matplotlib/3.10.3-gfbf-2025a
+MDTraj/1.11.0-foss-2025a
+nglview/3.1.4-foss-2025a
+OpenForceField-Toolkit/0.16.9-foss-2025a
+OpenMM/8.3.0-foss-2025a
+PyYAML/6.0.2-GCCcore-14.2.0
+RDKit/2025.03.4-foss-2025a
+scikit-learn/1.7.0-gfbf-2025a
+SciPy-bundle/2025.06-gfbf-2025a
+tqdm/4.67.1-GCCcore-14.2.0
 "
+
 MODULE_REQUIREMENTS=$(tr '\n' ' ' <<< ${MODULE_REQUIREMENTS})
-PYTHON_VERSION='3.11.3-GCCcore-12.3.0'
+PYTHON_VERSION='3.13.1-GCCcore-14.2.0'
 PYTHON_RELEASE=$(awk -F. '{print $1"."$2}' <<< ${PYTHON_VERSION})
 VSC_ARCH="${VSC_ARCH_LOCAL}${VSC_ARCH_SUFFIX}"
 PIP_TOOLS="pip==24.2 build==1.2.1 pip-tools==7.4.1 pyproject-hooks==1.1.0"
@@ -61,7 +66,7 @@ source ${ROOT}/venvs/\${VSC_ARCH_LOCAL}\${VSC_ARCH_SUFFIX}/${PYTHON_VERSION}/bin
 
 # Make sure that Python programs (like Jupyter) are aware
 # of the Python packages installed in the venv.
-export PYTHONPATH="\${VIRTUAL_ENV}/lib/python3.11/site-packages:\${PYTHONPATH}"
+export PYTHONPATH="\${VIRTUAL_ENV}/lib/python3.13/site-packages:\${PYTHONPATH}"
 
 # Set matplotlibrc location
 export MATPLOTLIBRC=\${VIRTUAL_ENV}/etc/matplotlib/matplotlibrc

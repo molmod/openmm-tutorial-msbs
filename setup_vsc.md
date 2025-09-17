@@ -17,12 +17,12 @@ The following sections assume that you have access to your VSC account and can l
 We will use the OpenMM and several other Python packages, which are already installed on the cluster.
 In addition, some more Python packages are needed for the tutorial, which need to be installed in your account.
 
-Take make this easier, we prepared a job script `job_install_vsc.sh`, which can be submitted to any of the clusters, to prepare this software environment for you.
+Take make this easier, we prepared a job script `job_install_vsc.sh`, which can be submitted to any VSC cluster, to prepare this software environment for you.
 You can use this job script as follows.
 
 1. Navigate to [login.hpc.ugent.be](https://login.hpc.ugent.be) and follow the steps to log in.
 
-1. In the blue top bar, click `Clusters` > `>_ RHEL8 Login node Shell Access`.
+1. In the blue top bar, click `Clusters` > `>_ RHEL9 Login node Shell Access`.
    A new tab should open with a black screen and a welcome message from the HPC cluster,
    containing some information on the current state of the cluster.
 
