@@ -4,7 +4,7 @@ repos:
   hooks:
     - id: remove-crlf
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v5.0.0
+  rev: v6.0.0
   hooks:
     - id: check-added-large-files
     - id: check-ast
@@ -27,10 +27,10 @@ repos:
             .*\.prmtop
         )$
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.11.13
+  rev: v0.13.0
   hooks:
     - id: ruff-format
-    - id: ruff
+    - id: ruff-check
       args: ["--fix", "--show-fixes"]
 - repo: https://github.com/srstevenson/nb-clean
   rev: "4.0.1"
