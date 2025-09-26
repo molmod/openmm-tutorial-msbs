@@ -430,7 +430,7 @@ jupyter-server-terminals==0.5.3
     # via
     #   -r requirements_python-3.13.in
     #   jupyter-server
-jupyterlab==4.4.4
+jupyterlab==4.4.8
     # via
     #   -r requirements_python-3.13.in
     #   nglview
