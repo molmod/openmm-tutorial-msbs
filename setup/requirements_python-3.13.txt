@@ -251,7 +251,7 @@ flexparser==0.4
     # via
     #   -r requirements_python-3.13.in
     #   pint
-fonttools==4.58.4
+fonttools==4.61.0
     # via
     #   -r requirements_python-3.13.in
     #   matplotlib

@@ -257,7 +257,7 @@ seaborn==0.13.2
 cryptography==44.0.2
 
 # /apps/gent/RHEL9/cascadelake-ib/software/fonttools/4.58.4-GCCcore-14.2.0
-fonttools==4.58.4
+fonttools==4.61.0
 
 # /apps/gent/RHEL9/cascadelake-ib/software/jedi/0.19.1-GCCcore-14.2.0
 jedi==0.19.1
