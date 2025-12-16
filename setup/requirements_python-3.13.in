@@ -148,7 +148,7 @@ ecdsa==0.19.1
 editables==0.5
 exceptiongroup==1.2.2
 execnet==2.1.1
-filelock==3.18.0
+filelock==3.20.1
 fsspec==2025.3.2
 future==1.0.0
 glob2==0.7
