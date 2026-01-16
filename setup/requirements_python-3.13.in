@@ -190,7 +190,7 @@ psutil==7.0.0
 ptyprocess==0.7.0
 py==1.11.0
 py_expression_eval==0.3.14
-pyasn1==0.6.1
+pyasn1==0.6.2
 pycparser==2.22
 pycryptodome==3.22.0
 pydevtool==0.3.0

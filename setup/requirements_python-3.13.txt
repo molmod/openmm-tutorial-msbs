@@ -738,7 +738,7 @@ py-cpuinfo==9.0.0
     #   tables
 py-expression-eval==0.3.14
     # via -r requirements_python-3.13.in
-pyasn1==0.6.1
+pyasn1==0.6.2
     # via -r requirements_python-3.13.in
 pycparser==2.22
     # via
