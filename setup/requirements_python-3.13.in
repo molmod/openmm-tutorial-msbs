@@ -350,7 +350,7 @@ pyproject-metadata==0.9.1
 spglib==2.6.0
 
 # /apps/gent/RHEL9/cascadelake-ib/software/tornado/6.5.1-GCCcore-14.2.0
-tornado==6.5.1
+tornado==6.5.5
 
 # /apps/gent/RHEL9/cascadelake-ib/software/tqdm/4.67.1-GCCcore-14.2.0
 tqdm==4.67.1

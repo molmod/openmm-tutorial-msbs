@@ -1008,7 +1008,7 @@ tomlkit==0.13.2
     # via
     #   -r requirements_python-3.13.in
     #   jupyter-packaging
-tornado==6.5.1
+tornado==6.5.5
     # via
     #   -r requirements_python-3.13.in
     #   ipykernel
