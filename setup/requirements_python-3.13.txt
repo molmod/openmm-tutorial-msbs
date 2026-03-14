@@ -765,7 +765,7 @@ pygments==2.19.1
     #   nbconvert
     #   rich
     #   sphinx
-pyjwt==2.10.1
+pyjwt==2.12.0
     # via
     #   -r requirements_python-3.13.in
     #   qcportal
