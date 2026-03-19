@@ -89,7 +89,7 @@ zstandard==0.23.0
 OpenMM==8.3.0
 
 # /apps/gent/RHEL9/cascadelake-ib/software/Pillow/11.3.0-GCCcore-14.2.0
-pillow==11.3.0
+pillow==12.1.1
 
 # /apps/gent/RHEL9/cascadelake-ib/software/Pint/0.24.4-GCCcore-14.2.0
 Pint==0.24.4
