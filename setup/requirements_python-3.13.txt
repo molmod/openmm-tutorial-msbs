@@ -1095,7 +1095,7 @@ websocket-client==1.8.0
     # via
     #   -r requirements_python-3.13.in
     #   jupyter-server
-werkzeug==3.1.5
+werkzeug==3.1.6
     # via
     #   -r requirements_python-3.13.in
     #   flask
