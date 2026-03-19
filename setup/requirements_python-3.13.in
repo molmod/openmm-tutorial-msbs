@@ -45,7 +45,7 @@ httpcore==1.0.9
 httpx==0.28.1
 json5==0.12.0
 jupyter-lsp==2.2.5
-jupyterlab==4.4.4
+jupyterlab==4.4.8
 jupyterlab_server==2.27.3
 
 # /apps/gent/RHEL9/cascadelake-ib/software/JupyterNotebook/7.4.4-GCCcore-14.2.0
