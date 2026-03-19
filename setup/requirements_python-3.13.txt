@@ -1074,7 +1074,7 @@ urllib3==2.6.3
     #   requests
 versioneer==0.29
     # via -r requirements_python-3.13.in
-virtualenv==20.29.2
+virtualenv==20.36.1
     # via
     #   -r requirements_python-3.13.in
     #   pre-commit

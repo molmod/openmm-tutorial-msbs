@@ -359,7 +359,7 @@ tqdm==4.67.1
 typing_extensions==4.14.0
 
 # /apps/gent/RHEL9/cascadelake-ib/software/virtualenv/20.29.2-GCCcore-14.2.0
-virtualenv==20.29.2
+virtualenv==20.36.1
 
 # ------------------------------------------------------------------------------
 # Manual additions
