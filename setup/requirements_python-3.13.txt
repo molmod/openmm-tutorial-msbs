@@ -229,7 +229,7 @@ fastjsonschema==2.21.1
     # via
     #   -r requirements_python-3.13.in
     #   nbformat
-filelock==3.18.0
+filelock==3.20.3
     # via
     #   -r requirements_python-3.13.in
     #   mdanalysis
